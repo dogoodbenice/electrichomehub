@@ -43,18 +43,18 @@ export default function DeviceTile({ device, onClick }: DeviceTileProps) {
       className="device-tile bg-card border-border hover:border-brand-red cursor-pointer" 
       onClick={onClick}
     >
-      <CardContent className="p-4">
-        <div className="flex flex-col items-center text-center space-y-2">
-          <IconComponent className="w-8 h-8 text-brand-red" />
-          <h4 className="font-medium text-sm">{device.name}</h4>
-          <p className="text-xs text-muted-foreground">{device.model}</p>
+      <CardContent className="p-3">
+        <div className="flex flex-col items-center text-center space-y-1.5">
+          <IconComponent className="w-6 h-6 text-brand-red" />
+          <h4 className="font-medium text-xs leading-tight">{device.name}</h4>
+          <p className="text-xs text-muted-foreground truncate w-full">{device.model}</p>
           <Badge 
             variant={getWarrantyBadgeVariant(device.warrantyStatus)}
-            className={`text-xs ${getWarrantyBadgeClass(device.warrantyStatus)}`}
+            className={`text-xs px-1.5 py-0.5 ${getWarrantyBadgeClass(device.warrantyStatus)}`}
           >
-            {device.warrantyStatus === 'Active' ? 'Warranty Active' : 
-             device.warrantyStatus === 'Expires Soon' ? 'Expires Soon' : 
-             'No Warranty'}
+            {device.warrantyStatus === 'Active' ? 'Active' : 
+             device.warrantyStatus === 'Expires Soon' ? 'Expires' : 
+             'Expired'}
           </Badge>
         </div>
       </CardContent>

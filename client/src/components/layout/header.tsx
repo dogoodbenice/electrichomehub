@@ -9,9 +9,8 @@ const navigation = [
   { name: "Device Tracking", href: "/tracking" },
   { name: "Documentation", href: "/documentation" },
   { name: "Issue Monitoring", href: "/monitoring" },
-  { name: "Developer API", href: "/developer" },
+  { name: "Developer API", href: "/developer", featured: true },
   { name: "Data Export", href: "/data-export" },
-  { name: "About", href: "/about" },
   { name: "FAQ", href: "/faq" },
 ];
 
@@ -40,8 +39,8 @@ export default function Header() {
                 className={`nav-link text-sm font-medium transition-colors ${
                   location === item.href 
                     ? "text-brand-red" 
-                    : item.name === "Developer API" 
-                      ? "text-brand-red font-semibold"
+                    : item.featured 
+                      ? "text-brand-red font-semibold border border-brand-red px-3 py-1 rounded-lg hover:bg-brand-red hover:text-white"
                       : "text-white hover:text-brand-red"
                 }`}
               >
@@ -67,8 +66,8 @@ export default function Header() {
                     className={`nav-link text-sm font-medium transition-colors ${
                       location === item.href 
                         ? "text-brand-red" 
-                        : item.name === "Developer API" 
-                          ? "text-brand-red font-semibold"
+                        : item.featured 
+                          ? "text-brand-red font-semibold border border-brand-red px-3 py-1 rounded-lg hover:bg-brand-red hover:text-white"
                           : "text-white hover:text-brand-red"
                     }`}
                   >

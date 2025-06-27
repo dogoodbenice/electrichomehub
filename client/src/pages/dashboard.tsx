@@ -1,5 +1,6 @@
 import { useQuery } from "@tanstack/react-query";
-import { Smartphone, FileText, AlertTriangle, Badge } from "lucide-react";
+import { Smartphone, FileText, AlertTriangle, Zap, Globe, Shield } from "lucide-react";
+import { Badge } from "@/components/ui/badge";
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
 import { Button } from "@/components/ui/button";
 import StatsGrid from "@/components/dashboard/stats-grid";
@@ -17,6 +18,52 @@ export default function Dashboard() {
 
   return (
     <div className="space-y-8">
+      {/* Hero Section */}
+      <section className="bg-gradient-to-r from-black via-gray-900 to-black border-b border-border">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-12">
+          <div className="text-center mb-8">
+            <h1 className="text-4xl font-bold mb-4">
+              Welcome to <span className="text-brand-red">Electric Home Hub</span>
+            </h1>
+            <p className="text-xl text-muted-foreground max-w-3xl mx-auto">
+              The smart, centralized platform that empowers homeowners to seamlessly manage all their electric home hardware—regardless of brand.
+            </p>
+          </div>
+          
+          <div className="grid grid-cols-1 md:grid-cols-3 gap-8 mt-12">
+            <div className="text-center">
+              <div className="w-16 h-16 bg-brand-red rounded-full flex items-center justify-center mx-auto mb-4">
+                <Globe className="w-8 h-8 text-white" />
+              </div>
+              <h3 className="text-lg font-semibold mb-2">Universal Compatibility</h3>
+              <p className="text-muted-foreground text-sm">
+                Monitor all electric hardware in your home, regardless of manufacturer or brand
+              </p>
+            </div>
+            
+            <div className="text-center">
+              <div className="w-16 h-16 bg-brand-red rounded-full flex items-center justify-center mx-auto mb-4">
+                <FileText className="w-8 h-8 text-white" />
+              </div>
+              <h3 className="text-lg font-semibold mb-2">Centralized Control</h3>
+              <p className="text-muted-foreground text-sm">
+                Store all manuals, warranties, and documentation in one secure digital repository
+              </p>
+            </div>
+            
+            <div className="text-center">
+              <div className="w-16 h-16 bg-brand-red rounded-full flex items-center justify-center mx-auto mb-4">
+                <Shield className="w-8 h-8 text-white" />
+              </div>
+              <h3 className="text-lg font-semibold mb-2">Proactive Protection</h3>
+              <p className="text-muted-foreground text-sm">
+                Stay ahead with alerts for recalls, firmware updates, and emerging device issues
+              </p>
+            </div>
+          </div>
+        </div>
+      </section>
+
       {/* Quick Action Buttons */}
       <section className="bg-card border-b border-border">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-6">
