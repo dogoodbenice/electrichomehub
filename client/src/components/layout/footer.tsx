@@ -50,7 +50,7 @@ export default function Footer() {
         </div>
         
         <div className="border-t border-card mt-8 pt-8 flex flex-col sm:flex-row justify-between items-center">
-          <p className="text-muted-foreground text-sm">© 2025 Electric Home Hub. Built with love from Axle Energy.</p>
+          <p className="text-muted-foreground text-sm">© 2025 Electric Home Hub. Built with love as a concept by Suraj.</p>
           <div className="flex space-x-4 mt-4 sm:mt-0">
             <a href="#" className="text-muted-foreground hover:text-brand-red transition-colors">
               <Twitter className="w-5 h-5" />
