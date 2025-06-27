@@ -27,8 +27,21 @@ export default function Dashboard() {
             </h1>
             <p className="text-xl text-muted-foreground max-w-3xl mx-auto">The smart platform empowering anyone to seamlessly manage all their electric hardware</p>
           </div>
+
+          {/* Electric Divider */}
+          <div className="flex items-center justify-center my-8 fade-in-up-delay">
+            <div className="flex items-center space-x-2">
+              <div className="w-8 h-px bg-gradient-to-r from-transparent to-brand-red"></div>
+              <Zap className="w-5 h-5 text-brand-red animate-pulse" />
+              <div className="w-2 h-2 bg-brand-red rounded-full animate-pulse"></div>
+              <Zap className="w-4 h-4 text-brand-red/70 animate-pulse" style={{animationDelay: '0.5s'}} />
+              <div className="w-1 h-1 bg-brand-red/50 rounded-full animate-pulse" style={{animationDelay: '1s'}}></div>
+              <Zap className="w-3 h-3 text-brand-red/50 animate-pulse" style={{animationDelay: '1.5s'}} />
+              <div className="w-8 h-px bg-gradient-to-l from-transparent to-brand-red"></div>
+            </div>
+          </div>
           
-          <div className="grid grid-cols-1 md:grid-cols-3 gap-8 mt-12 fade-in-up-delay">
+          <div className="grid grid-cols-1 md:grid-cols-3 gap-8 fade-in-up-delay">
             <div className="text-center">
               <div className="w-16 h-16 bg-brand-red rounded-full flex items-center justify-center mx-auto mb-4 icon-pulse">
                 <Globe className="w-8 h-8 text-white" />
