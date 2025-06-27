@@ -1,4 +1,4 @@
-import { Rocket, Code, Download, Key, Zap, Terminal, Globe } from "lucide-react";
+import { Rocket, Code, Download, Key, Zap, Terminal, Globe, ArrowRight } from "lucide-react";
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
 import { Button } from "@/components/ui/button";
 import CodeBlock from "@/components/developer/code-block";
@@ -171,6 +171,45 @@ console.log(response);
                 </p>
               </CardContent>
             </Card>
+          </div>
+        </div>
+
+        {/* Call to Action */}
+        <div className="border-t border-border pt-8 mt-8">
+          <div className="text-center">
+            <h3 className="text-2xl font-bold mb-4">Ready to Build Your Electric Home Hub?</h3>
+            <p className="text-muted-foreground mb-6 max-w-2xl mx-auto">
+              Join thousands of developers already building smart home solutions with our powerful API. 
+              Get started in minutes with comprehensive documentation and dedicated support.
+            </p>
+            
+            <div className="flex flex-col sm:flex-row gap-4 justify-center items-center">
+              <Button size="lg" className="bg-brand-red hover:bg-red-600 px-8 py-3">
+                <Key className="w-5 h-5 mr-2" />
+                Get Your Free API Key
+                <ArrowRight className="w-5 h-5 ml-2" />
+              </Button>
+              
+              <Button size="lg" variant="outline" className="border-brand-red text-brand-red hover:bg-brand-red hover:text-white px-8 py-3">
+                <Code className="w-5 h-5 mr-2" />
+                View Full Documentation
+              </Button>
+            </div>
+            
+            <div className="mt-6 flex justify-center items-center space-x-6 text-sm text-muted-foreground">
+              <div className="flex items-center space-x-2">
+                <div className="w-2 h-2 bg-green-500 rounded-full"></div>
+                <span>Free tier available</span>
+              </div>
+              <div className="flex items-center space-x-2">
+                <div className="w-2 h-2 bg-blue-500 rounded-full"></div>
+                <span>No credit card required</span>
+              </div>
+              <div className="flex items-center space-x-2">
+                <div className="w-2 h-2 bg-brand-red rounded-full"></div>
+                <span>24/7 developer support</span>
+              </div>
+            </div>
           </div>
         </div>
       </Card>
