@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Redirecting... - Electric Home Hub</title>
+    <script>
+      // GitHub Pages SPA redirect
+      // This script takes the current page path and redirects to the index page
+      // with the path as a query parameter for the client-side router to handle
+      (function(l) {
+        if (l.search[1] === '/' ) {
+          var decoded = sessionStorage.getItem('redirect');
+          if (decoded) {
+            sessionStorage.removeItem('redirect');
+            l.replace(l.protocol + '//' + l.hostname + (l.port ? ':' + l.port : '') + decoded);
+          }
+        }
+      }(window.location))
+      
+      // Store the current path and redirect to index
+      sessionStorage.setItem('redirect', location.pathname);
+      location.replace(location.protocol + '//' + location.hostname + (location.port ? ':' + location.port : '') + 
+        location.pathname.split('/').slice(0, -1).join('/') + '/?/' + 
+        location.pathname.slice(1).split('/').slice(1).join('/') + 
+        (location.search ? '&' + location.search.slice(1) : '') + 
+        location.hash
+      );
+    </script>
+  </head>
+  <body>
+    <p>Redirecting to Electric Home Hub...</p>
+  </body>
+</html>

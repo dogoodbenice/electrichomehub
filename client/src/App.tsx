@@ -1,4 +1,4 @@
-import { Switch, Route } from "wouter";
+import { Switch, Route, Router as WouterRouter } from "wouter";
 import { queryClient } from "./lib/queryClient";
 import { QueryClientProvider } from "@tanstack/react-query";
 import { Toaster } from "@/components/ui/toaster";
@@ -15,19 +15,25 @@ import FAQ from "@/pages/faq";
 import About from "@/pages/about";
 import NotFound from "@/pages/not-found";
 
+// Check if we're in GitHub Pages environment
+const isGitHubPages = window.location.hostname.includes('github.io');
+const basePath = isGitHubPages ? '/electrichomehub' : '';
+
 function Router() {
   return (
-    <Switch>
-      <Route path="/" component={Dashboard} />
-      <Route path="/tracking" component={DeviceTracking} />
-      <Route path="/documentation" component={Documentation} />
-      <Route path="/monitoring" component={IssueMonitoring} />
-      <Route path="/developer" component={DeveloperAPI} />
-      <Route path="/data-export" component={DataExport} />
-      <Route path="/faq" component={FAQ} />
-      <Route path="/about" component={About} />
-      <Route component={NotFound} />
-    </Switch>
+    <WouterRouter base={basePath}>
+      <Switch>
+        <Route path="/" component={Dashboard} />
+        <Route path="/tracking" component={DeviceTracking} />
+        <Route path="/documentation" component={Documentation} />
+        <Route path="/monitoring" component={IssueMonitoring} />
+        <Route path="/developer" component={DeveloperAPI} />
+        <Route path="/data-export" component={DataExport} />
+        <Route path="/faq" component={FAQ} />
+        <Route path="/about" component={About} />
+        <Route component={NotFound} />
+      </Switch>
+    </WouterRouter>
   );
 }
 
