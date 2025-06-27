@@ -95,7 +95,7 @@ export default function Dashboard() {
             <h2 className="text-xl font-semibold mb-2">Quick Actions</h2>
             <p className="text-muted-foreground text-sm">Start managing your electric home devices instantly</p>
           </div>
-          <div className="grid grid-cols-1 md:grid-cols-4 gap-4">
+          <div className="grid grid-cols-1 md:grid-cols-3 gap-4">
             <Button 
               variant="outline" 
               className="bg-black border-card hover:border-brand-red rounded-lg p-6 h-auto text-left transition-all duration-200 group justify-start"
@@ -134,20 +134,33 @@ export default function Dashboard() {
                 </div>
               </div>
             </Button>
-            
+          </div>
+        </div>
+      </section>
+
+      {/* Developer API Call to Action */}
+      <section className="bg-gradient-to-r from-black to-gray-900 border-b border-brand-red/20">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-8">
+          <div className="text-center mb-6">
+            <h2 className="text-2xl font-bold mb-2">Build Your Own Electric Home Hub</h2>
+            <p className="text-muted-foreground">Use our powerful Developer API to create custom solutions for your customers</p>
+          </div>
+          <div className="max-w-2xl mx-auto">
             <Button 
               variant="outline" 
-              className="bg-black border-2 border-brand-red hover:bg-brand-red/10 rounded-lg p-6 h-auto text-left transition-all duration-200 group justify-start relative overflow-hidden"
+              className="w-full bg-black border-2 border-brand-red hover:bg-brand-red/10 rounded-lg p-8 h-auto text-left transition-all duration-200 group justify-start relative overflow-hidden"
             >
-              <div className="flex items-center space-x-3">
-                <Code className="w-6 h-6 text-brand-red" />
-                <div className="text-left">
-                  <h3 className="text-lg font-semibold text-brand-red">Build Your Own</h3>
-                  <p className="text-muted-foreground text-sm">Use our Developer API to create custom solutions</p>
+              <div className="flex items-center space-x-4">
+                <div className="w-12 h-12 bg-brand-red rounded-full flex items-center justify-center">
+                  <Code className="w-6 h-6 text-white" />
+                </div>
+                <div className="text-left flex-1">
+                  <h3 className="text-xl font-semibold text-brand-red mb-1">Developer API Access</h3>
+                  <p className="text-muted-foreground">White-label our platform and build custom Electric Home Hub solutions</p>
                 </div>
               </div>
-              <div className="absolute top-2 right-2">
-                <Badge variant="destructive" className="bg-brand-red text-white text-xs px-2 py-1">
+              <div className="absolute top-4 right-4">
+                <Badge variant="destructive" className="bg-brand-red text-white px-3 py-1">
                   API
                 </Badge>
               </div>
