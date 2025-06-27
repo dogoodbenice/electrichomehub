@@ -1,4 +1,4 @@
-# Electric Home Hub - Project Overview
+# Electric Home Hub - Concept Overview
 
 ## Overview
 
@@ -56,64 +56,3 @@ The application uses four main database tables:
 3. **Database**: Drizzle ORM handles type-safe database operations
 4. **Response**: JSON responses with proper error handling and status codes
 5. **UI Updates**: Query cache invalidation triggers automatic UI updates
-
-## External Dependencies
-
-### Core Dependencies
-- **@neondatabase/serverless**: PostgreSQL serverless driver
-- **drizzle-orm**: Type-safe ORM with PostgreSQL dialect
-- **@tanstack/react-query**: Server state management
-- **wouter**: Lightweight React router
-- **zod**: Runtime type validation
-
-### UI Dependencies
-- **@radix-ui/***: Accessible UI primitives
-- **tailwindcss**: Utility-first CSS framework
-- **class-variance-authority**: Type-safe variant styling
-- **lucide-react**: Icon library
-
-### Development Dependencies
-- **vite**: Build tool and development server
-- **tsx**: TypeScript execution for Node.js
-- **esbuild**: Production bundling for server code
-
-## Deployment Strategy
-
-The application is configured for deployment on Replit with autoscaling:
-
-- **Development**: `npm run dev` starts both frontend and backend with hot reload
-- **Build**: `npm run build` creates optimized production bundles
-- **Production**: `npm run start` runs the production server
-- **Database**: Automatic migration with `npm run db:push`
-
-**Environment Variables Required**:
-- `DATABASE_URL`: PostgreSQL connection string
-- `NODE_ENV`: Environment setting (development/production)
-
-**Port Configuration**:
-- Development: localhost:5000
-- Production: External port 80
-
-The deployment uses a monorepo structure where the Express server serves both the API and static frontend files in production, with Vite middleware handling development builds.
-
-## Changelog
-
-- June 27, 2025. Initial setup
-- June 27, 2025. Added animated hero section with gradient background and fade-in animations
-- June 27, 2025. Made device tiles smaller and more compact with icons-only display
-- June 27, 2025. Enhanced Developer API prominence in navigation with bordered styling
-- June 27, 2025. Updated documentation page title to "Manage Device Documents"
-- June 27, 2025. Removed About page from main navigation
-- June 27, 2025. Increased device grid density (up to 10 columns on XL screens)
-- June 27, 2025. Replaced hero gradient with subtle dot pattern background
-- June 27, 2025. Added electric-themed lightning bolt dividers throughout the interface
-- June 27, 2025. Created prominent Developer API section after hero with call-to-action
-- June 27, 2025. Enhanced code examples with realistic API response data
-- June 27, 2025. Redesigned code blocks with terminal-style interface and improved syntax highlighting
-- June 27, 2025. Added compelling call-to-action section to Developer API page
-- June 27, 2025. Prepared repository for GitHub Pages deployment with workflows and documentation
-
-## User Preferences
-
-Preferred communication style: Simple, everyday language.
-Design preferences: Developer-focused platform with prominent API tooling, compact device tiles with small icons, animated hero sections.
