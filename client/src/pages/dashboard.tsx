@@ -1,5 +1,5 @@
 import { useQuery } from "@tanstack/react-query";
-import { Smartphone, FileText, AlertTriangle, Zap, Globe, Shield, Code } from "lucide-react";
+import { Smartphone, FileText, AlertTriangle, Zap, Globe, Shield, Code, Heart, Home } from "lucide-react";
 import { Badge } from "@/components/ui/badge";
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
 import { Button } from "@/components/ui/button";
@@ -108,11 +108,11 @@ export default function Dashboard() {
       <div className="flex items-center justify-center py-8">
         <div className="flex items-center space-x-2">
           <div className="w-8 h-px bg-gradient-to-r from-transparent to-brand-red"></div>
-          <Zap className="w-5 h-5 text-brand-red animate-pulse" />
+          <Zap className="w-5 h-5 text-white animate-pulse" />
           <div className="w-2 h-2 bg-brand-red rounded-full animate-pulse"></div>
-          <Zap className="w-4 h-4 text-brand-red/70 animate-pulse" style={{animationDelay: '0.5s'}} />
+          <Heart className="w-4 h-4 text-white animate-pulse" style={{animationDelay: '0.5s'}} />
           <div className="w-1 h-1 bg-brand-red/50 rounded-full animate-pulse" style={{animationDelay: '1s'}}></div>
-          <Zap className="w-3 h-3 text-brand-red/50 animate-pulse" style={{animationDelay: '1.5s'}} />
+          <Home className="w-3 h-3 text-white animate-pulse" style={{animationDelay: '1.5s'}} />
           <div className="w-8 h-px bg-gradient-to-l from-transparent to-brand-red"></div>
         </div>
       </div>
@@ -169,11 +169,11 @@ export default function Dashboard() {
       <div className="flex items-center justify-center py-8">
         <div className="flex items-center space-x-2">
           <div className="w-8 h-px bg-gradient-to-r from-transparent to-brand-red"></div>
-          <Zap className="w-5 h-5 text-brand-red animate-pulse" />
+          <Zap className="w-5 h-5 text-white animate-pulse" />
           <div className="w-2 h-2 bg-brand-red rounded-full animate-pulse"></div>
-          <Zap className="w-4 h-4 text-brand-red/70 animate-pulse" style={{animationDelay: '0.5s'}} />
+          <Heart className="w-4 h-4 text-white animate-pulse" style={{animationDelay: '0.5s'}} />
           <div className="w-1 h-1 bg-brand-red/50 rounded-full animate-pulse" style={{animationDelay: '1s'}}></div>
-          <Zap className="w-3 h-3 text-brand-red/50 animate-pulse" style={{animationDelay: '1.5s'}} />
+          <Home className="w-3 h-3 text-white animate-pulse" style={{animationDelay: '1.5s'}} />
           <div className="w-8 h-px bg-gradient-to-l from-transparent to-brand-red"></div>
         </div>
       </div>
