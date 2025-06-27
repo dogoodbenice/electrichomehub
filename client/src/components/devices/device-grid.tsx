@@ -34,13 +34,12 @@ export default function DeviceGrid() {
   return (
     <div className="space-y-6">
       <div className="flex justify-between items-center">
-        <h2 className="text-2xl font-bold">Universal Device Tracking</h2>
+        <h2 className="text-2xl font-bold">Complete universal device tracking</h2>
         <Button className="bg-brand-red hover:bg-red-600">
           <Plus className="w-4 h-4 mr-2" />
           Add Device
         </Button>
       </div>
-      
       {/* Search and Filter */}
       <div className="flex flex-col sm:flex-row gap-4">
         <div className="flex-1 relative">
@@ -67,7 +66,6 @@ export default function DeviceGrid() {
           </SelectContent>
         </Select>
       </div>
-      
       {/* Device Grid */}
       <div className="grid grid-cols-3 md:grid-cols-6 lg:grid-cols-8 xl:grid-cols-10 gap-3">
         {filteredDevices.map((device) => (
@@ -78,7 +76,6 @@ export default function DeviceGrid() {
           />
         ))}
       </div>
-      
       {filteredDevices.length === 0 && (
         <div className="text-center py-8 text-muted-foreground">
           No devices found matching your criteria.
