@@ -11,8 +11,40 @@ const ehh = new ElectricHomeHub({
   environment: 'production'
 });
 
-// Get all devices
-const devices = await ehh.getDevices();`;
+// Get all devices with response example
+const response = await ehh.getDevices();
+
+console.log(response);
+// Output:
+{
+  "devices": [
+    {
+      "id": 1,
+      "name": "Smart Fridge",
+      "model": "RF28R7351",
+      "manufacturer": "Samsung",
+      "category": "Appliance",
+      "status": "online",
+      "lastSeen": "2025-06-27T19:22:00Z",
+      "warrantyExpiry": "2026-12-15",
+      "location": "Kitchen"
+    },
+    {
+      "id": 2,
+      "name": "Smart Thermostat",
+      "model": "Nest Learning",
+      "manufacturer": "Google",
+      "category": "HVAC",
+      "status": "online",
+      "lastSeen": "2025-06-27T19:21:45Z",
+      "warrantyExpiry": "2027-03-10",
+      "location": "Living Room"
+    }
+  ],
+  "total": 2,
+  "page": 1,
+  "limit": 10
+}`;
 
   const endpoints = [
     {
