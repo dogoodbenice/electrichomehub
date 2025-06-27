@@ -25,7 +25,7 @@ export default function DeviceGrid() {
     return matchesSearch && matchesCategory;
   }) || [];
 
-  const categories = [...new Set(devices?.map(d => d.category) || [])];
+  const categories = Array.from(new Set(devices?.map(d => d.category) || []));
 
   if (isLoading) {
     return <div className="text-center py-8">Loading devices...</div>;

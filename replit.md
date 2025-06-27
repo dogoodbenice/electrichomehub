@@ -99,7 +99,14 @@ The deployment uses a monorepo structure where the Express server serves both th
 ## Changelog
 
 - June 27, 2025. Initial setup
+- June 27, 2025. Added animated hero section with gradient background and fade-in animations
+- June 27, 2025. Made device tiles smaller and more compact with icons-only display
+- June 27, 2025. Enhanced Developer API prominence in navigation with bordered styling
+- June 27, 2025. Updated documentation page title to "Manage Device Documents"
+- June 27, 2025. Removed About page from main navigation
+- June 27, 2025. Increased device grid density (up to 10 columns on XL screens)
 
 ## User Preferences
 
 Preferred communication style: Simple, everyday language.
+Design preferences: Developer-focused platform with prominent API tooling, compact device tiles with small icons, animated hero sections.

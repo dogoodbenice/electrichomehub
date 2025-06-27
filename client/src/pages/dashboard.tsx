@@ -19,9 +19,9 @@ export default function Dashboard() {
   return (
     <div className="space-y-8">
       {/* Hero Section */}
-      <section className="bg-gradient-to-r from-black via-gray-900 to-black border-b border-border">
+      <section className="hero-gradient border-b border-border relative overflow-hidden">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-12">
-          <div className="text-center mb-8">
+          <div className="text-center mb-8 fade-in-up">
             <h1 className="text-4xl font-bold mb-4">
               Welcome to <span className="text-brand-red">Electric Home Hub</span>
             </h1>
@@ -30,9 +30,9 @@ export default function Dashboard() {
             </p>
           </div>
           
-          <div className="grid grid-cols-1 md:grid-cols-3 gap-8 mt-12">
+          <div className="grid grid-cols-1 md:grid-cols-3 gap-8 mt-12 fade-in-up-delay">
             <div className="text-center">
-              <div className="w-16 h-16 bg-brand-red rounded-full flex items-center justify-center mx-auto mb-4">
+              <div className="w-16 h-16 bg-brand-red rounded-full flex items-center justify-center mx-auto mb-4 icon-pulse">
                 <Globe className="w-8 h-8 text-white" />
               </div>
               <h3 className="text-lg font-semibold mb-2">Universal Compatibility</h3>
@@ -42,7 +42,7 @@ export default function Dashboard() {
             </div>
             
             <div className="text-center">
-              <div className="w-16 h-16 bg-brand-red rounded-full flex items-center justify-center mx-auto mb-4">
+              <div className="w-16 h-16 bg-brand-red rounded-full flex items-center justify-center mx-auto mb-4 icon-pulse" style={{ animationDelay: '1s' }}>
                 <FileText className="w-8 h-8 text-white" />
               </div>
               <h3 className="text-lg font-semibold mb-2">Centralized Control</h3>
@@ -52,7 +52,7 @@ export default function Dashboard() {
             </div>
             
             <div className="text-center">
-              <div className="w-16 h-16 bg-brand-red rounded-full flex items-center justify-center mx-auto mb-4">
+              <div className="w-16 h-16 bg-brand-red rounded-full flex items-center justify-center mx-auto mb-4 icon-pulse" style={{ animationDelay: '2s' }}>
                 <Shield className="w-8 h-8 text-white" />
               </div>
               <h3 className="text-lg font-semibold mb-2">Proactive Protection</h3>
