@@ -19,7 +19,7 @@ export default function Dashboard() {
   return (
     <div className="space-y-8">
       {/* Hero Section */}
-      <section className="hero-gradient border-b border-border relative overflow-hidden">
+      <section className="hero-dots border-b border-border relative overflow-hidden">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-12">
           <div className="text-center mb-8 fade-in-up">
             <h1 className="text-4xl font-bold mb-4">
