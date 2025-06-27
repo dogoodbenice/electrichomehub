@@ -171,7 +171,7 @@ export default function Dashboard() {
         {/* Dashboard Overview */}
         <section>
           <div className="flex justify-between items-center mb-6">
-            <h2 className="text-2xl font-bold">Dashboard Overview</h2>
+            <h2 className="text-2xl font-bold">Your future dashboard</h2>
             <div className="flex space-x-3">
               <Badge variant="secondary" className="bg-card px-3 py-1 rounded-full text-sm">
                 {stats?.totalDevices || 0} Devices
