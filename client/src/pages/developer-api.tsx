@@ -1,4 +1,4 @@
-import { Rocket, Code, Download, Key } from "lucide-react";
+import { Rocket, Code, Download, Key, Zap, Terminal, Globe } from "lucide-react";
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
 import { Button } from "@/components/ui/button";
 import CodeBlock from "@/components/developer/code-block";
@@ -57,11 +57,35 @@ const devices = await ehh.getDevices();`;
               <span>Quick Start Guide</span>
             </h3>
             
-            <img 
-              src="https://images.unsplash.com/photo-1498050108023-c5249f4df085?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=800&h=400" 
-              alt="Developer workspace with multiple monitors" 
-              className="rounded-lg mb-4 w-full h-48 object-cover"
-            />
+            <div className="rounded-lg mb-4 w-full h-48 bg-gradient-to-r from-black to-gray-900 border border-brand-red/20 flex items-center justify-center relative overflow-hidden">
+              {/* Background pattern */}
+              <div className="absolute inset-0 bg-black">
+                <div className="absolute inset-0" style={{
+                  backgroundImage: 'radial-gradient(circle at 1px 1px, rgba(255, 255, 255, 0.05) 1px, transparent 0)',
+                  backgroundSize: '20px 20px'
+                }}></div>
+              </div>
+              
+              {/* Icon arrangement */}
+              <div className="relative z-10 flex items-center justify-center space-x-8">
+                <div className="w-12 h-12 bg-brand-red rounded-full flex items-center justify-center animate-pulse">
+                  <Terminal className="w-6 h-6 text-white" />
+                </div>
+                <div className="flex flex-col items-center space-y-2">
+                  <Zap className="w-8 h-8 text-brand-red animate-pulse" style={{animationDelay: '0.5s'}} />
+                  <div className="w-16 h-px bg-brand-red"></div>
+                  <Zap className="w-6 h-6 text-brand-red/70 animate-pulse" style={{animationDelay: '1s'}} />
+                </div>
+                <div className="w-12 h-12 bg-brand-red/80 rounded-full flex items-center justify-center animate-pulse" style={{animationDelay: '1.5s'}}>
+                  <Globe className="w-6 h-6 text-white" />
+                </div>
+              </div>
+              
+              {/* Subtle text overlay */}
+              <div className="absolute bottom-4 left-4 right-4 text-center">
+                <p className="text-brand-red text-sm font-medium">API Integration Workflow</p>
+              </div>
+            </div>
             
             <CodeBlock code={quickStartCode} />
           </div>
