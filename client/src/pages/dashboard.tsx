@@ -121,7 +121,7 @@ export default function Dashboard() {
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-6">
           <div className="text-center mb-6">
             <h2 className="text-xl font-semibold mb-2">Straightforward control for your own grid</h2>
-            <p className="text-muted-foreground text-sm">Start managing your electric home devices instantly</p>
+            <p className="text-sm text-[#dedede]">Keep track, manage your status and keep aware of changes</p>
           </div>
           <div className="grid grid-cols-1 md:grid-cols-3 gap-4">
             <Button 
