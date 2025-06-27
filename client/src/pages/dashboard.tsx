@@ -1,5 +1,5 @@
 import { useQuery } from "@tanstack/react-query";
-import { Smartphone, FileText, AlertTriangle, Zap, Globe, Shield } from "lucide-react";
+import { Smartphone, FileText, AlertTriangle, Zap, Globe, Shield, Code } from "lucide-react";
 import { Badge } from "@/components/ui/badge";
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
 import { Button } from "@/components/ui/button";
@@ -74,10 +74,28 @@ export default function Dashboard() {
           </div>
         </div>
       </section>
+
+      {/* Electric Divider */}
+      <div className="flex items-center justify-center py-8">
+        <div className="flex items-center space-x-2">
+          <div className="w-8 h-px bg-gradient-to-r from-transparent to-brand-red"></div>
+          <Zap className="w-5 h-5 text-brand-red animate-pulse" />
+          <div className="w-2 h-2 bg-brand-red rounded-full animate-pulse"></div>
+          <Zap className="w-4 h-4 text-brand-red/70 animate-pulse" style={{animationDelay: '0.5s'}} />
+          <div className="w-1 h-1 bg-brand-red/50 rounded-full animate-pulse" style={{animationDelay: '1s'}}></div>
+          <Zap className="w-3 h-3 text-brand-red/50 animate-pulse" style={{animationDelay: '1.5s'}} />
+          <div className="w-8 h-px bg-gradient-to-l from-transparent to-brand-red"></div>
+        </div>
+      </div>
+
       {/* Quick Action Buttons */}
       <section className="bg-card border-b border-border">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-6">
-          <div className="grid grid-cols-1 md:grid-cols-3 gap-4">
+          <div className="text-center mb-6">
+            <h2 className="text-xl font-semibold mb-2">Quick Actions</h2>
+            <p className="text-muted-foreground text-sm">Start managing your electric home devices instantly</p>
+          </div>
+          <div className="grid grid-cols-1 md:grid-cols-4 gap-4">
             <Button 
               variant="outline" 
               className="bg-black border-card hover:border-brand-red rounded-lg p-6 h-auto text-left transition-all duration-200 group justify-start"
@@ -114,6 +132,24 @@ export default function Dashboard() {
                   <h3 className="text-lg font-semibold group-hover:text-brand-red">Monitor Issues</h3>
                   <p className="text-muted-foreground text-sm">Proactive alerts for device problems and recalls</p>
                 </div>
+              </div>
+            </Button>
+            
+            <Button 
+              variant="outline" 
+              className="bg-black border-2 border-brand-red hover:bg-brand-red/10 rounded-lg p-6 h-auto text-left transition-all duration-200 group justify-start relative overflow-hidden"
+            >
+              <div className="flex items-center space-x-3">
+                <Code className="w-6 h-6 text-brand-red" />
+                <div className="text-left">
+                  <h3 className="text-lg font-semibold text-brand-red">Build Your Own</h3>
+                  <p className="text-muted-foreground text-sm">Use our Developer API to create custom solutions</p>
+                </div>
+              </div>
+              <div className="absolute top-2 right-2">
+                <Badge variant="destructive" className="bg-brand-red text-white text-xs px-2 py-1">
+                  API
+                </Badge>
               </div>
             </Button>
           </div>
