@@ -25,9 +25,7 @@ export default function Dashboard() {
             <h1 className="text-4xl font-bold mb-4">
               Welcome to <span className="text-brand-red">Electric Home Hub</span>
             </h1>
-            <p className="text-xl text-muted-foreground max-w-3xl mx-auto">
-              The smart, centralized platform that empowers homeowners to seamlessly manage all their electric home hardware—regardless of brand.
-            </p>
+            <p className="text-xl text-muted-foreground max-w-3xl mx-auto">The smart platform empowering anyone to seamlessly manage all their electric hardware</p>
           </div>
           
           <div className="grid grid-cols-1 md:grid-cols-3 gap-8 mt-12 fade-in-up-delay">
@@ -63,7 +61,6 @@ export default function Dashboard() {
           </div>
         </div>
       </section>
-
       {/* Quick Action Buttons */}
       <section className="bg-card border-b border-border">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-6">
@@ -109,7 +106,6 @@ export default function Dashboard() {
           </div>
         </div>
       </section>
-
       {/* Main Content */}
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 space-y-12">
         
