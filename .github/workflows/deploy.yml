@@ -37,6 +37,15 @@ jobs:
       env:
         NODE_ENV: production
         
+    - name: Move build files to correct location
+      run: |
+        if [ -d "dist/public" ]; then
+          mv dist/public/* dist/ 2>/dev/null || true
+          mv dist/public/.* dist/ 2>/dev/null || true
+          rmdir dist/public 2>/dev/null || true
+        fi
+        ls -la dist/
+        
     - name: Upload artifact
       uses: actions/upload-pages-artifact@v3
       with:
