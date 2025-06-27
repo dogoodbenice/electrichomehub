@@ -74,7 +74,6 @@ export default function Dashboard() {
           </div>
         </div>
       </section>
-
       {/* Developer API Call to Action */}
       <section className="bg-gradient-to-r from-black to-gray-900 border-b border-brand-red/20">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-8">
@@ -105,7 +104,6 @@ export default function Dashboard() {
           </div>
         </div>
       </section>
-
       {/* Electric Divider */}
       <div className="flex items-center justify-center py-8">
         <div className="flex items-center space-x-2">
@@ -118,12 +116,11 @@ export default function Dashboard() {
           <div className="w-8 h-px bg-gradient-to-l from-transparent to-brand-red"></div>
         </div>
       </div>
-
       {/* Quick Action Buttons */}
       <section className="bg-card border-b border-border">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-6">
           <div className="text-center mb-6">
-            <h2 className="text-xl font-semibold mb-2">Quick Actions</h2>
+            <h2 className="text-xl font-semibold mb-2">Straightforward control for your own grid</h2>
             <p className="text-muted-foreground text-sm">Start managing your electric home devices instantly</p>
           </div>
           <div className="grid grid-cols-1 md:grid-cols-3 gap-4">
