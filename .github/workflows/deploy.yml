@@ -33,7 +33,11 @@ jobs:
       run: npm ci
       
     - name: Build application
-      run: npm run build -- --base=/electrichomehub/
+      run: |
+        # Build with correct base path for GitHub Pages
+        npx vite build --base=/electrichomehub/
+        # Build server separately
+        npx esbuild server/index.ts --platform=node --packages=external --bundle --format=esm --outdir=dist
       env:
         NODE_ENV: production
         
