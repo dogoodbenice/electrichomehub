@@ -158,7 +158,7 @@ export default function Dashboard() {
                 <AlertTriangle className="w-6 h-6 text-brand-red" />
                 <div className="text-left">
                   <h3 className="text-lg font-semibold group-hover:text-brand-red">Monitor Issues</h3>
-                  <p className="text-muted-foreground text-sm">Proactive alerts for device problems and recalls</p>
+                  <p className="text-muted-foreground text-sm">Proactive alerts for any device problems and recalls</p>
                 </div>
               </div>
             </Button>
