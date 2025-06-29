@@ -1,0 +1,74 @@
+[
+  {
+    "id": 1,
+    "name": "Smart Refrigerator",
+    "model": "RF28R7351SR",
+    "manufacturer": "Samsung",
+    "category": "Kitchen",
+    "serialNumber": "SR240001234",
+    "warrantyStatus": "active",
+    "warrantyExpiry": "2025-12-15",
+    "location": "Kitchen",
+    "iconType": "refrigerator"
+  },
+  {
+    "id": 2,
+    "name": "Nest Thermostat",
+    "model": "T3007ES",
+    "manufacturer": "Google",
+    "category": "HVAC",
+    "serialNumber": "NT350002456",
+    "warrantyStatus": "active",
+    "warrantyExpiry": "2026-03-22",
+    "location": "Living Room",
+    "iconType": "thermostat"
+  },
+  {
+    "id": 3,
+    "name": "Front Load Washer",
+    "model": "WF45K6500AV",
+    "manufacturer": "Samsung",
+    "category": "Laundry",
+    "serialNumber": "WM450003789",
+    "warrantyStatus": "expired",
+    "warrantyExpiry": "2024-08-10",
+    "location": "Laundry Room",
+    "iconType": "washer"
+  },
+  {
+    "id": 4,
+    "name": "Video Doorbell Pro",
+    "model": "8VD1S7-0EN0",
+    "manufacturer": "Ring",
+    "category": "Security",
+    "serialNumber": "RG880004567",
+    "warrantyStatus": "active",
+    "warrantyExpiry": "2025-09-30",
+    "location": "Front Door",
+    "iconType": "doorbell"
+  },
+  {
+    "id": 5,
+    "name": "Hue Bridge",
+    "model": "BSB002",
+    "manufacturer": "Philips",
+    "category": "Lighting",
+    "serialNumber": "PH550005890",
+    "warrantyStatus": "active",
+    "warrantyExpiry": "2026-01-15",
+    "location": "Living Room",
+    "iconType": "hub"
+  },
+  {
+    "id": 6,
+    "name": "Roomba i7+",
+    "model": "i755020",
+    "manufacturer": "iRobot",
+    "category": "Cleaning",
+    "serialNumber": "IR770006123",
+    "warrantyStatus": "active",
+    "warrantyExpiry": "2025-11-20",
+    "location": "Living Room",
+    "iconType": "vacuum"
+  }
+]

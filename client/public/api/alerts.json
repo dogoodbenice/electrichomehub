@@ -1,0 +1,42 @@
+[
+  {
+    "id": 1,
+    "deviceId": 1,
+    "type": "recall",
+    "severity": "critical",
+    "title": "Firmware Security Update Required",
+    "description": "Samsung has released a critical security update for your refrigerator. Update within 7 days to maintain secure operation.",
+    "isRead": false,
+    "createdAt": "2024-12-25T00:00:00.000Z"
+  },
+  {
+    "id": 2,
+    "deviceId": 4,
+    "type": "maintenance",
+    "severity": "medium",
+    "title": "Battery Level Low",
+    "description": "Your Ring Video Doorbell Pro battery is at 15%. Charge soon to avoid service interruption.",
+    "isRead": false,
+    "createdAt": "2024-12-26T00:00:00.000Z"
+  },
+  {
+    "id": 3,
+    "deviceId": 6,
+    "type": "update",
+    "severity": "low",
+    "title": "Software Update Available",
+    "description": "Roomba i7+ has a new software update with improved navigation and cleaning patterns.",
+    "isRead": true,
+    "createdAt": "2024-12-20T00:00:00.000Z"
+  },
+  {
+    "id": 4,
+    "deviceId": 2,
+    "type": "maintenance",
+    "severity": "medium",
+    "title": "Filter Replacement Due",
+    "description": "Your Nest Thermostat's air filter needs replacement. Order a new filter to maintain optimal air quality.",
+    "isRead": false,
+    "createdAt": "2024-12-24T00:00:00.000Z"
+  }
+]

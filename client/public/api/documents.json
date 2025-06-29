@@ -1,0 +1,38 @@
+[
+  {
+    "id": 1,
+    "deviceId": 1,
+    "name": "Samsung Refrigerator Manual",
+    "type": "manual",
+    "category": "User Guide",
+    "filePath": "/docs/samsung-rf28r7351sr-manual.pdf",
+    "uploadDate": "2024-01-15T00:00:00.000Z"
+  },
+  {
+    "id": 2,
+    "deviceId": 1,
+    "name": "Samsung Warranty Certificate",
+    "type": "warranty",
+    "category": "Warranty",
+    "filePath": "/docs/samsung-rf28r7351sr-warranty.pdf",
+    "uploadDate": "2024-01-15T00:00:00.000Z"
+  },
+  {
+    "id": 3,
+    "deviceId": 2,
+    "name": "Nest Installation Guide",
+    "type": "manual",
+    "category": "Installation",
+    "filePath": "/docs/nest-t3007es-install.pdf",
+    "uploadDate": "2024-02-10T00:00:00.000Z"
+  },
+  {
+    "id": 4,
+    "deviceId": 4,
+    "name": "Ring Setup Instructions",
+    "type": "manual",
+    "category": "Setup",
+    "filePath": "/docs/ring-doorbell-setup.pdf",
+    "uploadDate": "2024-03-05T00:00:00.000Z"
+  }
+]

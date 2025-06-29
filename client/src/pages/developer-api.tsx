@@ -8,6 +8,9 @@ import APIEndpoint from "@/components/developer/api-endpoint";
 import type { ApiKey } from "@shared/schema";
 
 export default function DeveloperAPI() {
+  const { data: apiKeys, isLoading: keysLoading } = useQuery<ApiKey[]>({
+    queryKey: ["/api/api-keys"],
+  });
   const quickStartCode = `// Initialize Electric Home Hub API
 const ehh = new ElectricHomeHub({
   apiKey: 'your-api-key',
@@ -175,6 +178,61 @@ console.log(response);
               </CardContent>
             </Card>
           </div>
+        </div>
+
+        {/* API Keys Management */}
+        <div className="border-t border-border pt-8 mt-8">
+          <div className="flex justify-between items-center mb-6">
+            <h3 className="text-xl font-bold">Your API Keys</h3>
+            <Button className="bg-brand-red hover:bg-red-600">
+              <Plus className="w-4 h-4 mr-2" />
+              Generate New Key
+            </Button>
+          </div>
+          
+          {keysLoading ? (
+            <div className="text-center py-8">Loading API keys...</div>
+          ) : (
+            <div className="space-y-4">
+              {apiKeys?.map((apiKey) => (
+                <Card key={apiKey.id} className="bg-card border-border">
+                  <CardContent className="p-4">
+                    <div className="flex items-center justify-between">
+                      <div className="space-y-1">
+                        <div className="flex items-center space-x-2">
+                          <Key className="w-4 h-4 text-muted-foreground" />
+                          <span className="font-medium">{apiKey.name}</span>
+                        </div>
+                        <div className="flex items-center space-x-4 text-sm text-muted-foreground">
+                          <span className="font-mono bg-muted px-2 py-1 rounded text-xs">
+                            {apiKey.key.substring(0, 16)}...
+                          </span>
+                          <div className="flex items-center space-x-1">
+                            <Clock className="w-3 h-3" />
+                            <span>
+                              Last used: {apiKey.lastUsed ? new Date(apiKey.lastUsed).toLocaleDateString() : 'Never'}
+                            </span>
+                          </div>
+                        </div>
+                      </div>
+                      <div className="flex items-center space-x-2">
+                        <Badge variant="secondary">Active</Badge>
+                        <Button variant="outline" size="sm">
+                          Revoke
+                        </Button>
+                      </div>
+                    </div>
+                  </CardContent>
+                </Card>
+              ))}
+              
+              {apiKeys?.length === 0 && (
+                <div className="text-center py-8 text-muted-foreground">
+                  No API keys created yet. Generate your first key to get started.
+                </div>
+              )}
+            </div>
+          )}
         </div>
 
         {/* Call to Action */}
