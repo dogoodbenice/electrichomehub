@@ -72,16 +72,16 @@ The application uses four main database tables:
 5. **Demo Functionality**: All five core features fully demonstrated
 
 ## Recent Changes
-- June 29, 2025: Implemented static HTML pages for GitHub Pages routing
-  - Created individual HTML files for each route (documentation.html, tracking.html, etc.)
-  - Each static page sets window.__INITIAL_ROUTE__ to specify the React route to load
-  - Updated React app to check for __INITIAL_ROUTE__ and navigate accordingly
-  - Simplified 404.html to handle true 404 cases only
-  - This approach eliminates complex redirects and provides reliable GitHub Pages routing
-  - URLs now work directly: /electrichomehub/documentation, /electrichomehub/tracking, etc.
-- Earlier: Fixed GitHub Pages navigation and enhanced demo presentation
-  - Added device warranty status diversity (3 active, 2 expiring soon, 2 expired)
-  - Updated favicon to match header logo design (red background with white lightning bolt)
+- June 29, 2025: Complete static GitHub Pages demo with enhanced styling
+  - Fixed static HTML pages to use proper Vite structure with /src/main.tsx
+  - Forced query client to use static JSON files for consistent demo data
+  - Fixed DeviceTile component to display proper warranty status badges (Active/Expiring/Expired)
+  - Added animated demo section with blue/purple gradient background below electric divider
+  - Created "INTERACTIVE DEMO" badge with pulsing elements to distinguish demo content
+  - Applied radial gradient overlays and backdrop blur effects for modern demo styling
+  - Updated all static pages to work reliably with GitHub Pages build process
+- Earlier: Implemented static HTML pages for GitHub Pages routing
+  - Added device warranty status diversity (2 active, 2 expiring soon, 2 expired)
   - Enhanced JSON API files with clear example data comments for demonstration
   - Fixed logo navigation and updated all links for GitHub Pages deployment
 - Implemented comprehensive static hosting solution for GitHub Pages
