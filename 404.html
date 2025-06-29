@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Electric Home Hub</title>
+    <script>
+      // GitHub Pages SPA redirect handler for root-level 404s
+      const currentPath = window.location.pathname;
+      const basePath = '/electrichomehub';
+      
+      console.log('Root 404 redirect - Current path:', currentPath);
+      
+      // Handle root-level routes that need to be redirected to subdirectory
+      const knownRoutes = ['/tracking', '/monitoring', '/documentation', '/developer', '/data-export', '/faq', '/about'];
+      
+      if (knownRoutes.includes(currentPath)) {
+        console.log('Redirecting known route to subdirectory:', currentPath);
+        sessionStorage.setItem('intended-route', currentPath);
+        window.location.replace(basePath + '/');
+      } else if (currentPath.startsWith('/electrichomehub')) {
+        // Already in correct subdirectory, redirect to main app
+        console.log('In subdirectory, redirecting to main app');
+        const route = currentPath.replace(basePath, '') || '/';
+        if (route !== '/') {
+          sessionStorage.setItem('intended-route', route);
+        }
+        window.location.replace(basePath + '/');
+      } else {
+        // Unknown route - redirect to main app
+        console.log('Unknown route, redirecting to main app');
+        window.location.replace(basePath + '/');
+      }
+    </script>
+  </head>
+  <body>
+    <div style="font-family: Arial, sans-serif; text-align: center; margin-top: 100px; color: white; background: black; min-height: 100vh; padding: 20px;">
+      <h1>Electric Home Hub</h1>
+      <p>Redirecting to application...</p>
+    </div>
+  </body>
+</html>
