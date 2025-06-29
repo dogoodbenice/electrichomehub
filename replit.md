@@ -81,8 +81,10 @@ The application uses four main database tables:
   - Created clear "Demo vs Production" comparison section
   - Added example data comments to all JSON API files for clear demonstration labeling
   - Updated favicon to match header logo design (red background with white lightning bolt)
-  - Created individual HTML redirect files for all routes to fix GitHub Pages direct URL access
+  - Created comprehensive GitHub Pages routing solution with root-level redirect files
   - Enhanced query client to properly handle new JSON structure with nested data objects
+  - Implemented dual-layer 404 handling (root + subdirectory) for complete route coverage
+  - Added route restoration logic in main index.html for seamless navigation
 - Implemented comprehensive static hosting solution for GitHub Pages
 - Complete dual-mode architecture supporting both development and static deployment
 - Environment-aware query client serving appropriate data sources
