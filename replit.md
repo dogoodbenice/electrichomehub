@@ -72,14 +72,17 @@ The application uses four main database tables:
 5. **Demo Functionality**: All five core features fully demonstrated
 
 ## Recent Changes
-- June 29, 2025: Complete static GitHub Pages demo with enhanced styling
-  - Fixed static HTML pages to use proper Vite structure with /src/main.tsx
-  - Forced query client to use static JSON files for consistent demo data
+- June 29, 2025: Fixed GitHub Pages navigation and cleaned up redundancies
+  - Updated header and footer navigation to use absolute GitHub Pages URLs
+  - Fixed all static HTML files to use /electrichomehub/ base path for assets
+  - Cleaned up redundant JavaScript and GitHub Pages detection logic
+  - Removed unused API JSON files and simplified query client architecture
+  - Ensured all navigation works correctly at https://dogoodbenice.github.io/electrichomehub/
+  - Streamlined footer with functional links only, removed placeholder social links
+- Earlier: Complete static GitHub Pages demo with enhanced styling
   - Fixed DeviceTile component to display proper warranty status badges (Active/Expiring/Expired)
   - Added animated demo section with blue/purple gradient background below electric divider
   - Created "INTERACTIVE DEMO" badge with pulsing elements to distinguish demo content
-  - Applied radial gradient overlays and backdrop blur effects for modern demo styling
-  - Updated all static pages to work reliably with GitHub Pages build process
 - Earlier: Implemented static HTML pages for GitHub Pages routing
   - Added device warranty status diversity (2 active, 2 expiring soon, 2 expired)
   - Enhanced JSON API files with clear example data comments for demonstration

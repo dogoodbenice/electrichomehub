@@ -1,7 +1,26 @@
 import { Link } from "wouter";
 import { Zap, Twitter, Github, Linkedin } from "lucide-react";
 
+const navigation = [
+  { name: "Device Tracking", href: "/tracking" },
+  { name: "Documentation", href: "/documentation" },
+  { name: "Issue Monitoring", href: "/monitoring" },
+  { name: "Developer API", href: "/developer" },
+  { name: "FAQ", href: "/faq" },
+  { name: "About", href: "/about" }
+];
+
 export default function Footer() {
+  const isGitHubPages = typeof window !== 'undefined' && window.location.hostname.includes('github.io');
+  
+  const FooterLink = ({ href, children, className }: { href: string; children: React.ReactNode; className: string }) => {
+    if (isGitHubPages) {
+      const fullHref = `https://dogoodbenice.github.io/electrichomehub${href}`;
+      return <a href={fullHref} className={className}>{children}</a>;
+    }
+    return <Link href={href} className={className}>{children}</Link>;
+  };
+
   return (
     <footer className="border-t border-card bg-black mt-16">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-8">
@@ -21,27 +40,22 @@ export default function Footer() {
           <div>
             <h4 className="font-semibold mb-4">Platform</h4>
             <ul className="space-y-2 text-sm text-muted-foreground">
-              <li><Link href="/tracking" className="hover:text-brand-red transition-colors">Device Tracking</Link></li>
-              <li><Link href="/documentation" className="hover:text-brand-red transition-colors">Documentation</Link></li>
-              <li><Link href="/monitoring" className="hover:text-brand-red transition-colors">Issue Monitoring</Link></li>
-              <li><Link href="/developer" className="hover:text-brand-red transition-colors">Developer API</Link></li>
+              <li><FooterLink href="/tracking" className="hover:text-brand-red transition-colors">Device Tracking</FooterLink></li>
+              <li><FooterLink href="/documentation" className="hover:text-brand-red transition-colors">Documentation</FooterLink></li>
+              <li><FooterLink href="/monitoring" className="hover:text-brand-red transition-colors">Issue Monitoring</FooterLink></li>
+              <li><FooterLink href="/developer" className="hover:text-brand-red transition-colors">Developer API</FooterLink></li>
             </ul>
           </div>
           
           <div>
             <h4 className="font-semibold mb-4">Support</h4>
             <ul className="space-y-2 text-sm text-muted-foreground">
-              <li><Link href="/faq" className="hover:text-brand-red transition-colors">FAQ</Link></li>
-              <li><Link href="/documentation" className="hover:text-brand-red transition-colors">Documentation</Link></li>
+              <li><FooterLink href="/faq" className="hover:text-brand-red transition-colors">FAQ</FooterLink></li>
+              <li><FooterLink href="/documentation" className="hover:text-brand-red transition-colors">Documentation</FooterLink></li>
             </ul>
           </div>
           
-          <div>
-            <h4 className="font-semibold mb-4">Company</h4>
-            <ul className="space-y-2 text-sm text-muted-foreground">
-              <li><Link href="/about" className="hover:text-brand-red transition-colors">About</Link></li>
-            </ul>
-          </div>
+          
         </div>
         
         <div className="border-t border-card mt-8 pt-8 flex flex-col sm:flex-row justify-between items-center">
