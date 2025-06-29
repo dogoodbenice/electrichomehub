@@ -177,30 +177,52 @@ export default function Dashboard() {
           <div className="w-8 h-px bg-gradient-to-l from-transparent to-brand-red"></div>
         </div>
       </div>
-      {/* Main Content */}
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 space-y-12">
+      
+      {/* Demo Section */}
+      <div className="relative overflow-hidden">
+        {/* Animated Background */}
+        <div className="absolute inset-0 bg-gradient-to-br from-blue-900/20 via-purple-900/20 to-indigo-900/20">
+          <div className="absolute inset-0 bg-[radial-gradient(circle_at_20%_80%,_rgba(120,119,198,0.3),_transparent_50%)]"></div>
+          <div className="absolute inset-0 bg-[radial-gradient(circle_at_80%_20%,_rgba(255,0,0,0.2),_transparent_50%)]"></div>
+          <div className="absolute inset-0 bg-[radial-gradient(circle_at_40%_40%,_rgba(59,130,246,0.15),_transparent_50%)]"></div>
+        </div>
         
-        {/* Dashboard Overview */}
-        <section>
-          <div className="flex justify-between items-center mb-6">
-            <h2 className="text-2xl font-bold">Your future dashboard</h2>
-            <div className="flex space-x-3">
-              <Badge variant="secondary" className="bg-card px-3 py-1 rounded-full text-sm">
-                {stats?.totalDevices || 0} Devices
-              </Badge>
-              <Badge variant="destructive" className="bg-brand-red px-3 py-1 rounded-full text-sm">
-                {stats?.activeAlerts || 0} Alerts
-              </Badge>
+        {/* Demo Badge */}
+        <div className="relative flex items-center justify-center py-6">
+          <div className="bg-gradient-to-r from-blue-600/20 to-purple-600/20 backdrop-blur-sm border border-blue-500/30 rounded-full px-6 py-2">
+            <div className="flex items-center space-x-2">
+              <div className="w-2 h-2 bg-blue-400 rounded-full animate-pulse"></div>
+              <span className="text-blue-200 text-sm font-medium">INTERACTIVE DEMO</span>
+              <div className="w-2 h-2 bg-purple-400 rounded-full animate-pulse" style={{animationDelay: '0.5s'}}></div>
             </div>
           </div>
-          
-          {stats && <StatsGrid stats={stats} />}
-        </section>
+        </div>
+        
+        {/* Main Content */}
+        <div className="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 space-y-12 pb-16">
+        
+          {/* Dashboard Overview */}
+          <section>
+            <div className="flex justify-between items-center mb-6">
+              <h2 className="text-2xl font-bold">Your future dashboard</h2>
+              <div className="flex space-x-3">
+                <Badge variant="secondary" className="bg-card px-3 py-1 rounded-full text-sm">
+                  {stats?.totalDevices || 0} Devices
+                </Badge>
+                <Badge variant="destructive" className="bg-brand-red px-3 py-1 rounded-full text-sm">
+                  {stats?.activeAlerts || 0} Alerts
+                </Badge>
+              </div>
+            </div>
+            
+            {stats && <StatsGrid stats={stats} />}
+          </section>
 
-        {/* Device Grid Preview */}
-        <section>
-          <DeviceGrid />
-        </section>
+          {/* Device Grid Preview */}
+          <section>
+            <DeviceGrid />
+          </section>
+        </div>
       </div>
     </div>
   );
