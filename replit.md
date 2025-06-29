@@ -72,6 +72,11 @@ The application uses four main database tables:
 5. **Demo Functionality**: All five core features fully demonstrated
 
 ## Recent Changes
+- June 29, 2025: Cleaned up project redundancies and optimized codebase
+  - Removed redundant files: attached_assets/ folder, faq.html, js/faq.js, package-lock.json
+  - Consolidated duplicate CSS rules for .btn-primary and .btn-secondary classes
+  - Reduced CSS file size from 3,248 to 3,204 lines by eliminating redundant styling
+  - Streamlined project structure for efficient static site deployment
 - June 29, 2025: Improved spacing in developer section layout
   - Increased margin-bottom from 2rem to 4rem between "Build Your Own Electric Home Hub" text and "Developer API Access" card
   - Enhanced CTA card spacing by increasing gap from 2rem to 3rem between content and "Access Developer Tools" button
