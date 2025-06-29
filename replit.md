@@ -72,6 +72,11 @@ The application uses four main database tables:
 5. **Demo Functionality**: All five core features fully demonstrated
 
 ## Recent Changes
+- June 29, 2025: Enhanced Developer API navigation as primary call-to-action
+  - Created distinctive .api-cta styling with gradient background and rocket emoji
+  - Applied shimmer animation effects and enhanced hover states with transforms
+  - Updated all 6 pages with consistent API highlighting across desktop and mobile navigation
+  - Developer API now prominently featured as primary call-to-action on every page
 - June 29, 2025: Dashboard enhancement and hero section improvements
   - Replaced simple stats grid with comprehensive 3-card dashboard layout
   - Added iconography to dashboard: Device Overview (📱), Alert Monitor (⚠️), System Health (📊)
