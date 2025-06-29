@@ -4,7 +4,8 @@ import type { DashboardStats } from "./types";
 // Environment detection for static deployments
 export const isStaticDeployment = () => {
   return window.location.hostname.includes('github.io') || 
-         import.meta.env.VITE_STATIC_MODE === 'true';
+         import.meta.env.VITE_STATIC_MODE === 'true' ||
+         true; // Force static mode for demo purposes
 };
 
 // Get the correct base path for the current environment

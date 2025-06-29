@@ -56,73 +56,73 @@ export class MemStorage implements IStorage {
   }
 
   private seedData() {
-    // Seed devices
+    // Seed devices with consistent warranty status values
     const sampleDevices: InsertDevice[] = [
       {
         name: "Smart Fridge",
         model: "RF28R7351",
         manufacturer: "Samsung",
-        category: "Kitchen Appliances",
-        serialNumber: "SN123456789",
-        warrantyStatus: "Active",
-        warrantyExpiry: "2025-06-15",
+        category: "Kitchen",
+        serialNumber: "SR240001234",
+        warrantyStatus: "active",
+        warrantyExpiry: "2025-12-15",
         location: "Kitchen",
         iconType: "refrigerator"
       },
       {
-        name: "Thermostat",
-        model: "Learning 3rd Gen",
-        manufacturer: "Nest",
+        name: "Nest Thermostat",
+        model: "T3007ES",
+        manufacturer: "Google",
         category: "HVAC",
-        serialNumber: "NT987654321",
-        warrantyStatus: "Expires Soon",
-        warrantyExpiry: "2025-02-20",
+        serialNumber: "NT350002456",
+        warrantyStatus: "expiring_soon",
+        warrantyExpiry: "2025-02-15",
         location: "Living Room",
-        iconType: "thermometer"
+        iconType: "thermostat"
       },
       {
-        name: "Smart Lights",
-        model: "Hue Bridge v2",
-        manufacturer: "Philips",
-        category: "Lighting",
-        serialNumber: "PH456789123",
-        warrantyStatus: "Active",
-        warrantyExpiry: "2026-01-10",
-        location: "Whole House",
-        iconType: "lightbulb"
+        name: "Front Load Washer",
+        model: "WF45K6500AV",
+        manufacturer: "Samsung",
+        category: "Laundry",
+        serialNumber: "WM450003789",
+        warrantyStatus: "expired",
+        warrantyExpiry: "2024-08-10",
+        location: "Laundry Room",
+        iconType: "washer"
       },
       {
-        name: "Security Camera",
-        model: "Doorbell Pro",
+        name: "Video Doorbell Pro",
+        model: "8VD1S7-0EN0",
         manufacturer: "Ring",
         category: "Security",
-        serialNumber: "RG789123456",
-        warrantyStatus: "Expired",
-        warrantyExpiry: "2024-08-30",
+        serialNumber: "RG880004567",
+        warrantyStatus: "expiring_soon",
+        warrantyExpiry: "2025-01-30",
         location: "Front Door",
-        iconType: "shield"
+        iconType: "doorbell"
       },
       {
-        name: "Washer",
-        model: "WM3900HWA",
-        manufacturer: "LG",
-        category: "Laundry",
-        serialNumber: "LG321654987",
-        warrantyStatus: "Active",
-        warrantyExpiry: "2025-12-01",
-        location: "Utility Room",
-        iconType: "washing-machine"
+        name: "Hue Bridge",
+        model: "BSB002",
+        manufacturer: "Philips",
+        category: "Lighting",
+        serialNumber: "PH550005890",
+        warrantyStatus: "expired",
+        warrantyExpiry: "2024-06-15",
+        location: "Living Room",
+        iconType: "hub"
       },
       {
-        name: "Microwave",
-        model: "NN-SN966S",
-        manufacturer: "Panasonic",
-        category: "Kitchen Appliances",
-        serialNumber: "PN654321789",
-        warrantyStatus: "Expires Soon",
-        warrantyExpiry: "2025-03-15",
-        location: "Kitchen",
-        iconType: "microwave"
+        name: "Roomba i7+",
+        model: "i755020",
+        manufacturer: "iRobot",
+        category: "Cleaning",
+        serialNumber: "IR770006123",
+        warrantyStatus: "active",
+        warrantyExpiry: "2025-11-20",
+        location: "Living Room",
+        iconType: "vacuum"
       }
     ];
 
