@@ -72,42 +72,7 @@ export const getQueryFn: <T>(options: {
     
     // Use static data for GitHub Pages deployment
     if (isStaticDeployment()) {
-      // Try JSON files first, then fallback to in-memory data
-      try {
-        const basePath = getBasePath();
-        const staticPath = basePath + endpoint.replace('/api', '/api') + '.json';
-        const res = await fetch(staticPath);
-        
-        if (res.ok) {
-          const data = await res.json();
-          // Handle new JSON structure with comments and nested data
-          if (endpoint === '/api/devices' && data.devices) return data.devices;
-          if (endpoint === '/api/documents' && data.documents) return data.documents;
-          if (endpoint === '/api/alerts' && data.alerts) return data.alerts;
-          if (endpoint === '/api/api-keys' && data.apiKeys) return data.apiKeys;
-          if (endpoint === '/api/dashboard/stats' && data.stats) return data.stats;
-          
-          // Handle device-specific endpoints
-          if (endpoint.startsWith('/api/devices/') && data.devices) {
-            const deviceId = parseInt(endpoint.split('/')[3]);
-            return data.devices.find((d: any) => d.id === deviceId);
-          }
-          if (endpoint.startsWith('/api/documents/device/') && data.documents) {
-            const deviceId = parseInt(endpoint.split('/')[4]);
-            return data.documents.filter((d: any) => d.deviceId === deviceId);
-          }
-          if (endpoint.startsWith('/api/alerts/unread') && data.alerts) {
-            return data.alerts.filter((a: any) => !a.isRead);
-          }
-          
-          // Fallback to original data if no nested structure
-          return data;
-        }
-      } catch (error) {
-        // Fallback to in-memory data
-      }
-      
-      await new Promise(resolve => setTimeout(resolve, 200));
+      await new Promise(resolve => setTimeout(resolve, 100));
       return getStaticData(endpoint);
     }
 

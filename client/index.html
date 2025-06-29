@@ -6,24 +6,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Electric Home Hub - Smart Device Management Platform</title>
     <meta name="description" content="Centralize smart home device management across all brands. Track devices, manage documentation, monitor issues, and access developer APIs." />
-    <script>
-      // GitHub Pages route handling
-      (function() {
-        const isGitHubPages = window.location.hostname.includes('github.io');
-        if (isGitHubPages) {
-          const currentPath = window.location.pathname;
-          const basePath = '/electrichomehub';
-          
-          // Check if we need to restore an intended route
-          const storedRoute = sessionStorage.getItem('intended-route');
-          if (storedRoute && currentPath === basePath + '/') {
-            sessionStorage.removeItem('intended-route');
-            const newUrl = basePath + storedRoute;
-            window.history.replaceState({}, '', newUrl);
-          }
-        }
-      })();
-    </script>
+
   </head>
   <body>
     <div id="root"></div>
