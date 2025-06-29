@@ -72,6 +72,12 @@ The application uses four main database tables:
 5. **Demo Functionality**: All five core features fully demonstrated
 
 ## Recent Changes
+- June 29, 2025: Added demo indicators to feature pages
+  - Added "INTERACTIVE DEMO" badges to tracking (📱), documentation (📄), monitoring (⚠️), and export (📊) pages
+  - Enhanced demo badge styling with improved spacing, shadows, and visual prominence
+  - Updated footer text across all pages to include "made with love, as a demo by Suraj"
+  - Fixed API navigation readability with proper white text styling when featured
+  - Standardized API documentation examples with consistent curl format and copy buttons
 - June 29, 2025: Enhanced Developer API navigation as primary call-to-action
   - Created distinctive .api-cta styling with gradient background and rocket emoji
   - Applied shimmer animation effects and enhanced hover states with transforms
