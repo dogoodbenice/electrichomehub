@@ -75,7 +75,7 @@ export default function Dashboard() {
         </div>
       </section>
       {/* Developer API Call to Action */}
-      <section className="bg-gradient-to-r from-black to-gray-900 border-b border-brand-red/20">
+      <section className="bg-black border-b border-brand-red/20">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-8">
           <div className="text-center mb-6">
             <h2 className="text-2xl font-bold mb-2">Build Your Own Electric Home Hub</h2>
