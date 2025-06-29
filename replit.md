@@ -72,6 +72,14 @@ The application uses four main database tables:
 5. **Demo Functionality**: All five core features fully demonstrated
 
 ## Recent Changes
+- June 29, 2025: Dashboard enhancement and hero section improvements
+  - Replaced simple stats grid with comprehensive 3-card dashboard layout
+  - Added iconography to dashboard: Device Overview (📱), Alert Monitor (⚠️), System Health (📊)
+  - Integrated monitoring aspects: device status indicators, alert categories, system health metrics
+  - Center-aligned main hero titles "Welcome to Electric Home Hub" and subtitle
+  - Added status indicators with color coding (green/yellow/red dots for good/warning/critical)
+  - Enhanced dashboard with detailed metrics: online/offline devices, alert types, API usage
+  - Reduced white space in dashboard area with more informative content layout
 - June 29, 2025: Site styling and navigation improvements
   - Removed FAQ from navigation while keeping file in repository
   - Changed "Documentation" to "Hardware Manuals" across all pages
