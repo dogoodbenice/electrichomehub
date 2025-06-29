@@ -17,16 +17,9 @@ export default function Dashboard() {
   }
 
   return (
-    <div className="space-y-8 relative overflow-hidden">
-      {/* Animated Background for Entire Page */}
-      <div className="fixed inset-0 bg-gradient-to-br from-blue-900/20 via-purple-900/20 to-indigo-900/20 pointer-events-none">
-        <div className="absolute inset-0 bg-[radial-gradient(circle_at_20%_80%,_rgba(120,119,198,0.3),_transparent_50%)]"></div>
-        <div className="absolute inset-0 bg-[radial-gradient(circle_at_80%_20%,_rgba(255,0,0,0.2),_transparent_50%)]"></div>
-        <div className="absolute inset-0 bg-[radial-gradient(circle_at_40%_40%,_rgba(59,130,246,0.15),_transparent_50%)]"></div>
-      </div>
-      
+    <div className="space-y-8">
       {/* Hero Section */}
-      <section className="hero-dots border-b border-border relative overflow-hidden pt-[7px] pb-[7px] z-10">
+      <section className="hero-dots border-b border-border relative overflow-hidden pt-[7px] pb-[7px]">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-12">
           <div className="text-center mb-8 fade-in-up">
             <h1 className="text-4xl font-bold mb-4">
@@ -173,7 +166,7 @@ export default function Dashboard() {
         </div>
       </section>
       {/* Electric Divider */}
-      <div className="flex items-center justify-center py-8 relative z-10">
+      <div className="flex items-center justify-center py-8">
         <div className="flex items-center space-x-2">
           <div className="w-8 h-px bg-gradient-to-r from-transparent to-brand-red"></div>
           <Zap className="w-5 h-5 text-white animate-pulse" />
@@ -185,20 +178,27 @@ export default function Dashboard() {
         </div>
       </div>
       {/* Demo Section */}
-      <div className="relative z-10">
+      <div className="relative overflow-hidden">
+        {/* Animated Background */}
+        <div className="absolute inset-0 bg-gradient-to-br from-blue-900/20 via-purple-900/20 to-indigo-900/20">
+          <div className="absolute inset-0 bg-[radial-gradient(circle_at_20%_80%,_rgba(120,119,198,0.3),_transparent_50%)]"></div>
+          <div className="absolute inset-0 bg-[radial-gradient(circle_at_80%_20%,_rgba(255,0,0,0.2),_transparent_50%)]"></div>
+          <div className="absolute inset-0 bg-[radial-gradient(circle_at_40%_40%,_rgba(59,130,246,0.15),_transparent_50%)]"></div>
+        </div>
+        
         {/* Demo Badge */}
         <div className="relative flex items-center justify-center py-6">
           <div className="bg-gradient-to-r from-blue-600/20 to-purple-600/20 backdrop-blur-sm border border-blue-500/30 rounded-full px-6 py-2">
             <div className="flex items-center space-x-2">
               <div className="w-2 h-2 bg-blue-400 rounded-full animate-pulse"></div>
-              <span className="text-blue-200 text-sm font-medium">INTERACTIVE DEMO</span>
+              <span className="text-blue-200 text-sm font-medium">DEMO</span>
               <div className="w-2 h-2 bg-purple-400 rounded-full animate-pulse" style={{animationDelay: '0.5s'}}></div>
             </div>
           </div>
         </div>
         
         {/* Main Content */}
-        <div className="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 space-y-12 pb-16 z-10">
+        <div className="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 space-y-12 pb-16">
         
           {/* Dashboard Overview */}
           <section>
