@@ -72,14 +72,15 @@ The application uses four main database tables:
 5. **Demo Functionality**: All five core features fully demonstrated
 
 ## Recent Changes
-- June 29, 2025: Complete navigation system with functional internal linking
+- June 29, 2025: Fixed GitHub Pages navigation and removed Dashboard dependency
+  - Replaced main index.html with static homepage eliminating Dashboard navigation issue
+  - Updated React routing to redirect root path to DeveloperAPI instead of removed Dashboard
+  - Created comprehensive static homepage with correct navigation structure
+  - Navigation now shows: Developer API (featured), Device Tracking, Documentation, Issue Monitoring, Data Export, FAQ
+  - All GitHub Pages URLs now display consistent navigation without Dashboard
+  - Maintained electric theme with black background, white text, and red (#ff3333) accents
+- Earlier: Complete navigation system with functional internal linking
   - Added onClick handlers to all interactive buttons across React components
-  - Dashboard "Developer API Access" button now navigates to developer.html
-  - Quick action buttons (Track Devices, Manage Documents, Monitor Issues) link to respective pages
-  - Device grid "Add Device" button navigates to tracking.html
-  - Documentation "Upload Document" button stays on documentation.html
-  - Developer API buttons (Get API Key, Download SDK, Generate New Key) link to developer.html
-  - Data export buttons link to data-export.html for demonstration
   - All navigation uses absolute GitHub Pages URLs (/electrichomehub/[page].html)
   - Maintains consistency between development and GitHub Pages deployment
 - Earlier: Complete static HTML page implementation with improved navigation
