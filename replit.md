@@ -79,6 +79,10 @@ The application uses four main database tables:
   - Completely rewrote README.md to emphasize demo nature with detailed example highlights
   - Added comprehensive demo data documentation (6 devices, 4 alerts, 5+ documents)
   - Created clear "Demo vs Production" comparison section
+  - Added example data comments to all JSON API files for clear demonstration labeling
+  - Updated favicon to match header logo design (red background with white lightning bolt)
+  - Created individual HTML redirect files for all routes to fix GitHub Pages direct URL access
+  - Enhanced query client to properly handle new JSON structure with nested data objects
 - Implemented comprehensive static hosting solution for GitHub Pages
 - Complete dual-mode architecture supporting both development and static deployment
 - Environment-aware query client serving appropriate data sources
