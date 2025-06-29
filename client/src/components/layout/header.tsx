@@ -47,21 +47,42 @@ export default function Header() {
           
           {/* Desktop Navigation */}
           <nav className="hidden md:flex space-x-8">
-            {navigation.map((item) => (
-              <Link
-                key={item.name}
-                href={item.href}
-                className={`nav-link text-sm font-medium transition-colors ${
-                  location === item.href 
-                    ? "text-brand-red" 
-                    : item.featured 
-                      ? "text-brand-red font-semibold border border-brand-red px-3 py-1 rounded-lg hover:bg-brand-red hover:text-white"
-                      : "text-white hover:text-brand-red"
-                }`}
-              >
-                {item.name}
-              </Link>
-            ))}
+            {navigation.map((item) => {
+              // For GitHub Pages, use full URLs to ensure proper navigation
+              const navHref = isGitHubPages ? 
+                `https://dogoodbenice.github.io/electrichomehub${item.href === '/' ? '' : item.href}` : 
+                item.href;
+              
+              return isGitHubPages ? (
+                <a
+                  key={item.name}
+                  href={navHref}
+                  className={`nav-link text-sm font-medium transition-colors ${
+                    location === item.href 
+                      ? "text-brand-red" 
+                      : item.featured 
+                        ? "text-brand-red font-semibold border border-brand-red px-3 py-1 rounded-lg hover:bg-brand-red hover:text-white"
+                        : "text-white hover:text-brand-red"
+                  }`}
+                >
+                  {item.name}
+                </a>
+              ) : (
+                <Link
+                  key={item.name}
+                  href={item.href}
+                  className={`nav-link text-sm font-medium transition-colors ${
+                    location === item.href 
+                      ? "text-brand-red" 
+                      : item.featured 
+                        ? "text-brand-red font-semibold border border-brand-red px-3 py-1 rounded-lg hover:bg-brand-red hover:text-white"
+                        : "text-white hover:text-brand-red"
+                  }`}
+                >
+                  {item.name}
+                </Link>
+              );
+            })}
           </nav>
           
           {/* Mobile Menu */}
@@ -73,22 +94,43 @@ export default function Header() {
             </SheetTrigger>
             <SheetContent side="right" className="bg-black border-card">
               <nav className="flex flex-col space-y-4 mt-6">
-                {navigation.map((item) => (
-                  <Link
-                    key={item.name}
-                    href={item.href}
-                    onClick={() => setMobileMenuOpen(false)}
-                    className={`nav-link text-sm font-medium transition-colors ${
-                      location === item.href 
-                        ? "text-brand-red" 
-                        : item.featured 
-                          ? "text-brand-red font-semibold border border-brand-red px-3 py-1 rounded-lg hover:bg-brand-red hover:text-white"
-                          : "text-white hover:text-brand-red"
-                    }`}
-                  >
-                    {item.name}
-                  </Link>
-                ))}
+                {navigation.map((item) => {
+                  const navHref = isGitHubPages ? 
+                    `https://dogoodbenice.github.io/electrichomehub${item.href === '/' ? '' : item.href}` : 
+                    item.href;
+                  
+                  return isGitHubPages ? (
+                    <a
+                      key={item.name}
+                      href={navHref}
+                      onClick={() => setMobileMenuOpen(false)}
+                      className={`nav-link text-sm font-medium transition-colors ${
+                        location === item.href 
+                          ? "text-brand-red" 
+                          : item.featured 
+                            ? "text-brand-red font-semibold border border-brand-red px-3 py-1 rounded-lg hover:bg-brand-red hover:text-white"
+                            : "text-white hover:text-brand-red"
+                      }`}
+                    >
+                      {item.name}
+                    </a>
+                  ) : (
+                    <Link
+                      key={item.name}
+                      href={item.href}
+                      onClick={() => setMobileMenuOpen(false)}
+                      className={`nav-link text-sm font-medium transition-colors ${
+                        location === item.href 
+                          ? "text-brand-red" 
+                          : item.featured 
+                            ? "text-brand-red font-semibold border border-brand-red px-3 py-1 rounded-lg hover:bg-brand-red hover:text-white"
+                            : "text-white hover:text-brand-red"
+                      }`}
+                    >
+                      {item.name}
+                    </Link>
+                  );
+                })}
               </nav>
             </SheetContent>
           </Sheet>
