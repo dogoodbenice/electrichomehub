@@ -1,0 +1,271 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Developer API - Electric Home Hub</title>
+    <meta name="description" content="Access Electric Home Hub's comprehensive developer API for device management, documentation handling, and monitoring integration.">
+    
+    <link rel="stylesheet" href="css/styles.css">
+    <link rel="icon" href="images/favicon.svg" type="image/svg+xml">
+</head>
+<body>
+    <!-- Header -->
+    <header class="header">
+        <div class="container">
+            <div class="header-content">
+                <a href="index.html" class="logo">
+                    <div class="logo-icon">
+                        <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="white" stroke-width="2">
+                            <polygon points="13,2 3,14 12,14 11,22 21,10 12,10 13,2"></polygon>
+                        </svg>
+                    </div>
+                    <span class="logo-text">Electric Home Hub</span>
+                </a>
+                
+                <nav class="nav desktop-nav">
+                    <a href="api.html" class="nav-link featured">Developer API</a>
+                    <a href="tracking.html" class="nav-link">Device Tracking</a>
+                    <a href="documentation.html" class="nav-link">Documentation</a>
+                    <a href="monitoring.html" class="nav-link">Issue Monitoring</a>
+                    <a href="export.html" class="nav-link">Data Export</a>
+                    <a href="faq.html" class="nav-link">FAQ</a>
+                </nav>
+                
+                <button class="mobile-menu-toggle" id="mobileMenuToggle">
+                    <span></span>
+                    <span></span>
+                    <span></span>
+                </button>
+            </div>
+        </div>
+        
+        <nav class="mobile-nav" id="mobileNav">
+            <a href="api.html" class="nav-link featured">Developer API</a>
+            <a href="tracking.html" class="nav-link">Device Tracking</a>
+            <a href="documentation.html" class="nav-link">Documentation</a>
+            <a href="monitoring.html" class="nav-link">Issue Monitoring</a>
+            <a href="export.html" class="nav-link">Data Export</a>
+            <a href="faq.html" class="nav-link">FAQ</a>
+        </nav>
+    </header>
+
+    <main>
+        <section class="page-hero">
+            <div class="container">
+                <h1>Developer API</h1>
+                <p>White-label our platform and build custom Electric Home Hub solutions</p>
+            </div>
+        </section>
+
+        <section class="content-section">
+            <div class="container">
+                <!-- API Key Management -->
+                <div class="api-section">
+                    <h2>API Key Management</h2>
+                    <div class="api-keys-grid">
+                        <div class="api-key-card">
+                            <div class="api-key-header">
+                                <h3>Production Key</h3>
+                                <span class="api-badge">PROD</span>
+                            </div>
+                            <div class="api-key-value">ehk_prod_1234567890abcdef</div>
+                            <div class="api-key-actions">
+                                <button class="btn-secondary">Copy</button>
+                                <button class="btn-danger">Revoke</button>
+                            </div>
+                        </div>
+                        
+                        <div class="api-key-card">
+                            <div class="api-key-header">
+                                <h3>Development Key</h3>
+                                <span class="api-badge dev">DEV</span>
+                            </div>
+                            <div class="api-key-value">ehk_dev_abcdef1234567890</div>
+                            <div class="api-key-actions">
+                                <button class="btn-secondary">Copy</button>
+                                <button class="btn-danger">Revoke</button>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <button class="btn-primary" id="generateApiKey">Generate New API Key</button>
+                </div>
+
+                <!-- API Endpoints -->
+                <div class="api-section">
+                    <h2>API Endpoints</h2>
+                    
+                    <div class="endpoint-group">
+                        <h3>Device Management</h3>
+                        
+                        <div class="endpoint-card">
+                            <div class="endpoint-header">
+                                <span class="method get">GET</span>
+                                <code>/api/devices</code>
+                            </div>
+                            <p>Retrieve all devices for the authenticated user</p>
+                            <div class="code-block">
+                                <pre><code>{
+  "devices": [
+    {
+      "id": "device_123",
+      "name": "Smart Thermostat",
+      "manufacturer": "Nest",
+      "model": "T3007ES",
+      "status": "active",
+      "warranty_expiry": "2025-12-31"
+    }
+  ]
+}</code></pre>
+                            </div>
+                        </div>
+                        
+                        <div class="endpoint-card">
+                            <div class="endpoint-header">
+                                <span class="method post">POST</span>
+                                <code>/api/devices</code>
+                            </div>
+                            <p>Add a new device to the system</p>
+                            <div class="code-block">
+                                <pre><code>{
+  "name": "Smart Refrigerator",
+  "manufacturer": "Samsung",
+  "model": "RF28R7351SR",
+  "serial_number": "ABC123456",
+  "warranty_expiry": "2026-06-15"
+}</code></pre>
+                            </div>
+                        </div>
+                        
+                        <div class="endpoint-card">
+                            <div class="endpoint-header">
+                                <span class="method put">PUT</span>
+                                <code>/api/devices/{id}</code>
+                            </div>
+                            <p>Update an existing device</p>
+                        </div>
+                        
+                        <div class="endpoint-card">
+                            <div class="endpoint-header">
+                                <span class="method delete">DELETE</span>
+                                <code>/api/devices/{id}</code>
+                            </div>
+                            <p>Remove a device from the system</p>
+                        </div>
+                    </div>
+                    
+                    <div class="endpoint-group">
+                        <h3>Document Management</h3>
+                        
+                        <div class="endpoint-card">
+                            <div class="endpoint-header">
+                                <span class="method get">GET</span>
+                                <code>/api/documents</code>
+                            </div>
+                            <p>List all documents</p>
+                        </div>
+                        
+                        <div class="endpoint-card">
+                            <div class="endpoint-header">
+                                <span class="method post">POST</span>
+                                <code>/api/documents</code>
+                            </div>
+                            <p>Upload a new document</p>
+                        </div>
+                    </div>
+                    
+                    <div class="endpoint-group">
+                        <h3>Alert Management</h3>
+                        
+                        <div class="endpoint-card">
+                            <div class="endpoint-header">
+                                <span class="method get">GET</span>
+                                <code>/api/alerts</code>
+                            </div>
+                            <p>Retrieve system alerts</p>
+                        </div>
+                        
+                        <div class="endpoint-card">
+                            <div class="endpoint-header">
+                                <span class="method post">POST</span>
+                                <code>/api/alerts/{id}/acknowledge</code>
+                            </div>
+                            <p>Mark an alert as acknowledged</p>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- SDK Downloads -->
+                <div class="api-section">
+                    <h2>SDK Downloads</h2>
+                    <div class="sdk-grid">
+                        <div class="sdk-card">
+                            <div class="sdk-icon">
+                                <svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                    <path d="M2 3h6a4 4 0 0 1 4 4v14a3 3 0 0 0-3-3H2z"/>
+                                    <path d="M22 3h-6a4 4 0 0 0-4 4v14a3 3 0 0 1 3-3h7z"/>
+                                </svg>
+                            </div>
+                            <h3>JavaScript SDK</h3>
+                            <p>Full-featured SDK for web applications</p>
+                            <button class="btn-secondary">Download</button>
+                        </div>
+                        
+                        <div class="sdk-card">
+                            <div class="sdk-icon">
+                                <svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                    <path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/>
+                                    <polyline points="14,2 14,8 20,8"/>
+                                </svg>
+                            </div>
+                            <h3>Python SDK</h3>
+                            <p>Comprehensive Python library</p>
+                            <button class="btn-secondary">Download</button>
+                        </div>
+                        
+                        <div class="sdk-card">
+                            <div class="sdk-icon">
+                                <svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                    <path d="M4 19.5A2.5 2.5 0 0 1 6.5 17H20"/>
+                                    <path d="M6.5 2H20v20H6.5A2.5 2.5 0 0 1 4 19.5v-15A2.5 2.5 0 0 1 6.5 2z"/>
+                                </svg>
+                            </div>
+                            <h3>REST Documentation</h3>
+                            <p>Complete API reference</p>
+                            <button class="btn-secondary">View Docs</button>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Authentication -->
+                <div class="api-section">
+                    <h2>Authentication</h2>
+                    <div class="auth-info">
+                        <p>All API requests require authentication using your API key in the Authorization header:</p>
+                        <div class="code-block">
+                            <pre><code>Authorization: Bearer YOUR_API_KEY</code></pre>
+                        </div>
+                        
+                        <h4>Example Request</h4>
+                        <div class="code-block">
+                            <pre><code>curl -H "Authorization: Bearer ehk_prod_1234567890abcdef" \
+     -H "Content-Type: application/json" \
+     https://api.electrichomehub.com/v1/devices</code></pre>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <footer class="footer">
+        <div class="container">
+            <p>&copy; 2025 Electric Home Hub. Empowering smart device management.</p>
+        </div>
+    </footer>
+
+    <script src="js/main.js"></script>
+    <script src="js/api.js"></script>
+</body>
+</html>
