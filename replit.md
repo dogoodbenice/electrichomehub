@@ -72,6 +72,9 @@ The application uses four main database tables:
 5. **Demo Functionality**: All five core features fully demonstrated
 
 ## Recent Changes
+- June 29, 2025: Improved spacing in developer section layout
+  - Increased margin-bottom from 2rem to 3rem between "Build Your Own Electric Home Hub" text and "Developer API Access" card
+  - Enhanced visual hierarchy and breathing room on homepage layout
 - June 29, 2025: Enhanced "Monitoring Preferences" and "Data Import" section styling
   - Added comprehensive CSS styling for monitoring settings with card-based layout and responsive grid
   - Created professional toggle switches with brand red accent colors and smooth animations

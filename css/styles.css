@@ -386,7 +386,7 @@ body {
 .developer-section > p {
     color: var(--text-secondary);
     font-size: 1.1rem;
-    margin-bottom: 2rem;
+    margin-bottom: 3rem;
 }
 
 .cta-card {
