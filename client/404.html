@@ -9,30 +9,18 @@
       const currentPath = window.location.pathname;
       const basePath = '/electrichomehub';
       
-      // Handle different URL patterns
-      console.log('404 redirect - Current path:', currentPath);
+      // Handle GitHub Pages subdirectory routing
+      console.log('404 redirect - Current path:', currentPath, 'Base path:', basePath);
       
       if (currentPath.startsWith(basePath + '/') && currentPath !== basePath + '/') {
-        // Correct subdirectory path - store the route
+        // We're in the correct subdirectory but route doesn't exist - store and redirect to main app
         const route = currentPath.replace(basePath, '');
-        console.log('Storing intended route:', route);
+        console.log('Storing intended route for subdirectory:', route);
         sessionStorage.setItem('intended-route', route);
         window.location.replace(basePath + '/');
-      } else if (currentPath !== basePath && currentPath !== basePath + '/') {
-        // Handle root-level routes that need to be redirected to subdirectory
-        const knownRoutes = ['/tracking', '/monitoring', '/documentation', '/developer', '/data-export', '/faq', '/about'];
-        if (knownRoutes.includes(currentPath)) {
-          console.log('Redirecting known route to subdirectory:', currentPath);
-          sessionStorage.setItem('intended-route', currentPath);
-          window.location.replace(basePath + '/');
-        } else {
-          // Unknown route - redirect to main app
-          console.log('Unknown route, redirecting to main app');
-          window.location.replace(basePath + '/');
-        }
       } else {
         // Default redirect to main app
-        console.log('Default redirect to main app');
+        console.log('Redirecting to main app');
         window.location.replace(basePath + '/');
       }
     </script>

@@ -3,7 +3,7 @@
   "_demo_note": "These are fictional dashboard statistics showcasing platform metrics for demonstration purposes only.",
   "stats": {
     "totalDevices": 6,
-    "activeWarranties": 5,
+    "activeWarranties": 3,
     "totalDocuments": 4,
     "activeAlerts": 3
   }
