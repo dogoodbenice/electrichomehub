@@ -72,7 +72,16 @@ The application uses four main database tables:
 5. **Demo Functionality**: All five core features fully demonstrated
 
 ## Recent Changes
-- June 29, 2025: Complete static site reconstruction for GitHub Pages deployment
+- June 29, 2025: Site styling and navigation improvements
+  - Removed FAQ from navigation while keeping file in repository
+  - Changed "Documentation" to "Hardware Manuals" across all pages
+  - Enhanced API documentation to remove key management section
+  - Added production-ready API examples following Stripe API patterns
+  - Improved CSS styling with better shadows, hover effects, and visual consistency
+  - Updated navigation menus consistently across all pages
+  - Enhanced code blocks with copy buttons and improved formatting
+  - Site now live at https://dogoodbenice.github.io/electrichomehub/ with working navigation
+- Earlier: Complete static site reconstruction for GitHub Pages deployment
   - Removed all React/TypeScript infrastructure and build dependencies
   - Created clean directory structure: css/, js/, images/
   - Built comprehensive API documentation with webhooks, error handling, and multi-language examples
