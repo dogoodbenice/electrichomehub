@@ -74,6 +74,7 @@ The application uses four main database tables:
 ## Recent Changes
 - June 29, 2025: Improved spacing in developer section layout
   - Increased margin-bottom from 2rem to 4rem between "Build Your Own Electric Home Hub" text and "Developer API Access" card
+  - Enhanced CTA card spacing by increasing gap from 2rem to 3rem between content and "Access Developer Tools" button
   - Enhanced visual hierarchy and breathing room on homepage layout
 - June 29, 2025: Enhanced button styling and API page reorganization
   - Added comprehensive button styling with .btn-primary and .btn-secondary classes for consistency across all pages
