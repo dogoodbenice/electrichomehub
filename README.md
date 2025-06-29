@@ -1,156 +1,105 @@
-# Electric Home Hub - Demo Platform
+# Electric Home Hub
 
-🚀 **This is a fully functional demonstration** of the Electric Home Hub platform, showcasing a comprehensive smart home management solution with rich example data and interactive features.
+A lightweight, self-hostable smart home management platform designed for developers, enabling seamless device monitoring through vanilla JavaScript and static HTML technologies.
 
-## Demo Highlights
+## Features
 
-Experience all five core features with realistic example data:
+- **Universal Device Tracking** - Monitor all electric hardware regardless of manufacturer
+- **Document Management** - Centralized storage for manuals, warranties, and documentation  
+- **Issue Monitoring** - Proactive alerts for recalls, firmware updates, and device issues
+- **Developer API** - Comprehensive REST API for integrations and custom solutions
+- **Data Export** - Complete data portability with multiple export formats
 
-### 📱 Universal Device Tracking
-- **6 Example Devices**: Smart Fridge, EV Charger, Solar Panels, Heat Pump, Smart Thermostat, Battery Storage
-- Interactive device tiles with warranty status, installation dates, and location tracking
-- Multi-manufacturer support (Samsung, Tesla, SunPower, Mitsubishi, Nest, Enphase)
+## Technology Stack
 
-### 📋 Document Management  
-- **5+ Sample Documents**: Device manuals, warranty certificates, installation guides
-- Upload interface with drag-and-drop functionality
-- Organized by device with quick access and search
-
-### 🚨 Proactive Issue Monitoring
-- **4 Active Alerts**: Firmware updates, warranty expiration, recall notices, maintenance reminders
-- Priority-based alert system (High, Medium, Low)
-- Real-time notification interface with detailed alert descriptions
-
-### 🔧 Developer API
-- **Complete API Documentation**: Interactive endpoints for all features
-- Code examples in multiple languages (JavaScript, Python, cURL)
-- Authentication and rate limiting examples
-- White-label integration guides
-
-### 📊 Data Export & Visualization
-- **Interactive Charts**: Device distribution, warranty timeline, alert trends
-- Export capabilities for CSV, JSON, and PDF formats
-- Comprehensive analytics dashboard with filtering options
-
-## Try the Demo
-
-**🌐 Live Demo**: [https://dogoodbenice.github.io/electrichomehub/](https://dogoodbenice.github.io/electrichomehub/)
-
-Explore the complete platform with pre-loaded example data demonstrating real-world smart home scenarios. No setup required - all features are immediately accessible.
-
-## Key Demo Data Examples
-
-**Sample Devices Include:**
-- Samsung Smart Fridge (RF28R7351) - Kitchen, warranty expires 2026
-- Tesla Wall Connector EV Charger - Garage, installed 2023
-- SunPower Solar Panel System - Roof, 10kW capacity
-- Mitsubishi Heat Pump - Living Room, energy efficient heating/cooling
-- Nest Learning Thermostat - Smart temperature control
-- Enphase Battery Storage - Basement, 13.5kWh capacity
-
-**Sample Alerts Include:**
-- High Priority: Tesla firmware update available
-- Medium Priority: Smart Fridge warranty expiring in 6 months
-- Low Priority: Quarterly HVAC maintenance reminder
-- Information: New energy efficiency report available
-
-**Sample Documents Include:**
-- Installation manuals for all devices
-- Warranty certificates with expiration tracking
-- Energy efficiency reports and compliance documents
-- Maintenance schedules and service records
-
-## Tech Stack
-
-- **Frontend**: React 18 + TypeScript, Vite, Tailwind CSS, shadcn/ui
-- **Backend**: Node.js + Express, TypeScript
-- **Database**: PostgreSQL with Drizzle ORM
-- **State Management**: TanStack Query
-- **Routing**: Wouter
-
-## Getting Started
-
-### Prerequisites
-
-- Node.js 20+
-- PostgreSQL database
-
-### Installation
-
-1. Clone the repository
-2. Install dependencies:
-   ```bash
-   npm install
-   ```
-
-3. Set up environment variables:
-   ```bash
-   DATABASE_URL=your_postgresql_connection_string
-   NODE_ENV=development
-   ```
-
-4. Start the development server:
-   ```bash
-   npm run dev
-   ```
-
-The application will be available at `http://localhost:5000`
-
-## Demo Deployment
-
-This demonstration is automatically deployed to GitHub Pages, showcasing the complete Electric Home Hub experience with realistic data.
-
-### Static Demo Architecture
-
-The demo uses a sophisticated dual-mode system:
-- **Static Deployment**: Serves pre-loaded example data for immediate exploration
-- **Development Mode**: Full-stack functionality with live API when running locally
-- **Smart Environment Detection**: Seamlessly switches between modes based on deployment context
-
-### Deployment Features
-
-- Automatic deployment via GitHub Actions on code changes
-- Optimized static build with comprehensive example data
-- Mobile-responsive design with dark theme
-- Full navigation and feature demonstration without backend requirements
+- Pure HTML5, CSS3, and vanilla JavaScript
+- Zero build dependencies
+- Static file architecture
+- GitHub Pages compatible
+- Mobile-responsive design
+- Electric-themed styling (black/white/red #ff3333)
 
 ## Project Structure
 
 ```
-├── client/           # React frontend
-├── server/           # Express backend  
-├── shared/           # Shared types and schemas
-├── .github/workflows/ # GitHub Actions
-└── dist/             # Build output
+├── index.html              # Homepage
+├── api.html                # Developer API documentation
+├── tracking.html           # Device tracking interface
+├── documentation.html      # Document management
+├── monitoring.html         # Issue monitoring dashboard
+├── export.html            # Data export and visualization
+├── faq.html               # Frequently asked questions
+├── css/
+│   └── styles.css         # Main stylesheet
+├── js/
+│   ├── main.js            # Core functionality
+│   ├── api.js             # API management
+│   ├── tracking.js        # Device tracking
+│   ├── documentation.js   # Document handling
+│   ├── monitoring.js      # Alert management
+│   ├── export.js          # Data export
+│   └── faq.js             # FAQ interactions
+└── images/
+    └── favicon.svg        # Site icon
 ```
 
-## For Developers
+## Quick Start
 
-The demo includes a complete Developer API section with:
-- **Interactive API Documentation**: Test endpoints directly in the browser
-- **Code Examples**: JavaScript, Python, and cURL implementations
-- **Authentication Examples**: API key management and security
-- **Integration Guides**: White-label solutions and custom implementations
+1. Clone or download this repository
+2. Open `index.html` in a web browser
+3. No build process required - everything works statically
 
-Perfect for exploring how to build custom Electric Home Hub solutions with your own branding and features.
+## GitHub Pages Deployment
 
-## Demo vs Production
+1. Upload all files to your GitHub repository
+2. Go to Settings → Pages
+3. Select "Deploy from a branch" 
+4. Choose "main" branch and "/ (root)" folder
+5. Your site will be available at `https://username.github.io/repository-name/`
 
-This demonstration showcases the complete Electric Home Hub platform capabilities:
+## Core Functionality
 
-**Demo Features (GitHub Pages):**
-- Static deployment with comprehensive example data
-- All UI components and interactions fully functional
-- Complete feature demonstration across all five core areas
-- Mobile-responsive design with dark theme
+### Device Tracking
+- Add, edit, and delete devices
+- Category filtering and search
+- Warranty status monitoring
+- Visual status indicators
 
-**Production Features (Full Stack):**
-- Live API with database persistence
-- Real-time data updates and synchronization
-- User authentication and multi-tenant support
-- Advanced analytics and reporting
-- Enterprise integrations and custom features
+### Documentation Management  
+- Drag-and-drop file uploads
+- Document categorization
+- Preview and download capabilities
+- Metadata tracking
+
+### Issue Monitoring
+- Real-time alert system
+- Severity-based categorization
+- Notification preferences
+- Alert history tracking
+
+### Developer API
+- RESTful endpoint documentation
+- API key management
+- SDK downloads
+- Authentication examples
+
+### Data Export
+- Multiple export formats (CSV, JSON, PDF, ZIP)
+- Data visualization charts
+- Import functionality
+- Backup and restore
+
+## Browser Support
+
+- Chrome 60+
+- Firefox 55+
+- Safari 12+
+- Edge 79+
 
 ## License
 
-MIT License
+MIT License - see LICENSE file for details
+
+## Contributing
+
+This is a demonstration project showcasing static web development patterns. Feel free to fork and adapt for your own use cases.

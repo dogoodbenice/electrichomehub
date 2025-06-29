@@ -1,0 +1,275 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Documentation Management - Electric Home Hub</title>
+    <meta name="description" content="Centralized storage and management for all your device manuals, warranties, and documentation with easy upload and organization.">
+    
+    <link rel="stylesheet" href="css/styles.css">
+    <link rel="icon" href="images/favicon.svg" type="image/svg+xml">
+</head>
+<body>
+    <!-- Header -->
+    <header class="header">
+        <div class="container">
+            <div class="header-content">
+                <a href="index.html" class="logo">
+                    <div class="logo-icon">
+                        <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="white" stroke-width="2">
+                            <polygon points="13,2 3,14 12,14 11,22 21,10 12,10 13,2"></polygon>
+                        </svg>
+                    </div>
+                    <span class="logo-text">Electric Home Hub</span>
+                </a>
+                
+                <nav class="nav desktop-nav">
+                    <a href="api.html" class="nav-link">Developer API</a>
+                    <a href="tracking.html" class="nav-link">Device Tracking</a>
+                    <a href="documentation.html" class="nav-link featured">Documentation</a>
+                    <a href="monitoring.html" class="nav-link">Issue Monitoring</a>
+                    <a href="export.html" class="nav-link">Data Export</a>
+                    <a href="faq.html" class="nav-link">FAQ</a>
+                </nav>
+                
+                <button class="mobile-menu-toggle" id="mobileMenuToggle">
+                    <span></span>
+                    <span></span>
+                    <span></span>
+                </button>
+            </div>
+        </div>
+        
+        <nav class="mobile-nav" id="mobileNav">
+            <a href="api.html" class="nav-link">Developer API</a>
+            <a href="tracking.html" class="nav-link">Device Tracking</a>
+            <a href="documentation.html" class="nav-link featured">Documentation</a>
+            <a href="monitoring.html" class="nav-link">Issue Monitoring</a>
+            <a href="export.html" class="nav-link">Data Export</a>
+            <a href="faq.html" class="nav-link">FAQ</a>
+        </nav>
+    </header>
+
+    <main>
+        <section class="page-hero">
+            <div class="container">
+                <h1>Documentation Management</h1>
+                <p>Centralized storage for all your device manuals and documentation</p>
+            </div>
+        </section>
+
+        <section class="content-section">
+            <div class="container">
+                <!-- Upload Zone -->
+                <div class="upload-section">
+                    <div class="upload-zone" id="uploadZone">
+                        <div class="upload-icon">
+                            <svg width="48" height="48" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                <path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/>
+                                <polyline points="14,2 14,8 20,8"/>
+                                <line x1="12" y1="18" x2="12" y2="12"/>
+                                <polyline points="9,15 12,12 15,15"/>
+                            </svg>
+                        </div>
+                        <h3>Drop files here or click to upload</h3>
+                        <p>Support for PDF, DOC, DOCX, and image files</p>
+                        <input type="file" id="fileInput" multiple accept=".pdf,.doc,.docx,.jpg,.jpeg,.png" hidden>
+                        <button class="btn-primary" id="selectFiles">Select Files</button>
+                    </div>
+                </div>
+
+                <!-- Document Categories -->
+                <div class="categories-bar">
+                    <button class="category-btn active" data-category="">All Documents</button>
+                    <button class="category-btn" data-category="Manual">Manuals</button>
+                    <button class="category-btn" data-category="Warranty">Warranties</button>
+                    <button class="category-btn" data-category="Receipt">Receipts</button>
+                    <button class="category-btn" data-category="Certificate">Certificates</button>
+                </div>
+
+                <!-- Documents Grid -->
+                <div class="documents-grid" id="documentsGrid">
+                    <!-- Smart Refrigerator Manual -->
+                    <div class="document-card" data-category="Manual">
+                        <div class="document-icon">
+                            <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                <path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/>
+                                <polyline points="14,2 14,8 20,8"/>
+                            </svg>
+                        </div>
+                        <div class="document-info">
+                            <h3>Smart Refrigerator Manual</h3>
+                            <p class="document-device">Samsung RF28R7351SR</p>
+                            <p class="document-type">Manual • PDF • 2.3 MB</p>
+                            <p class="document-date">Uploaded: Dec 15, 2024</p>
+                        </div>
+                        <div class="document-actions">
+                            <button class="btn-icon" title="View">
+                                <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                    <path d="M1 12s4-8 11-8 11 8 11 8-4 8-11 8-11-8-11-8z"/>
+                                    <circle cx="12" cy="12" r="3"/>
+                                </svg>
+                            </button>
+                            <button class="btn-icon" title="Download">
+                                <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                    <path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"/>
+                                    <polyline points="7,10 12,15 17,10"/>
+                                    <line x1="12" y1="15" x2="12" y2="3"/>
+                                </svg>
+                            </button>
+                            <button class="btn-icon" title="Delete">
+                                <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                    <polyline points="3,6 5,6 21,6"/>
+                                    <path d="M19,6v14a2,2 0 0,1 -2,2H7a2,2 0 0,1 -2,-2V6m3,0V4a2,2 0 0,1 2,-2h4a2,2 0 0,1 2,2v2"/>
+                                </svg>
+                            </button>
+                        </div>
+                    </div>
+
+                    <!-- Thermostat Warranty -->
+                    <div class="document-card" data-category="Warranty">
+                        <div class="document-icon">
+                            <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                <path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/>
+                            </svg>
+                        </div>
+                        <div class="document-info">
+                            <h3>Nest Thermostat Warranty</h3>
+                            <p class="document-device">Google T3007ES</p>
+                            <p class="document-type">Warranty • PDF • 0.8 MB</p>
+                            <p class="document-date">Uploaded: Nov 20, 2024</p>
+                        </div>
+                        <div class="document-actions">
+                            <button class="btn-icon" title="View">
+                                <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                    <path d="M1 12s4-8 11-8 11 8 11 8-4 8-11 8-11-8-11-8z"/>
+                                    <circle cx="12" cy="12" r="3"/>
+                                </svg>
+                            </button>
+                            <button class="btn-icon" title="Download">
+                                <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                    <path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"/>
+                                    <polyline points="7,10 12,15 17,10"/>
+                                    <line x1="12" y1="15" x2="12" y2="3"/>
+                                </svg>
+                            </button>
+                            <button class="btn-icon" title="Delete">
+                                <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                    <polyline points="3,6 5,6 21,6"/>
+                                    <path d="M19,6v14a2,2 0 0,1 -2,2H7a2,2 0 0,1 -2,-2V6m3,0V4a2,2 0 0,1 2,-2h4a2,2 0 0,1 2,2v2"/>
+                                </svg>
+                            </button>
+                        </div>
+                    </div>
+
+                    <!-- Washer Receipt -->
+                    <div class="document-card" data-category="Receipt">
+                        <div class="document-icon">
+                            <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                <path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/>
+                                <polyline points="14,2 14,8 20,8"/>
+                                <line x1="16" y1="13" x2="8" y2="13"/>
+                                <line x1="16" y1="17" x2="8" y2="17"/>
+                                <polyline points="10,9 9,9 8,9"/>
+                            </svg>
+                        </div>
+                        <div class="document-info">
+                            <h3>Washer Purchase Receipt</h3>
+                            <p class="document-device">Samsung WF45K6500AV</p>
+                            <p class="document-type">Receipt • JPG • 1.2 MB</p>
+                            <p class="document-date">Uploaded: Oct 5, 2024</p>
+                        </div>
+                        <div class="document-actions">
+                            <button class="btn-icon" title="View">
+                                <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                    <path d="M1 12s4-8 11-8 11 8 11 8-4 8-11 8-11-8-11-8z"/>
+                                    <circle cx="12" cy="12" r="3"/>
+                                </svg>
+                            </button>
+                            <button class="btn-icon" title="Download">
+                                <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                    <path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"/>
+                                    <polyline points="7,10 12,15 17,10"/>
+                                    <line x1="12" y1="15" x2="12" y2="3"/>
+                                </svg>
+                            </button>
+                            <button class="btn-icon" title="Delete">
+                                <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                    <polyline points="3,6 5,6 21,6"/>
+                                    <path d="M19,6v14a2,2 0 0,1 -2,2H7a2,2 0 0,1 -2,-2V6m3,0V4a2,2 0 0,1 2,-2h4a2,2 0 0,1 2,2v2"/>
+                                </svg>
+                            </button>
+                        </div>
+                    </div>
+
+                    <!-- Doorbell Manual -->
+                    <div class="document-card" data-category="Manual">
+                        <div class="document-icon">
+                            <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                <path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/>
+                                <polyline points="14,2 14,8 20,8"/>
+                            </svg>
+                        </div>
+                        <div class="document-info">
+                            <h3>Video Doorbell Installation Guide</h3>
+                            <p class="document-device">Ring 8VD1S7-0EN0</p>
+                            <p class="document-type">Manual • PDF • 3.1 MB</p>
+                            <p class="document-date">Uploaded: Sep 12, 2024</p>
+                        </div>
+                        <div class="document-actions">
+                            <button class="btn-icon" title="View">
+                                <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                    <path d="M1 12s4-8 11-8 11 8 11 8-4 8-11 8-11-8-11-8z"/>
+                                    <circle cx="12" cy="12" r="3"/>
+                                </svg>
+                            </button>
+                            <button class="btn-icon" title="Download">
+                                <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                    <path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"/>
+                                    <polyline points="7,10 12,15 17,10"/>
+                                    <line x1="12" y1="15" x2="12" y2="3"/>
+                                </svg>
+                            </button>
+                            <button class="btn-icon" title="Delete">
+                                <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                    <polyline points="3,6 5,6 21,6"/>
+                                    <path d="M19,6v14a2,2 0 0,1 -2,2H7a2,2 0 0,1 -2,-2V6m3,0V4a2,2 0 0,1 2,-2h4a2,2 0 0,1 2,2v2"/>
+                                </svg>
+                            </button>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Document Stats -->
+                <div class="document-stats">
+                    <div class="stat-item">
+                        <span class="stat-number">4</span>
+                        <span class="stat-label">Total Documents</span>
+                    </div>
+                    <div class="stat-item">
+                        <span class="stat-number">2</span>
+                        <span class="stat-label">Manuals</span>
+                    </div>
+                    <div class="stat-item">
+                        <span class="stat-number">1</span>
+                        <span class="stat-label">Warranties</span>
+                    </div>
+                    <div class="stat-item">
+                        <span class="stat-number">1</span>
+                        <span class="stat-label">Receipts</span>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <footer class="footer">
+        <div class="container">
+            <p>&copy; 2025 Electric Home Hub. Empowering smart device management.</p>
+        </div>
+    </footer>
+
+    <script src="js/main.js"></script>
+    <script src="js/documentation.js"></script>
+</body>
+</html>

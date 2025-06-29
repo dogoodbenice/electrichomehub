@@ -1,0 +1,240 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>FAQ - Electric Home Hub</title>
+    <meta name="description" content="Frequently asked questions about Electric Home Hub's device management platform, features, and troubleshooting guides.">
+    
+    <link rel="stylesheet" href="css/styles.css">
+    <link rel="icon" href="images/favicon.svg" type="image/svg+xml">
+</head>
+<body>
+    <!-- Header -->
+    <header class="header">
+        <div class="container">
+            <div class="header-content">
+                <a href="index.html" class="logo">
+                    <div class="logo-icon">
+                        <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="white" stroke-width="2">
+                            <polygon points="13,2 3,14 12,14 11,22 21,10 12,10 13,2"></polygon>
+                        </svg>
+                    </div>
+                    <span class="logo-text">Electric Home Hub</span>
+                </a>
+                
+                <nav class="nav desktop-nav">
+                    <a href="api.html" class="nav-link">Developer API</a>
+                    <a href="tracking.html" class="nav-link">Device Tracking</a>
+                    <a href="documentation.html" class="nav-link">Documentation</a>
+                    <a href="monitoring.html" class="nav-link">Issue Monitoring</a>
+                    <a href="export.html" class="nav-link">Data Export</a>
+                    <a href="faq.html" class="nav-link featured">FAQ</a>
+                </nav>
+                
+                <button class="mobile-menu-toggle" id="mobileMenuToggle">
+                    <span></span>
+                    <span></span>
+                    <span></span>
+                </button>
+            </div>
+        </div>
+        
+        <nav class="mobile-nav" id="mobileNav">
+            <a href="api.html" class="nav-link">Developer API</a>
+            <a href="tracking.html" class="nav-link">Device Tracking</a>
+            <a href="documentation.html" class="nav-link">Documentation</a>
+            <a href="monitoring.html" class="nav-link">Issue Monitoring</a>
+            <a href="export.html" class="nav-link">Data Export</a>
+            <a href="faq.html" class="nav-link featured">FAQ</a>
+        </nav>
+    </header>
+
+    <main>
+        <section class="page-hero">
+            <div class="container">
+                <h1>Frequently Asked Questions</h1>
+                <p>Find answers to common questions about Electric Home Hub</p>
+            </div>
+        </section>
+
+        <section class="content-section">
+            <div class="container">
+                <div class="faq-categories">
+                    <button class="category-btn active" data-category="all">All Questions</button>
+                    <button class="category-btn" data-category="getting-started">Getting Started</button>
+                    <button class="category-btn" data-category="devices">Device Management</button>
+                    <button class="category-btn" data-category="api">Developer API</button>
+                    <button class="category-btn" data-category="troubleshooting">Troubleshooting</button>
+                </div>
+
+                <div class="faq-list">
+                    <!-- Getting Started -->
+                    <div class="faq-item" data-category="getting-started">
+                        <div class="faq-question">
+                            <h3>How do I get started with Electric Home Hub?</h3>
+                            <button class="faq-toggle">+</button>
+                        </div>
+                        <div class="faq-answer">
+                            <p>Getting started is simple! Begin by adding your first device through the Device Tracking page. Click "Add Device" and enter your device details including manufacturer, model, and warranty information. Once added, you can upload manuals and documentation, set up monitoring preferences, and access our developer API if needed.</p>
+                        </div>
+                    </div>
+
+                    <div class="faq-item" data-category="getting-started">
+                        <div class="faq-question">
+                            <h3>Is Electric Home Hub free to use?</h3>
+                            <button class="faq-toggle">+</button>
+                        </div>
+                        <div class="faq-answer">
+                            <p>Electric Home Hub offers a free tier that includes basic device tracking, document storage, and monitoring for up to 10 devices. For larger deployments or advanced features like API access and custom integrations, we offer paid plans starting at $9.99/month.</p>
+                        </div>
+                    </div>
+
+                    <!-- Device Management -->
+                    <div class="faq-item" data-category="devices">
+                        <div class="faq-question">
+                            <h3>What types of devices can I track?</h3>
+                            <button class="faq-toggle">+</button>
+                        </div>
+                        <div class="faq-answer">
+                            <p>Electric Home Hub supports all types of electric devices including appliances (refrigerators, washers, dryers), smart home devices (thermostats, lighting, speakers), security systems (cameras, doorbells, alarms), entertainment systems (TVs, gaming consoles), and more. If it plugs in or uses batteries, we can track it!</p>
+                        </div>
+                    </div>
+
+                    <div class="faq-item" data-category="devices">
+                        <div class="faq-question">
+                            <h3>How do warranty reminders work?</h3>
+                            <button class="faq-toggle">+</button>
+                        </div>
+                        <div class="faq-answer">
+                            <p>When you add a device with warranty information, Electric Home Hub automatically calculates the expiration date and sends notifications 90, 30, and 7 days before expiration. You can customize these reminder intervals in your monitoring preferences.</p>
+                        </div>
+                    </div>
+
+                    <div class="faq-item" data-category="devices">
+                        <div class="faq-question">
+                            <h3>Can I bulk import my existing device inventory?</h3>
+                            <button class="faq-toggle">+</button>
+                        </div>
+                        <div class="faq-answer">
+                            <p>Yes! Use our Data Export page to download a CSV template, fill in your device information, and upload it back to the platform. This feature is available for paid plan subscribers and can handle hundreds of devices at once.</p>
+                        </div>
+                    </div>
+
+                    <!-- API Questions -->
+                    <div class="faq-item" data-category="api">
+                        <div class="faq-question">
+                            <h3>How do I get API access?</h3>
+                            <button class="faq-toggle">+</button>
+                        </div>
+                        <div class="faq-answer">
+                            <p>API access is available with our Developer plan and above. Visit the Developer API page to generate your API keys. Each key is tied to your account and provides access to all device data, documentation, and monitoring features programmatically.</p>
+                        </div>
+                    </div>
+
+                    <div class="faq-item" data-category="api">
+                        <div class="faq-question">
+                            <h3>What are the API rate limits?</h3>
+                            <button class="faq-toggle">+</button>
+                        </div>
+                        <div class="faq-answer">
+                            <p>Our API enforces rate limits to ensure service quality: 1,000 requests per hour for Developer plans, 5,000 requests per hour for Professional plans, and 25,000 requests per hour for Enterprise plans. Rate limit headers are included in all API responses.</p>
+                        </div>
+                    </div>
+
+                    <div class="faq-item" data-category="api">
+                        <div class="faq-question">
+                            <h3>Can I white-label the Electric Home Hub platform?</h3>
+                            <button class="faq-toggle">+</button>
+                        </div>
+                        <div class="faq-answer">
+                            <p>Yes! Our Enterprise plan includes white-labeling options that allow you to customize branding, domain, and integrate Electric Home Hub into your existing products. Contact our sales team for custom deployment options.</p>
+                        </div>
+                    </div>
+
+                    <!-- Troubleshooting -->
+                    <div class="faq-item" data-category="troubleshooting">
+                        <div class="faq-question">
+                            <h3>Why am I not receiving alert notifications?</h3>
+                            <button class="faq-toggle">+</button>
+                        </div>
+                        <div class="faq-answer">
+                            <p>Check your notification preferences in the Issue Monitoring page. Ensure email notifications are enabled and verify your email address is correct in account settings. For SMS alerts, confirm your phone number is verified. Also check your spam/junk folders for Electric Home Hub emails.</p>
+                        </div>
+                    </div>
+
+                    <div class="faq-item" data-category="troubleshooting">
+                        <div class="faq-question">
+                            <h3>My device isn't showing the correct warranty status</h3>
+                            <button class="faq-toggle">+</button>
+                        </div>
+                        <div class="faq-answer">
+                            <p>Warranty status is calculated based on the expiration date you entered. To update it, go to Device Tracking, click the edit button on your device, and verify the warranty expiration date is correct. The system updates status automatically based on current date.</p>
+                        </div>
+                    </div>
+
+                    <div class="faq-item" data-category="troubleshooting">
+                        <div class="faq-question">
+                            <h3>Can I recover deleted devices or documents?</h3>
+                            <button class="faq-toggle">+</button>
+                        </div>
+                        <div class="faq-answer">
+                            <p>Deleted items are retained for 30 days in our system before permanent removal. Contact support within this window to recover accidentally deleted devices or documents. After 30 days, data cannot be recovered, so we recommend regular data exports as backups.</p>
+                        </div>
+                    </div>
+
+                    <div class="faq-item" data-category="troubleshooting">
+                        <div class="faq-question">
+                            <h3>The platform seems slow or unresponsive</h3>
+                            <button class="faq-toggle">+</button>
+                        </div>
+                        <div class="faq-answer">
+                            <p>Try refreshing your browser and clearing cache/cookies for Electric Home Hub. Ensure you're using a supported browser (Chrome, Firefox, Safari, Edge). If issues persist, check our status page for any ongoing service disruptions or contact support for assistance.</p>
+                        </div>
+                    </div>
+
+                    <!-- General -->
+                    <div class="faq-item" data-category="getting-started">
+                        <div class="faq-question">
+                            <h3>How secure is my device data?</h3>
+                            <button class="faq-toggle">+</button>
+                        </div>
+                        <div class="faq-answer">
+                            <p>Security is our top priority. All data is encrypted in transit and at rest using industry-standard AES-256 encryption. We undergo regular security audits, maintain SOC 2 compliance, and never share your device information with third parties without explicit consent.</p>
+                        </div>
+                    </div>
+
+                    <div class="faq-item" data-category="getting-started">
+                        <div class="faq-question">
+                            <h3>Can I export my data at any time?</h3>
+                            <button class="faq-toggle">+</button>
+                        </div>
+                        <div class="faq-answer">
+                            <p>Absolutely! Use the Data Export page to download all your device information, documents, and alert history in standard formats (CSV, JSON, PDF). You own your data and can export it anytime, even after account cancellation.</p>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Contact Support -->
+                <div class="support-section">
+                    <h2>Still need help?</h2>
+                    <p>Can't find the answer you're looking for? Our support team is here to help.</p>
+                    <div class="support-options">
+                        <button class="btn-primary">Contact Support</button>
+                        <button class="btn-secondary">Browse Documentation</button>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <footer class="footer">
+        <div class="container">
+            <p>&copy; 2025 Electric Home Hub. Empowering smart device management.</p>
+        </div>
+    </footer>
+
+    <script src="js/main.js"></script>
+    <script src="js/faq.js"></script>
+</body>
+</html>

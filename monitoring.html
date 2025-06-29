@@ -1,0 +1,299 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Issue Monitoring - Electric Home Hub</title>
+    <meta name="description" content="Proactive monitoring and alerts for device recalls, firmware updates, and emerging issues across all your electric hardware.">
+    
+    <link rel="stylesheet" href="css/styles.css">
+    <link rel="icon" href="images/favicon.svg" type="image/svg+xml">
+</head>
+<body>
+    <!-- Header -->
+    <header class="header">
+        <div class="container">
+            <div class="header-content">
+                <a href="index.html" class="logo">
+                    <div class="logo-icon">
+                        <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="white" stroke-width="2">
+                            <polygon points="13,2 3,14 12,14 11,22 21,10 12,10 13,2"></polygon>
+                        </svg>
+                    </div>
+                    <span class="logo-text">Electric Home Hub</span>
+                </a>
+                
+                <nav class="nav desktop-nav">
+                    <a href="api.html" class="nav-link">Developer API</a>
+                    <a href="tracking.html" class="nav-link">Device Tracking</a>
+                    <a href="documentation.html" class="nav-link">Documentation</a>
+                    <a href="monitoring.html" class="nav-link featured">Issue Monitoring</a>
+                    <a href="export.html" class="nav-link">Data Export</a>
+                    <a href="faq.html" class="nav-link">FAQ</a>
+                </nav>
+                
+                <button class="mobile-menu-toggle" id="mobileMenuToggle">
+                    <span></span>
+                    <span></span>
+                    <span></span>
+                </button>
+            </div>
+        </div>
+        
+        <nav class="mobile-nav" id="mobileNav">
+            <a href="api.html" class="nav-link">Developer API</a>
+            <a href="tracking.html" class="nav-link">Device Tracking</a>
+            <a href="documentation.html" class="nav-link">Documentation</a>
+            <a href="monitoring.html" class="nav-link featured">Issue Monitoring</a>
+            <a href="export.html" class="nav-link">Data Export</a>
+            <a href="faq.html" class="nav-link">FAQ</a>
+        </nav>
+    </header>
+
+    <main>
+        <section class="page-hero">
+            <div class="container">
+                <h1>Issue Monitoring</h1>
+                <p>Proactive alerts for device recalls, firmware updates, and emerging issues</p>
+            </div>
+        </section>
+
+        <section class="content-section">
+            <div class="container">
+                <!-- Alert Summary -->
+                <div class="alert-summary">
+                    <div class="summary-card critical">
+                        <div class="summary-icon">⚠️</div>
+                        <div class="summary-info">
+                            <span class="summary-number">1</span>
+                            <span class="summary-label">Critical Alert</span>
+                        </div>
+                    </div>
+                    <div class="summary-card warning">
+                        <div class="summary-icon">⚡</div>
+                        <div class="summary-info">
+                            <span class="summary-number">2</span>
+                            <span class="summary-label">Warnings</span>
+                        </div>
+                    </div>
+                    <div class="summary-card info">
+                        <div class="summary-icon">ℹ️</div>
+                        <div class="summary-info">
+                            <span class="summary-number">3</span>
+                            <span class="summary-label">Updates Available</span>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Alerts List -->
+                <div class="alerts-section">
+                    <div class="section-header">
+                        <h2>Recent Alerts</h2>
+                        <button class="btn-secondary" id="markAllRead">Mark All as Read</button>
+                    </div>
+
+                    <div class="alerts-list" id="alertsList">
+                        <!-- Critical Alert -->
+                        <div class="alert-card critical unread" data-severity="critical">
+                            <div class="alert-indicator"></div>
+                            <div class="alert-content">
+                                <div class="alert-header">
+                                    <h3>Safety Recall Notice</h3>
+                                    <span class="alert-time">2 hours ago</span>
+                                </div>
+                                <p class="alert-device">Samsung RF28R7351SR - Smart Refrigerator</p>
+                                <p class="alert-description">
+                                    URGENT: Refrigerator recall due to potential fire hazard in ice maker component. 
+                                    Contact Samsung immediately for repair service.
+                                </p>
+                                <div class="alert-actions">
+                                    <button class="btn-primary">View Details</button>
+                                    <button class="btn-secondary mark-read">Mark as Read</button>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Warning Alert -->
+                        <div class="alert-card warning unread" data-severity="warning">
+                            <div class="alert-indicator"></div>
+                            <div class="alert-content">
+                                <div class="alert-header">
+                                    <h3>Warranty Expiring Soon</h3>
+                                    <span class="alert-time">1 day ago</span>
+                                </div>
+                                <p class="alert-device">Google T3007ES - Nest Thermostat</p>
+                                <p class="alert-description">
+                                    Your device warranty expires in 30 days. Consider purchasing extended coverage 
+                                    or scheduling a maintenance check.
+                                </p>
+                                <div class="alert-actions">
+                                    <button class="btn-primary">Extend Warranty</button>
+                                    <button class="btn-secondary mark-read">Mark as Read</button>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Info Alert -->
+                        <div class="alert-card info unread" data-severity="info">
+                            <div class="alert-indicator"></div>
+                            <div class="alert-content">
+                                <div class="alert-header">
+                                    <h3>Firmware Update Available</h3>
+                                    <span class="alert-time">2 days ago</span>
+                                </div>
+                                <p class="alert-device">Ring 8VD1S7-0EN0 - Video Doorbell Pro</p>
+                                <p class="alert-description">
+                                    New firmware version 3.4.2 available with improved motion detection 
+                                    and enhanced security features.
+                                </p>
+                                <div class="alert-actions">
+                                    <button class="btn-primary">Update Now</button>
+                                    <button class="btn-secondary mark-read">Mark as Read</button>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Warning Alert -->
+                        <div class="alert-card warning read" data-severity="warning">
+                            <div class="alert-indicator"></div>
+                            <div class="alert-content">
+                                <div class="alert-header">
+                                    <h3>Warranty Expired</h3>
+                                    <span class="alert-time">1 week ago</span>
+                                </div>
+                                <p class="alert-device">Samsung WF45K6500AV - Front Load Washer</p>
+                                <p class="alert-description">
+                                    Your device warranty has expired. Consider service plan options 
+                                    for continued coverage and support.
+                                </p>
+                                <div class="alert-actions">
+                                    <button class="btn-secondary">View Service Plans</button>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Info Alert -->
+                        <div class="alert-card info read" data-severity="info">
+                            <div class="alert-indicator"></div>
+                            <div class="alert-content">
+                                <div class="alert-header">
+                                    <h3>Energy Efficiency Report</h3>
+                                    <span class="alert-time">2 weeks ago</span>
+                                </div>
+                                <p class="alert-device">Philips BSB002 - Hue Bridge</p>
+                                <p class="alert-description">
+                                    Monthly energy report shows 15% reduction in lighting consumption 
+                                    through smart scheduling optimization.
+                                </p>
+                                <div class="alert-actions">
+                                    <button class="btn-secondary">View Report</button>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Info Alert -->
+                        <div class="alert-card info read" data-severity="info">
+                            <div class="alert-indicator"></div>
+                            <div class="alert-content">
+                                <div class="alert-header">
+                                    <h3>App Update Available</h3>
+                                    <span class="alert-time">3 weeks ago</span>
+                                </div>
+                                <p class="alert-device">iRobot i755020 - Roomba i7+</p>
+                                <p class="alert-description">
+                                    iRobot app version 6.2.1 includes new cleaning patterns and 
+                                    improved room mapping capabilities.
+                                </p>
+                                <div class="alert-actions">
+                                    <button class="btn-secondary">Download Update</button>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Monitoring Settings -->
+                <div class="monitoring-settings">
+                    <h2>Monitoring Preferences</h2>
+                    <div class="settings-grid">
+                        <div class="setting-item">
+                            <div class="setting-info">
+                                <h3>Recall Notifications</h3>
+                                <p>Get immediately notified of safety recalls</p>
+                            </div>
+                            <label class="toggle-switch">
+                                <input type="checkbox" checked>
+                                <span class="toggle-slider"></span>
+                            </label>
+                        </div>
+
+                        <div class="setting-item">
+                            <div class="setting-info">
+                                <h3>Firmware Updates</h3>
+                                <p>Alerts for available firmware updates</p>
+                            </div>
+                            <label class="toggle-switch">
+                                <input type="checkbox" checked>
+                                <span class="toggle-slider"></span>
+                            </label>
+                        </div>
+
+                        <div class="setting-item">
+                            <div class="setting-info">
+                                <h3>Warranty Reminders</h3>
+                                <p>30-day warning before warranty expiration</p>
+                            </div>
+                            <label class="toggle-switch">
+                                <input type="checkbox" checked>
+                                <span class="toggle-slider"></span>
+                            </label>
+                        </div>
+
+                        <div class="setting-item">
+                            <div class="setting-info">
+                                <h3>Performance Reports</h3>
+                                <p>Monthly device performance and efficiency reports</p>
+                            </div>
+                            <label class="toggle-switch">
+                                <input type="checkbox">
+                                <span class="toggle-slider"></span>
+                            </label>
+                        </div>
+
+                        <div class="setting-item">
+                            <div class="setting-info">
+                                <h3>Email Notifications</h3>
+                                <p>Send alert summaries to your email</p>
+                            </div>
+                            <label class="toggle-switch">
+                                <input type="checkbox" checked>
+                                <span class="toggle-slider"></span>
+                            </label>
+                        </div>
+
+                        <div class="setting-item">
+                            <div class="setting-info">
+                                <h3>SMS Alerts</h3>
+                                <p>Critical alerts via text message</p>
+                            </div>
+                            <label class="toggle-switch">
+                                <input type="checkbox">
+                                <span class="toggle-slider"></span>
+                            </label>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <footer class="footer">
+        <div class="container">
+            <p>&copy; 2025 Electric Home Hub. Empowering smart device management.</p>
+        </div>
+    </footer>
+
+    <script src="js/main.js"></script>
+    <script src="js/monitoring.js"></script>
+</body>
+</html>
