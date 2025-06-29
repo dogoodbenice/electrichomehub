@@ -1,473 +1,370 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8" />
-  <link rel="icon" type="image/svg+xml" href="/electrichomehub/favicon.svg" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Developer API - Electric Home Hub</title>
-  <meta name="description" content="Access developer APIs and integration tools for Electric Home Hub smart device management platform." />
-  <style>
-    * { margin: 0; padding: 0; box-sizing: border-box; }
-    body { 
-      font-family: system-ui, -apple-system, sans-serif; 
-      background: black; 
-      color: white; 
-      line-height: 1.6; 
-    }
-    .container { max-width: 1200px; margin: 0 auto; padding: 2rem 1rem; }
-    .header {
-      display: flex;
-      justify-content: space-between;
-      align-items: center;
-      padding: 1rem 2rem;
-      border-bottom: 1px solid #333;
-      background: black;
-    }
-    .logo {
-      display: flex;
-      align-items: center;
-      gap: 0.5rem;
-      font-size: 1.5rem;
-      font-weight: bold;
-      color: #ff3333;
-      text-decoration: none;
-    }
-    .nav {
-      display: flex;
-      gap: 2rem;
-      list-style: none;
-    }
-    .nav a {
-      color: white;
-      text-decoration: none;
-      padding: 0.5rem 1rem;
-      border-radius: 0.25rem;
-      transition: all 0.2s;
-    }
-    .nav a:hover { background: #333; }
-    .nav a.featured {
-      color: #ff3333;
-      border: 1px solid #ff3333;
-      font-weight: 600;
-    }
-    .main-card {
-      background: #111;
-      border: 1px solid #333;
-      border-radius: 0.5rem;
-      padding: 2rem;
-      margin-bottom: 2rem;
-    }
-    .section-header {
-      display: flex;
-      justify-content: space-between;
-      align-items: center;
-      margin-bottom: 2rem;
-    }
-    .btn {
-      background: #ff3333;
-      color: white;
-      border: none;
-      padding: 0.75rem 1.5rem;
-      border-radius: 0.25rem;
-      font-weight: 600;
-      cursor: pointer;
-      transition: all 0.2s;
-      text-decoration: none;
-      display: inline-flex;
-      align-items: center;
-      gap: 0.5rem;
-      margin: 0.25rem;
-    }
-    .btn:hover { background: #cc2222; }
-    .btn-outline {
-      background: transparent;
-      border: 1px solid #ff3333;
-      color: #ff3333;
-    }
-    .btn-outline:hover {
-      background: #ff3333;
-      color: white;
-    }
-    .grid {
-      display: grid;
-      grid-template-columns: 1fr 1fr;
-      gap: 2rem;
-      margin-bottom: 2rem;
-    }
-    .code-block {
-      background: #000;
-      border: 1px solid #333;
-      border-radius: 0.5rem;
-      padding: 1.5rem;
-      font-family: 'Courier New', monospace;
-      font-size: 0.875rem;
-      overflow-x: auto;
-      white-space: pre-wrap;
-    }
-    .api-endpoint {
-      background: #111;
-      border: 1px solid #333;
-      border-radius: 0.25rem;
-      padding: 1rem;
-      margin-bottom: 0.75rem;
-    }
-    .method-badge {
-      padding: 0.25rem 0.75rem;
-      border-radius: 0.25rem;
-      font-size: 0.75rem;
-      font-weight: 600;
-      margin-right: 1rem;
-    }
-    .method-get { background: #16a34a; color: white; }
-    .method-post { background: #2563eb; color: white; }
-    .method-patch { background: #f59e0b; color: black; }
-    .method-delete { background: #dc2626; color: white; }
-    .endpoint-path {
-      font-family: 'Courier New', monospace;
-      color: #ff3333;
-      font-weight: 600;
-    }
-    .workflow-demo {
-      background: linear-gradient(45deg, #000, #111);
-      border: 1px solid #ff3333;
-      border-radius: 0.5rem;
-      padding: 2rem;
-      text-align: center;
-      position: relative;
-      overflow: hidden;
-    }
-    .workflow-demo::before {
-      content: '';
-      position: absolute;
-      top: 0;
-      left: 0;
-      right: 0;
-      bottom: 0;
-      background: 
-        radial-gradient(circle at 20px 20px, rgba(255,255,255,0.05) 1px, transparent 1px);
-      background-size: 40px 40px;
-    }
-    .workflow-icons {
-      display: flex;
-      justify-content: center;
-      align-items: center;
-      gap: 2rem;
-      margin: 2rem 0;
-      position: relative;
-      z-index: 1;
-    }
-    .workflow-icon {
-      width: 3rem;
-      height: 3rem;
-      background: #ff3333;
-      border-radius: 50%;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      font-size: 1.5rem;
-      animation: pulse 2s infinite;
-    }
-    .workflow-icon:nth-child(2) { animation-delay: 0.5s; }
-    .workflow-icon:nth-child(3) { animation-delay: 1s; }
-    @keyframes pulse {
-      0%, 100% { opacity: 1; transform: scale(1); }
-      50% { opacity: 0.7; transform: scale(1.1); }
-    }
-    .features-grid {
-      display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-      gap: 1.5rem;
-      margin: 2rem 0;
-    }
-    .feature-card {
-      background: #111;
-      border: 1px solid #333;
-      border-radius: 0.5rem;
-      padding: 1.5rem;
-    }
-    .api-key-card {
-      background: #111;
-      border: 1px solid #333;
-      border-radius: 0.5rem;
-      padding: 1.5rem;
-      margin-bottom: 1rem;
-      display: flex;
-      justify-content: space-between;
-      align-items: center;
-    }
-    .key-info {
-      display: flex;
-      flex-direction: column;
-      gap: 0.5rem;
-    }
-    .key-value {
-      font-family: 'Courier New', monospace;
-      background: #222;
-      padding: 0.5rem;
-      border-radius: 0.25rem;
-      font-size: 0.875rem;
-    }
-    .status-badge {
-      padding: 0.25rem 0.75rem;
-      border-radius: 9999px;
-      font-size: 0.75rem;
-      font-weight: 600;
-      background: #16a34a;
-      color: white;
-    }
-    h1 { font-size: 2rem; margin-bottom: 1rem; color: #ff3333; }
-    h2 { font-size: 1.5rem; margin: 2rem 0 1rem 0; }
-    h3 { font-size: 1.25rem; margin-bottom: 1rem; }
-    .cta-section {
-      text-align: center;
-      border-top: 1px solid #333;
-      padding-top: 2rem;
-      margin-top: 2rem;
-    }
-    .feature-list {
-      display: flex;
-      justify-content: center;
-      gap: 2rem;
-      margin: 1.5rem 0;
-      flex-wrap: wrap;
-    }
-    .feature-item {
-      display: flex;
-      align-items: center;
-      gap: 0.5rem;
-      color: #999;
-      font-size: 0.875rem;
-    }
-    .feature-dot {
-      width: 0.5rem;
-      height: 0.5rem;
-      border-radius: 50%;
-    }
-    .dot-green { background: #16a34a; }
-    .dot-blue { background: #2563eb; }
-    .dot-red { background: #ff3333; }
-    @media (max-width: 768px) {
-      .nav { display: none; }
-      .grid { grid-template-columns: 1fr; }
-      .container { padding: 1rem; }
-      .section-header { flex-direction: column; gap: 1rem; align-items: flex-start; }
-      .workflow-icons { gap: 1rem; }
-      .feature-list { flex-direction: column; gap: 1rem; }
-    }
-  </style>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Developer API - Electric Home Hub</title>
+    <meta name="description" content="Build custom Electric Home Hub solutions with our comprehensive developer API. White-label platform with full documentation and SDK support.">
+    <link rel="stylesheet" href="styles.css">
 </head>
 <body>
-  <header class="header">
-    <a href="/electrichomehub/" class="logo">
-      ⚡ Electric Home Hub
-    </a>
-    <nav>
-      <ul class="nav">
-        <li><a href="/electrichomehub/developer.html" class="featured">Developer API</a></li>
-        <li><a href="/electrichomehub/tracking.html">Device Tracking</a></li>
-        <li><a href="/electrichomehub/documentation.html">Documentation</a></li>
-        <li><a href="/electrichomehub/monitoring.html">Issue Monitoring</a></li>
-        <li><a href="/electrichomehub/data-export.html">Data Export</a></li>
-        <li><a href="/electrichomehub/faq.html">FAQ</a></li>
-      </ul>
-    </nav>
-  </header>
-
-  <div class="container">
-    <div class="main-card">
-      <div class="section-header">
-        <h1>Developer API & Integration</h1>
-        <div>
-          <button class="btn">🔑 Get API Key</button>
-          <button class="btn btn-outline">📥 Download SDK</button>
-        </div>
-      </div>
-      
-      <div class="grid">
-        <div>
-          <h3>🚀 Quick Start Guide</h3>
-          
-          <div class="workflow-demo">
-            <div class="workflow-icons">
-              <div class="workflow-icon">💻</div>
-              <div class="workflow-icon">⚡</div>
-              <div class="workflow-icon">🌐</div>
+    <!-- Header -->
+    <header class="header">
+        <div class="container">
+            <div class="header-content">
+                <a href="index.html" class="logo">
+                    <div class="logo-icon">
+                        <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="white" stroke-width="2">
+                            <polygon points="13,2 3,14 12,14 11,22 21,10 12,10 13,2"></polygon>
+                        </svg>
+                    </div>
+                    <span class="logo-text">Electric Home Hub</span>
+                </a>
+                
+                <nav class="nav desktop-nav">
+                    <a href="developer.html" class="nav-link featured">Developer API</a>
+                    <a href="tracking.html" class="nav-link">Device Tracking</a>
+                    <a href="documentation.html" class="nav-link">Documentation</a>
+                    <a href="monitoring.html" class="nav-link">Issue Monitoring</a>
+                    <a href="data-export.html" class="nav-link">Data Export</a>
+                    <a href="faq.html" class="nav-link">FAQ</a>
+                </nav>
+                
+                <button class="mobile-menu-toggle" id="mobileMenuToggle">
+                    <span></span>
+                    <span></span>
+                    <span></span>
+                </button>
             </div>
-            <p style="color: #ff3333; font-weight: 600;">API Integration Workflow</p>
-          </div>
-          
-          <div class="code-block">// Initialize Electric Home Hub API
-const ehh = new ElectricHomeHub({
-  apiKey: 'your-api-key',
-  environment: 'production'
-});
+        </div>
+        
+        <nav class="mobile-nav" id="mobileNav">
+            <a href="developer.html" class="nav-link featured">Developer API</a>
+            <a href="tracking.html" class="nav-link">Device Tracking</a>
+            <a href="documentation.html" class="nav-link">Documentation</a>
+            <a href="monitoring.html" class="nav-link">Issue Monitoring</a>
+            <a href="data-export.html" class="nav-link">Data Export</a>
+            <a href="faq.html" class="nav-link">FAQ</a>
+        </nav>
+    </header>
 
-// Get all devices with response example
-const response = await ehh.getDevices();
+    <main>
+        <!-- Hero Section -->
+        <section class="developer-hero">
+            <div class="container">
+                <div class="hero-content">
+                    <h1>Developer API</h1>
+                    <p>Build custom Electric Home Hub solutions with our comprehensive API platform</p>
+                    <div class="hero-buttons">
+                        <button class="btn btn-primary" onclick="scrollToSection('quick-start')">
+                            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                <circle cx="12" cy="12" r="10"/>
+                                <polygon points="10,8 16,12 10,16 10,8"/>
+                            </svg>
+                            Get Started
+                        </button>
+                        <button class="btn btn-outline" onclick="createApiKey()">
+                            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                <path d="m15 18-.722-3.25"/>
+                                <path d="M2 8h20l-2 9H4z"/>
+                                <circle cx="7" cy="13" r="1"/>
+                            </svg>
+                            Get API Key
+                        </button>
+                    </div>
+                </div>
+            </div>
+        </section>
 
-console.log(response);
-// Output:
-{
+        <!-- API Endpoints -->
+        <section class="api-endpoints" id="quick-start">
+            <div class="container">
+                <h2>API Endpoints</h2>
+                <p class="section-subtitle">RESTful API endpoints for complete Electric Home Hub integration</p>
+                
+                <div class="endpoint-grid">
+                    <div class="endpoint-card">
+                        <div class="endpoint-header">
+                            <span class="method method-get">GET</span>
+                            <span class="endpoint-path">/api/devices</span>
+                        </div>
+                        <p>Retrieve all registered devices with warranty and status information</p>
+                        <div class="code-block">
+                            <pre><code>{
   "devices": [
     {
-      "id": 1,
-      "name": "Smart Fridge",
-      "model": "RF28R7351",
+      "id": "device_123",
+      "name": "Smart Refrigerator",
       "manufacturer": "Samsung",
-      "category": "Appliance",
-      "status": "online",
-      "lastSeen": "2025-06-27T19:22:00Z",
-      "warrantyExpiry": "2026-12-15",
+      "model": "RF28R7351SR",
+      "warrantyStatus": "active",
       "location": "Kitchen"
-    },
-    {
-      "id": 2,
-      "name": "Smart Thermostat",
-      "model": "Nest Learning",
-      "manufacturer": "Google",
-      "category": "HVAC",
-      "status": "online",
-      "lastSeen": "2025-06-27T19:21:45Z",
-      "warrantyExpiry": "2027-03-10",
-      "location": "Living Room"
     }
-  ],
-  "total": 2,
-  "page": 1,
-  "limit": 10
-}</div>
-        </div>
-        
-        <div>
-          <h3>💻 Popular Endpoints</h3>
-          <div>
-            <div class="api-endpoint">
-              <div style="display: flex; align-items: center; margin-bottom: 0.5rem;">
-                <span class="method-badge method-get">GET</span>
-                <span class="endpoint-path">/api/v1/devices</span>
-              </div>
-              <p style="color: #999; font-size: 0.875rem;">Retrieve all registered devices</p>
-            </div>
-            
-            <div class="api-endpoint">
-              <div style="display: flex; align-items: center; margin-bottom: 0.5rem;">
-                <span class="method-badge method-post">POST</span>
-                <span class="endpoint-path">/api/v1/devices</span>
-              </div>
-              <p style="color: #999; font-size: 0.875rem;">Register a new device</p>
-            </div>
-            
-            <div class="api-endpoint">
-              <div style="display: flex; align-items: center; margin-bottom: 0.5rem;">
-                <span class="method-badge method-get">GET</span>
-                <span class="endpoint-path">/api/v1/alerts</span>
-              </div>
-              <p style="color: #999; font-size: 0.875rem;">Get proactive monitoring alerts</p>
-            </div>
-          </div>
-        </div>
-      </div>
-      
-      <div style="border-top: 1px solid #333; padding-top: 1.5rem;">
-        <h3 style="color: #ff3333;">White Label Solutions</h3>
-        <div class="features-grid">
-          <div class="feature-card">
-            <h4 style="margin-bottom: 0.5rem;">Custom Branding</h4>
-            <p style="color: #999; font-size: 0.875rem;">
-              Full UI customization with your brand colors, logos, and domain
-            </p>
-          </div>
-          
-          <div class="feature-card">
-            <h4 style="margin-bottom: 0.5rem;">API Integration</h4>
-            <p style="color: #999; font-size: 0.875rem;">
-              Seamless integration with existing customer portals and systems
-            </p>
-          </div>
-          
-          <div class="feature-card">
-            <h4 style="margin-bottom: 0.5rem;">Enterprise Support</h4>
-            <p style="color: #999; font-size: 0.875rem;">
-              Dedicated technical support and custom feature development
-            </p>
-          </div>
-        </div>
-      </div>
+  ]
+}</code></pre>
+                        </div>
+                    </div>
 
-      <div style="border-top: 1px solid #333; padding-top: 2rem; margin-top: 2rem;">
-        <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 1.5rem;">
-          <h3>Your API Keys</h3>
-          <button class="btn">➕ Generate New Key</button>
-        </div>
-        
-        <div class="api-key-card">
-          <div class="key-info">
-            <div style="display: flex; align-items: center; gap: 0.5rem; margin-bottom: 0.5rem;">
-              <span>🔑</span>
-              <span style="font-weight: 600;">Production API Key</span>
-            </div>
-            <div style="display: flex; gap: 1rem; align-items: center; font-size: 0.875rem; color: #999;">
-              <span class="key-value">ehh_prod_a1b2c3d4e5f6...</span>
-              <span>⏱️ Last used: Dec 28, 2024</span>
-            </div>
-          </div>
-          <div style="display: flex; align-items: center; gap: 0.5rem;">
-            <span class="status-badge">Active</span>
-            <button class="btn btn-outline" style="padding: 0.5rem 1rem;">Revoke</button>
-          </div>
-        </div>
+                    <div class="endpoint-card">
+                        <div class="endpoint-header">
+                            <span class="method method-post">POST</span>
+                            <span class="endpoint-path">/api/devices</span>
+                        </div>
+                        <p>Register a new device in the Electric Home Hub platform</p>
+                        <div class="code-block">
+                            <pre><code>{
+  "name": "Smart Thermostat",
+  "manufacturer": "Nest",
+  "model": "T3007ES",
+  "serialNumber": "ABC123456",
+  "location": "Living Room",
+  "warrantyExpiry": "2025-12-31"
+}</code></pre>
+                        </div>
+                    </div>
 
-        <div class="api-key-card">
-          <div class="key-info">
-            <div style="display: flex; align-items: center; gap: 0.5rem; margin-bottom: 0.5rem;">
-              <span>🔑</span>
-              <span style="font-weight: 600;">Development API Key</span>
-            </div>
-            <div style="display: flex; gap: 1rem; align-items: center; font-size: 0.875rem; color: #999;">
-              <span class="key-value">ehh_dev_f6e5d4c3b2a1...</span>
-              <span>⏱️ Last used: Dec 29, 2024</span>
-            </div>
-          </div>
-          <div style="display: flex; align-items: center; gap: 0.5rem;">
-            <span class="status-badge">Active</span>
-            <button class="btn btn-outline" style="padding: 0.5rem 1rem;">Revoke</button>
-          </div>
-        </div>
-      </div>
+                    <div class="endpoint-card">
+                        <div class="endpoint-header">
+                            <span class="method method-get">GET</span>
+                            <span class="endpoint-path">/api/alerts</span>
+                        </div>
+                        <p>Fetch active monitoring alerts and notifications</p>
+                        <div class="code-block">
+                            <pre><code>{
+  "alerts": [
+    {
+      "id": "alert_456",
+      "type": "warranty_expiring",
+      "severity": "medium",
+      "deviceId": "device_123",
+      "message": "Warranty expires in 30 days"
+    }
+  ]
+}</code></pre>
+                        </div>
+                    </div>
 
-      <div class="cta-section">
-        <h3 style="font-size: 2rem; margin-bottom: 1rem;">Ready to Build Your Electric Home Hub?</h3>
-        <p style="color: #999; margin-bottom: 1.5rem; max-width: 600px; margin-left: auto; margin-right: auto;">
-          Join thousands of developers already building smart home solutions with our powerful API. 
-          Get started in minutes with comprehensive documentation and dedicated support.
-        </p>
-        
-        <div style="display: flex; flex-wrap: wrap; gap: 1rem; justify-content: center; margin-bottom: 1.5rem;">
-          <button class="btn" style="padding: 1rem 2rem;">
-            🔑 Get Your Free API Key →
-          </button>
-          
-          <button class="btn btn-outline" style="padding: 1rem 2rem;">
-            💻 View Full Documentation
-          </button>
+                    <div class="endpoint-card">
+                        <div class="endpoint-header">
+                            <span class="method method-post">POST</span>
+                            <span class="endpoint-path">/api/documents</span>
+                        </div>
+                        <p>Upload device documentation and manuals</p>
+                        <div class="code-block">
+                            <pre><code>{
+  "deviceId": "device_123",
+  "type": "manual",
+  "category": "user_guide",
+  "file": "base64_encoded_content",
+  "filename": "manual.pdf"
+}</code></pre>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- SDK Download -->
+        <section class="sdk-section">
+            <div class="container">
+                <div class="sdk-content">
+                    <div class="sdk-text">
+                        <h2>Official SDKs</h2>
+                        <p>Get started quickly with our official software development kits for popular programming languages</p>
+                        <div class="sdk-features">
+                            <div class="feature-item">
+                                <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#ff3333" stroke-width="2">
+                                    <polyline points="20 6 9 17 4 12"/>
+                                </svg>
+                                <span>Type-safe API client</span>
+                            </div>
+                            <div class="feature-item">
+                                <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#ff3333" stroke-width="2">
+                                    <polyline points="20 6 9 17 4 12"/>
+                                </svg>
+                                <span>Built-in error handling</span>
+                            </div>
+                            <div class="feature-item">
+                                <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#ff3333" stroke-width="2">
+                                    <polyline points="20 6 9 17 4 12"/>
+                                </svg>
+                                <span>Comprehensive documentation</span>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="sdk-downloads">
+                        <div class="sdk-card">
+                            <div class="sdk-icon">
+                                <svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="#ff3333" stroke-width="2">
+                                    <polyline points="16 18 22 12 16 6"/>
+                                    <polyline points="8 6 2 12 8 18"/>
+                                </svg>
+                            </div>
+                            <h3>JavaScript SDK</h3>
+                            <p>npm install @electric-home/sdk</p>
+                            <button class="btn btn-outline" onclick="downloadSdk('javascript')">Download</button>
+                        </div>
+                        
+                        <div class="sdk-card">
+                            <div class="sdk-icon">
+                                <svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="#ff3333" stroke-width="2">
+                                    <path d="M12 2v20M17 5H9.5a3.5 3.5 0 0 0 0 7h5a3.5 3.5 0 0 1 0 7H6"/>
+                                </svg>
+                            </div>
+                            <h3>Python SDK</h3>
+                            <p>pip install electric-home-sdk</p>
+                            <button class="btn btn-outline" onclick="downloadSdk('python')">Download</button>
+                        </div>
+                        
+                        <div class="sdk-card">
+                            <div class="sdk-icon">
+                                <svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="#ff3333" stroke-width="2">
+                                    <polygon points="12 2 22 8.5 22 15.5 12 22 2 15.5 2 8.5 12 2"/>
+                                    <line x1="12" y1="22" x2="12" y2="15.5"/>
+                                    <polyline points="7 4.21 12 6.81 17 4.21"/>
+                                    <polyline points="7 19.79 7 14.6 2 12"/>
+                                    <polyline points="17 19.79 17 14.6 22 12"/>
+                                </svg>
+                            </div>
+                            <h3>Go SDK</h3>
+                            <p>go get github.com/electric-home/sdk</p>
+                            <button class="btn btn-outline" onclick="downloadSdk('go')">Download</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- API Keys Management -->
+        <section class="api-keys">
+            <div class="container">
+                <div class="section-header">
+                    <h2>Your API Keys</h2>
+                    <button class="btn btn-primary" onclick="generateNewKey()">
+                        <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                            <line x1="12" y1="5" x2="12" y2="19"/>
+                            <line x1="5" y1="12" x2="19" y2="12"/>
+                        </svg>
+                        Generate New Key
+                    </button>
+                </div>
+                
+                <div class="api-keys-list" id="apiKeysList">
+                    <div class="api-key-card">
+                        <div class="key-info">
+                            <h4>Production Key</h4>
+                            <p class="key-value">ehub_pk_1234567890abcdef•••••••••••••••••</p>
+                            <span class="key-created">Created: Dec 15, 2024</span>
+                        </div>
+                        <div class="key-actions">
+                            <button class="btn-icon" onclick="copyApiKey('ehub_pk_1234567890abcdef')" title="Copy">
+                                <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                    <rect x="9" y="9" width="13" height="13" rx="2" ry="2"/>
+                                    <path d="M5 15H4a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2h9a2 2 0 0 1 2 2v1"/>
+                                </svg>
+                            </button>
+                            <button class="btn-icon danger" onclick="deleteApiKey('prod-key')" title="Delete">
+                                <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                    <polyline points="3,6 5,6 21,6"/>
+                                    <path d="M19 6v14a2 2 0 0 1-2 2H7a2 2 0 0 1-2-2V6m3 0V4a2 2 0 0 1 2-2h4a2 2 0 0 1 2 2v2"/>
+                                </svg>
+                            </button>
+                        </div>
+                    </div>
+                    
+                    <div class="api-key-card">
+                        <div class="key-info">
+                            <h4>Development Key</h4>
+                            <p class="key-value">ehub_sk_0987654321fedcba•••••••••••••••••</p>
+                            <span class="key-created">Created: Dec 10, 2024</span>
+                        </div>
+                        <div class="key-actions">
+                            <button class="btn-icon" onclick="copyApiKey('ehub_sk_0987654321fedcba')" title="Copy">
+                                <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                    <rect x="9" y="9" width="13" height="13" rx="2" ry="2"/>
+                                    <path d="M5 15H4a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2h9a2 2 0 0 1 2 2v1"/>
+                                </svg>
+                            </button>
+                            <button class="btn-icon danger" onclick="deleteApiKey('dev-key')" title="Delete">
+                                <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                    <polyline points="3,6 5,6 21,6"/>
+                                    <path d="M19 6v14a2 2 0 0 1-2 2H7a2 2 0 0 1-2-2V6m3 0V4a2 2 0 0 1 2-2h4a2 2 0 0 1 2 2v2"/>
+                                </svg>
+                            </button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Call to Action -->
+        <section class="cta-section">
+            <div class="container">
+                <div class="cta-content">
+                    <h2>Ready to Build Your Electric Home Hub?</h2>
+                    <p>Join thousands of developers already building smart home solutions with our powerful API. Get started in minutes with comprehensive documentation and dedicated support.</p>
+                    
+                    <div class="cta-buttons">
+                        <button class="btn btn-primary" onclick="createApiKey()">
+                            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                <path d="m15 18-.722-3.25"/>
+                                <path d="M2 8h20l-2 9H4z"/>
+                                <circle cx="7" cy="13" r="1"/>
+                            </svg>
+                            Get Your Free API Key
+                            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                <line x1="5" y1="12" x2="19" y2="12"/>
+                                <polyline points="12,5 19,12 12,19"/>
+                            </svg>
+                        </button>
+                        
+                        <button class="btn btn-outline" onclick="viewDocumentation()">
+                            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                <polyline points="16 18 22 12 16 6"/>
+                                <polyline points="8 6 2 12 8 18"/>
+                            </svg>
+                            View Full Documentation
+                        </button>
+                    </div>
+                    
+                    <div class="cta-features">
+                        <div class="feature-item">
+                            <div class="feature-dot green"></div>
+                            <span>Free tier available</span>
+                        </div>
+                        <div class="feature-item">
+                            <div class="feature-dot blue"></div>
+                            <span>No credit card required</span>
+                        </div>
+                        <div class="feature-item">
+                            <div class="feature-dot red"></div>
+                            <span>24/7 developer support</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-logo">
+                    <div class="logo-icon">
+                        <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="white" stroke-width="2">
+                            <polygon points="13,2 3,14 12,14 11,22 21,10 12,10 13,2"></polygon>
+                        </svg>
+                    </div>
+                    <span>Electric Home Hub</span>
+                </div>
+                <p>&copy; 2025 Electric Home Hub. All rights reserved.</p>
+            </div>
         </div>
-        
-        <div class="feature-list">
-          <div class="feature-item">
-            <div class="feature-dot dot-green"></div>
-            <span>Free tier available</span>
-          </div>
-          <div class="feature-item">
-            <div class="feature-dot dot-blue"></div>
-            <span>No credit card required</span>
-          </div>
-          <div class="feature-item">
-            <div class="feature-dot dot-red"></div>
-            <span>24/7 developer support</span>
-          </div>
-        </div>
-      </div>
-    </div>
-  </div>
+    </footer>
+
+    <script src="scripts.js"></script>
+    <script src="developer.js"></script>
 </body>
 </html>
