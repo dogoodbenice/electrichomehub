@@ -10,17 +10,29 @@
       const basePath = '/electrichomehub';
       
       // Handle different URL patterns
+      console.log('404 redirect - Current path:', currentPath);
+      
       if (currentPath.startsWith(basePath + '/') && currentPath !== basePath + '/') {
         // Correct subdirectory path - store the route
         const route = currentPath.replace(basePath, '');
+        console.log('Storing intended route:', route);
         sessionStorage.setItem('intended-route', route);
         window.location.replace(basePath + '/');
       } else if (currentPath !== basePath && currentPath !== basePath + '/') {
-        // Missing subdirectory - redirect to correct path
-        const correctPath = basePath + currentPath;
-        window.location.replace(correctPath);
+        // Handle root-level routes that need to be redirected to subdirectory
+        const knownRoutes = ['/tracking', '/monitoring', '/documentation', '/developer', '/data-export', '/faq', '/about'];
+        if (knownRoutes.includes(currentPath)) {
+          console.log('Redirecting known route to subdirectory:', currentPath);
+          sessionStorage.setItem('intended-route', currentPath);
+          window.location.replace(basePath + '/');
+        } else {
+          // Unknown route - redirect to main app
+          console.log('Unknown route, redirecting to main app');
+          window.location.replace(basePath + '/');
+        }
       } else {
         // Default redirect to main app
+        console.log('Default redirect to main app');
         window.location.replace(basePath + '/');
       }
     </script>
