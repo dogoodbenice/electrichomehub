@@ -72,6 +72,12 @@ The application uses four main database tables:
 5. **Demo Functionality**: All five core features fully demonstrated
 
 ## Recent Changes
+- June 29, 2025: Enhanced "Monitoring Preferences" and "Data Import" section styling
+  - Added comprehensive CSS styling for monitoring settings with card-based layout and responsive grid
+  - Created professional toggle switches with brand red accent colors and smooth animations
+  - Enhanced data import zone with dashed borders, hover effects, and visual feedback
+  - Improved template links section with consistent button styling and hover transforms
+  - Applied container styling and typography consistency across both sections
 - June 29, 2025: Added demo indicators to feature pages
   - Added "INTERACTIVE DEMO" badges to tracking (📱), documentation (📄), monitoring (⚠️), and export (📊) pages
   - Enhanced demo badge styling with improved spacing, shadows, and visual prominence
