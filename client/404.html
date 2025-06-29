@@ -1,34 +1,18 @@
 <!DOCTYPE html>
 <html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Electric Home Hub</title>
-    <script>
-      // GitHub Pages SPA redirect handler
-      const currentPath = window.location.pathname;
-      const basePath = '/electrichomehub';
-      
-      // Handle GitHub Pages subdirectory routing
-      console.log('404 redirect - Current path:', currentPath, 'Base path:', basePath);
-      
-      if (currentPath.startsWith(basePath + '/') && currentPath !== basePath + '/') {
-        // We're in the correct subdirectory but route doesn't exist - store and redirect to main app
-        const route = currentPath.replace(basePath, '');
-        console.log('Storing intended route for subdirectory:', route);
-        sessionStorage.setItem('intended-route', route);
-        window.location.replace(basePath + '/');
-      } else {
-        // Default redirect to main app
-        console.log('Redirecting to main app');
-        window.location.replace(basePath + '/');
-      }
-    </script>
-  </head>
-  <body>
-    <div style="font-family: Arial, sans-serif; text-align: center; margin-top: 100px; color: white; background: black; min-height: 100vh; padding: 20px;">
-      <h1>Electric Home Hub</h1>
-      <p>Loading application...</p>
-    </div>
-  </body>
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Page Not Found - Electric Home Hub</title>
+  <link rel="icon" type="image/svg+xml" href="/electrichomehub/favicon.svg" />
+  <script type="module" crossorigin src="/electrichomehub/assets/index.js"></script>
+  <link rel="stylesheet" crossorigin href="/electrichomehub/assets/index.css">
+</head>
+<body>
+  <div id="root"></div>
+  <script>
+    // Set the route to not-found for proper 404 handling
+    window.__INITIAL_ROUTE__ = '/not-found';
+  </script>
+</body>
 </html>

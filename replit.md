@@ -72,19 +72,18 @@ The application uses four main database tables:
 5. **Demo Functionality**: All five core features fully demonstrated
 
 ## Recent Changes
-- June 29, 2025: Fixed GitHub Pages navigation and enhanced demo presentation
-  - Resolved routing issues with proper base path handling for /electrichomehub/ subdirectory
-  - Fixed logo navigation to point to https://dogoodbenice.github.io/electrichomehub/ as home
-  - Updated all navigation links to use full URLs for GitHub Pages deployment
-  - Completely rewrote README.md to emphasize demo nature with detailed example highlights
-  - Added comprehensive demo data documentation (6 devices, 4 alerts, 5+ documents)
-  - Created clear "Demo vs Production" comparison section
-  - Added example data comments to all JSON API files for clear demonstration labeling
+- June 29, 2025: Implemented static HTML pages for GitHub Pages routing
+  - Created individual HTML files for each route (documentation.html, tracking.html, etc.)
+  - Each static page sets window.__INITIAL_ROUTE__ to specify the React route to load
+  - Updated React app to check for __INITIAL_ROUTE__ and navigate accordingly
+  - Simplified 404.html to handle true 404 cases only
+  - This approach eliminates complex redirects and provides reliable GitHub Pages routing
+  - URLs now work directly: /electrichomehub/documentation, /electrichomehub/tracking, etc.
+- Earlier: Fixed GitHub Pages navigation and enhanced demo presentation
+  - Added device warranty status diversity (3 active, 2 expiring soon, 2 expired)
   - Updated favicon to match header logo design (red background with white lightning bolt)
-  - Created comprehensive GitHub Pages routing solution with root-level redirect files
-  - Enhanced query client to properly handle new JSON structure with nested data objects
-  - Implemented dual-layer 404 handling (root + subdirectory) for complete route coverage
-  - Added route restoration logic in main index.html for seamless navigation
+  - Enhanced JSON API files with clear example data comments for demonstration
+  - Fixed logo navigation and updated all links for GitHub Pages deployment
 - Implemented comprehensive static hosting solution for GitHub Pages
 - Complete dual-mode architecture supporting both development and static deployment
 - Environment-aware query client serving appropriate data sources
