@@ -14,11 +14,11 @@ export default function DeviceTile({ device, onClick }: DeviceTileProps) {
   
   const getWarrantyBadgeVariant = (status: string) => {
     switch (status) {
-      case 'Active':
+      case 'active':
         return 'default';
-      case 'Expires Soon':
+      case 'expiring_soon':
         return 'secondary';
-      case 'Expired':
+      case 'expired':
         return 'destructive';
       default:
         return 'outline';
@@ -27,11 +27,11 @@ export default function DeviceTile({ device, onClick }: DeviceTileProps) {
 
   const getWarrantyBadgeClass = (status: string) => {
     switch (status) {
-      case 'Active':
+      case 'active':
         return 'bg-green-500 hover:bg-green-600';
-      case 'Expires Soon':
+      case 'expiring_soon':
         return 'bg-yellow-500 hover:bg-yellow-600';
-      case 'Expired':
+      case 'expired':
         return 'bg-red-500 hover:bg-red-600';
       default:
         return '';
@@ -52,8 +52,8 @@ export default function DeviceTile({ device, onClick }: DeviceTileProps) {
             variant={getWarrantyBadgeVariant(device.warrantyStatus)}
             className={`text-xs px-1.5 py-0.5 ${getWarrantyBadgeClass(device.warrantyStatus)}`}
           >
-            {device.warrantyStatus === 'Active' ? 'Active' : 
-             device.warrantyStatus === 'Expires Soon' ? 'Expires' : 
+            {device.warrantyStatus === 'active' ? 'Active' : 
+             device.warrantyStatus === 'expiring_soon' ? 'Expires' : 
              'Expired'}
           </Badge>
         </div>
