@@ -32,9 +32,7 @@ export default function Footer() {
             <h4 className="font-semibold mb-4">Support</h4>
             <ul className="space-y-2 text-sm text-muted-foreground">
               <li><Link href="/faq" className="hover:text-brand-red transition-colors">FAQ</Link></li>
-              <li><a href="#" className="hover:text-brand-red transition-colors">Documentation</a></li>
-              <li><a href="#" className="hover:text-brand-red transition-colors">Contact Support</a></li>
-              <li><a href="#" className="hover:text-brand-red transition-colors">Status Page</a></li>
+              <li><Link href="/documentation" className="hover:text-brand-red transition-colors">Documentation</Link></li>
             </ul>
           </div>
           
@@ -42,9 +40,6 @@ export default function Footer() {
             <h4 className="font-semibold mb-4">Company</h4>
             <ul className="space-y-2 text-sm text-muted-foreground">
               <li><Link href="/about" className="hover:text-brand-red transition-colors">About</Link></li>
-              <li><a href="#" className="hover:text-brand-red transition-colors">Privacy Policy</a></li>
-              <li><a href="#" className="hover:text-brand-red transition-colors">Terms of Service</a></li>
-              <li><a href="#" className="hover:text-brand-red transition-colors">Contact</a></li>
             </ul>
           </div>
         </div>
