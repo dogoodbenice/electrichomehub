@@ -58,8 +58,10 @@
         <!-- Hero Section -->
         <section class="hero">
             <div class="container">
-                <h1>Welcome to <span class="brand">Electric Home Hub</span></h1>
-                <p class="hero-subtitle">The smart platform empowering anyone to seamlessly manage all their electric hardware</p>
+                <div class="hero-content">
+                    <h1 class="hero-title">Welcome to Electric Home Hub</h1>
+                    <p class="hero-subtitle">The smart platform empowering anyone to seamlessly manage all their electric hardware</p>
+                </div>
                 
                 <div class="features-grid">
                     <div class="feature-card">
@@ -186,34 +188,78 @@
                 
                 <h2>Your future dashboard</h2>
                 
-                <div class="stats-grid">
-                    <div class="stat-card">
-                        <div class="stat-number">6</div>
-                        <div class="stat-label">Devices</div>
-                    </div>
-                    <div class="stat-card">
-                        <div class="stat-number">3</div>
-                        <div class="stat-label">Alerts</div>
-                    </div>
-                    <div class="stat-card large">
-                        <div class="stat-row">
-                            <div class="stat-item">
-                                <div class="stat-number">6</div>
-                                <div class="stat-label">Total Devices</div>
+                <div class="dashboard-grid">
+                    <div class="dashboard-card">
+                        <div class="dashboard-card-header">
+                            <div class="dashboard-icon">📱</div>
+                            <h3>Device Overview</h3>
+                        </div>
+                        <div class="dashboard-stats">
+                            <div class="dashboard-stat">
+                                <span class="stat-label">Total Devices</span>
+                                <span class="stat-value">6</span>
                             </div>
-                            <div class="stat-item">
-                                <div class="stat-number">2</div>
-                                <div class="stat-label">Active Warranties</div>
+                            <div class="dashboard-stat">
+                                <span class="stat-label">Online</span>
+                                <span class="stat-value">5 <span class="status-indicator good"></span></span>
+                            </div>
+                            <div class="dashboard-stat">
+                                <span class="stat-label">Offline</span>
+                                <span class="stat-value">1 <span class="status-indicator warning"></span></span>
+                            </div>
+                            <div class="dashboard-stat">
+                                <span class="stat-label">Active Warranties</span>
+                                <span class="stat-value">2</span>
                             </div>
                         </div>
-                        <div class="stat-row">
-                            <div class="stat-item">
-                                <div class="stat-number">4</div>
-                                <div class="stat-label">Documents</div>
+                    </div>
+                    
+                    <div class="dashboard-card">
+                        <div class="dashboard-card-header">
+                            <div class="dashboard-icon">⚠️</div>
+                            <h3>Alert Monitor</h3>
+                        </div>
+                        <div class="dashboard-stats">
+                            <div class="dashboard-stat">
+                                <span class="stat-label">Active Alerts</span>
+                                <span class="stat-value">3</span>
                             </div>
-                            <div class="stat-item">
-                                <div class="stat-number">3</div>
-                                <div class="stat-label">Active Alerts</div>
+                            <div class="dashboard-stat">
+                                <span class="stat-label">Critical</span>
+                                <span class="stat-value">0 <span class="status-indicator good"></span></span>
+                            </div>
+                            <div class="dashboard-stat">
+                                <span class="stat-label">Warnings</span>
+                                <span class="stat-value">2 <span class="status-indicator warning"></span></span>
+                            </div>
+                            <div class="dashboard-stat">
+                                <span class="stat-label">Firmware Updates</span>
+                                <span class="stat-value">1</span>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="dashboard-card">
+                        <div class="dashboard-card-header">
+                            <div class="dashboard-icon">📊</div>
+                            <h3>System Health</h3>
+                        </div>
+                        <div class="dashboard-stats">
+                            <div class="dashboard-stat">
+                                <span class="stat-label">Overall Status</span>
+                                <span class="stat-value">Good <span class="status-indicator good"></span></span>
+                            </div>
+                            <div class="dashboard-stat">
+                                <span class="stat-label">Documents</span>
+                                <span class="stat-value">4</span>
+                            </div>
+                            <div class="dashboard-stat">
+                                <span class="stat-label">Last Sync</span>
+                                <span class="stat-value">2m ago</span>
+                            </div>
+                            <div class="dashboard-stat">
+                                <span class="stat-label">API Calls Today</span>
+                                <span class="stat-value">247</span>
                             </div>
                         </div>
                     </div>

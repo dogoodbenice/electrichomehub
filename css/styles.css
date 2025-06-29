@@ -229,13 +229,19 @@ body {
     font-weight: bold;
     margin-bottom: 1rem;
     line-height: 1.2;
+    text-align: center;
+    background: linear-gradient(135deg, var(--brand-red), #ffffff);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
 }
 
 .hero-subtitle {
     font-size: 1.25rem;
     color: var(--text-secondary);
     max-width: 600px;
-    margin: 0 auto;
+    margin: 0 auto 3rem;
+    text-align: center;
 }
 
 /* Features Grid */
@@ -663,62 +669,102 @@ body {
     color: white;
 }
 
-/* Stats grid */
-.stats-grid {
+/* Dashboard grid with monitoring integration */
+.dashboard-grid {
     display: grid;
-    grid-template-columns: 1fr 1fr 2fr;
+    grid-template-columns: 1fr 1fr 1fr;
     gap: 1.5rem;
-    margin-bottom: 3rem;
+    margin-bottom: 2rem;
 }
 
-@media (max-width: 768px) {
-    .stats-grid {
-        grid-template-columns: 1fr;
-    }
-}
-
-.stat-card {
+.dashboard-card {
     background-color: rgba(0, 0, 0, 0.3);
     border: 1px solid rgba(255, 255, 255, 0.2);
     border-radius: 12px;
     padding: 1.5rem;
-    text-align: center;
     backdrop-filter: blur(10px);
+    transition: all 0.3s ease;
 }
 
-.stat-card.large {
-    grid-column: span 2;
+.dashboard-card:hover {
+    border-color: var(--brand-red);
+    transform: translateY(-2px);
 }
 
-.stat-number {
-    font-size: 2.5rem;
-    font-weight: bold;
-    color: var(--brand-red);
-    margin-bottom: 0.5rem;
-}
-
-.stat-label {
-    color: rgba(255, 255, 255, 0.8);
-    font-size: 0.9rem;
-}
-
-.stat-row {
+.dashboard-card-header {
     display: flex;
-    justify-content: space-around;
+    align-items: center;
+    gap: 0.75rem;
     margin-bottom: 1rem;
 }
 
-.stat-row:last-child {
-    margin-bottom: 0;
+.dashboard-icon {
+    width: 32px;
+    height: 32px;
+    background-color: var(--brand-red);
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 1rem;
 }
 
-.stat-item {
-    text-align: center;
+.dashboard-card h3 {
+    font-size: 1.1rem;
+    color: white;
+    margin: 0;
 }
 
-.stat-item .stat-number {
-    font-size: 2rem;
+.dashboard-stats {
+    display: flex;
+    flex-direction: column;
+    gap: 0.75rem;
 }
+
+.dashboard-stat {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.stat-label {
+    color: rgba(255, 255, 255, 0.7);
+    font-size: 0.9rem;
+}
+
+.stat-value {
+    color: var(--brand-red);
+    font-weight: bold;
+    font-size: 1.1rem;
+}
+
+.status-indicator {
+    display: inline-block;
+    width: 8px;
+    height: 8px;
+    border-radius: 50%;
+    margin-left: 0.5rem;
+}
+
+.status-indicator.good {
+    background-color: #22c55e;
+}
+
+.status-indicator.warning {
+    background-color: #fbbf24;
+}
+
+.status-indicator.critical {
+    background-color: #ef4444;
+}
+
+@media (max-width: 768px) {
+    .dashboard-grid {
+        grid-template-columns: 1fr;
+    }
+}
+
+/* Old stat styles removed - replaced with dashboard grid */
 
 /* Demo devices */
 .demo-devices {
