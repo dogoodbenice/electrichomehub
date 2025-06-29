@@ -72,8 +72,14 @@ The application uses four main database tables:
 5. **Demo Functionality**: All five core features fully demonstrated
 
 ## Recent Changes
-- June 29, 2025: Implemented comprehensive static hosting solution for GitHub Pages
+- June 29, 2025: Fixed GitHub Pages navigation and enhanced demo presentation
+  - Resolved routing issues with proper base path handling for /electrichomehub/ subdirectory
+  - Fixed logo navigation to point to https://dogoodbenice.github.io/electrichomehub/ as home
+  - Updated all navigation links to use full URLs for GitHub Pages deployment
+  - Completely rewrote README.md to emphasize demo nature with detailed example highlights
+  - Added comprehensive demo data documentation (6 devices, 4 alerts, 5+ documents)
+  - Created clear "Demo vs Production" comparison section
+- Implemented comprehensive static hosting solution for GitHub Pages
 - Complete dual-mode architecture supporting both development and static deployment
-- Created JSON API files demonstrating all core functionalities
 - Environment-aware query client serving appropriate data sources
 - Maintained full feature compatibility across deployment modes
