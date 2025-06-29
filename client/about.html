@@ -1,18 +1,24 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta charset="UTF-8" />
+  <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>About - Electric Home Hub</title>
-  <link rel="icon" type="image/svg+xml" href="/electrichomehub/favicon.svg" />
-  <script type="module" crossorigin src="/electrichomehub/assets/index.js"></script>
-  <link rel="stylesheet" crossorigin href="/electrichomehub/assets/index.css">
+  <meta name="description" content="Learn about Electric Home Hub and our mission to simplify smart home device management." />
+  <script>
+    window.__INITIAL_ROUTE__ = '/about';
+    (function() {
+      const isGitHubPages = window.location.hostname.includes('github.io');
+      if (isGitHubPages) {
+        const favicon = document.querySelector('link[rel="icon"]');
+        if (favicon) favicon.href = '/electrichomehub/favicon.svg';
+      }
+    })();
+  </script>
 </head>
 <body>
   <div id="root"></div>
-  <script>
-    // Set the initial route for this page
-    window.__INITIAL_ROUTE__ = '/about';
-  </script>
+  <script type="module" src="/src/main.tsx"></script>
 </body>
 </html>
