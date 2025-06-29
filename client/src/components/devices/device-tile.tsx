@@ -53,7 +53,7 @@ export default function DeviceTile({ device, onClick }: DeviceTileProps) {
             className={`text-xs px-1.5 py-0.5 ${getWarrantyBadgeClass(device.warrantyStatus)}`}
           >
             {device.warrantyStatus === 'active' ? 'Active' : 
-             device.warrantyStatus === 'expiring_soon' ? 'Expires' : 
+             device.warrantyStatus === 'expiring_soon' ? 'Expiring' : 
              'Expired'}
           </Badge>
         </div>
