@@ -9,14 +9,23 @@
 
 :root {
     --brand-red: #ff3333;
+    --brand-red-hover: #e62e2e;
     --background: #000000;
     --surface: #111111;
+    --surface-elevated: #1a1a1a;
     --border: #333333;
+    --border-light: #444444;
     --text-primary: #ffffff;
     --text-secondary: #cccccc;
     --text-muted: #888888;
+    --success: #10b981;
+    --warning: #f59e0b;
+    --error: #ef4444;
     --gradient-purple: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
     --gradient-blue: linear-gradient(135deg, #1e3c72 0%, #2a5298 100%);
+    --shadow-sm: 0 1px 2px 0 rgba(0, 0, 0, 0.3);
+    --shadow-md: 0 4px 6px -1px rgba(0, 0, 0, 0.4);
+    --shadow-lg: 0 10px 15px -3px rgba(0, 0, 0, 0.5);
 }
 
 body {
@@ -244,11 +253,13 @@ body {
     padding: 2rem;
     text-align: center;
     transition: all 0.3s ease;
+    box-shadow: var(--shadow-sm);
 }
 
 .feature-card:hover {
     border-color: var(--brand-red);
     transform: translateY(-4px);
+    box-shadow: var(--shadow-lg);
 }
 
 .feature-icon {
@@ -468,6 +479,7 @@ body {
     padding: 4rem 0;
     background: var(--gradient-blue);
     position: relative;
+    text-align: center;
 }
 
 .demo-section::before {
@@ -478,7 +490,7 @@ body {
     right: 0;
     bottom: 0;
     background: var(--gradient-purple);
-    opacity: 0.7;
+    opacity: 0.8;
 }
 
 .demo-section .container {
@@ -886,6 +898,33 @@ body {
     padding: 1rem;
     margin-top: 1rem;
     overflow-x: auto;
+    position: relative;
+}
+
+.code-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 0.5rem;
+    font-size: 0.8rem;
+    color: var(--text-muted);
+}
+
+.btn-copy {
+    background-color: var(--surface);
+    border: 1px solid var(--border);
+    color: var(--text-secondary);
+    padding: 0.25rem 0.5rem;
+    border-radius: 4px;
+    font-size: 0.7rem;
+    cursor: pointer;
+    transition: all 0.2s;
+}
+
+.btn-copy:hover {
+    background-color: var(--brand-red);
+    color: white;
+    border-color: var(--brand-red);
 }
 
 .code-block pre {
