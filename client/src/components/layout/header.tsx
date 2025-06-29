@@ -67,7 +67,21 @@ export default function Header() {
                 >
                   {item.name}
                 </a>
-              ) : null;
+              ) : (
+                <Link
+                  key={item.name}
+                  href={item.href}
+                  className={`nav-link text-sm font-medium transition-colors ${
+                    location === item.href 
+                      ? "text-brand-red" 
+                      : item.featured 
+                        ? "text-brand-red font-semibold border border-brand-red px-3 py-1 rounded-lg hover:bg-brand-red hover:text-white"
+                        : "text-white hover:text-brand-red"
+                  }`}
+                >
+                  {item.name}
+                </Link>
+              );
             })}
           </nav>
           
