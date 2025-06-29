@@ -5,89 +5,15 @@ import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
 import { Button } from "@/components/ui/button";
 import StatsGrid from "@/components/dashboard/stats-grid";
 import DeviceGrid from "@/components/devices/device-grid";
-import BackendUnavailable from "@/components/ui/backend-unavailable";
-import { isStaticDeployment } from "@/lib/staticData";
 import type { DashboardStats } from "@/lib/types";
 
 export default function Dashboard() {
-  const { data: stats, isLoading, error } = useQuery<DashboardStats>({
+  const { data: stats, isLoading } = useQuery<DashboardStats>({
     queryKey: ["/api/dashboard/stats"],
   });
 
   if (isLoading) {
     return <div className="p-8 text-center">Loading dashboard...</div>;
-  }
-
-  // Show backend unavailable message for static deployments when API fails
-  if (error && isStaticDeployment()) {
-    return (
-      <div className="space-y-8">
-        {/* Hero Section - Always show */}
-        <section className="hero-dots border-b border-border relative overflow-hidden pt-[7px] pb-[7px]">
-          <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-12">
-            <div className="text-center mb-8 fade-in-up">
-              <h1 className="text-4xl font-bold mb-4">
-                <span className="text-transparent bg-clip-text bg-gradient-to-r from-white to-gray-300">
-                  Electric Home Hub
-                </span>
-              </h1>
-              <p className="text-xl text-muted-foreground max-w-3xl mx-auto">The smart platform empowering anyone to seamlessly manage all their electric hardware</p>
-            </div>
-
-            {/* Electric Divider */}
-            <div className="flex items-center justify-center my-8 fade-in-up-delay">
-              <div className="flex items-center space-x-2">
-                <div className="w-8 h-px bg-gradient-to-r from-transparent to-brand-red"></div>
-                <Zap className="w-5 h-5 text-white animate-pulse" />
-                <div className="w-2 h-2 bg-brand-red rounded-full animate-pulse"></div>
-                <Heart className="w-4 h-4 text-white animate-pulse" style={{animationDelay: '0.5s'}} />
-                <div className="w-1 h-1 bg-brand-red/50 rounded-full animate-pulse" style={{animationDelay: '1s'}}></div>
-                <Home className="w-3 h-3 text-white animate-pulse" style={{animationDelay: '1.5s'}} />
-                <div className="w-8 h-px bg-gradient-to-l from-transparent to-brand-red"></div>
-              </div>
-            </div>
-            
-            <div className="grid grid-cols-1 md:grid-cols-3 gap-8 fade-in-up-delay">
-              <div className="text-center">
-                <div className="w-16 h-16 bg-brand-red rounded-full flex items-center justify-center mx-auto mb-4 icon-pulse">
-                  <Globe className="w-8 h-8 text-white" />
-                </div>
-                <h3 className="text-lg font-semibold mb-2">Universal Compatibility</h3>
-                <p className="text-muted-foreground text-sm">
-                  Monitor all electric hardware in your home, regardless of manufacturer or brand
-                </p>
-              </div>
-              
-              <div className="text-center">
-                <div className="w-16 h-16 bg-brand-red rounded-full flex items-center justify-center mx-auto mb-4 icon-pulse" style={{ animationDelay: '1s' }}>
-                  <FileText className="w-8 h-8 text-white" />
-                </div>
-                <h3 className="text-lg font-semibold mb-2">Centralized Control</h3>
-                <p className="text-muted-foreground text-sm">
-                  Store all manuals, warranties, and documentation in one secure digital repository
-                </p>
-              </div>
-              
-              <div className="text-center">
-                <div className="w-16 h-16 bg-brand-red rounded-full flex items-center justify-center mx-auto mb-4 icon-pulse" style={{ animationDelay: '2s' }}>
-                  <Shield className="w-8 h-8 text-white" />
-                </div>
-                <h3 className="text-lg font-semibold mb-2">Proactive Protection</h3>
-                <p className="text-muted-foreground text-sm">
-                  Stay ahead with alerts for recalls, firmware updates, and emerging device issues
-                </p>
-              </div>
-            </div>
-          </div>
-        </section>
-        
-        {/* Backend Unavailable Message */}
-        <BackendUnavailable 
-          title="Connect Your Backend"
-          message="This frontend showcase demonstrates the Electric Home Hub interface. Connect a backend server to access real device data, documentation storage, and monitoring features."
-        />
-      </div>
-    );
   }
 
   return (

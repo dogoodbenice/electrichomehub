@@ -1,8 +1,11 @@
-import { Rocket, Code, Download, Key, Zap, Terminal, Globe, ArrowRight } from "lucide-react";
+import { useQuery } from "@tanstack/react-query";
+import { Rocket, Code, Download, Key, Zap, Terminal, Globe, ArrowRight, Clock, Plus } from "lucide-react";
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
 import { Button } from "@/components/ui/button";
+import { Badge } from "@/components/ui/badge";
 import CodeBlock from "@/components/developer/code-block";
 import APIEndpoint from "@/components/developer/api-endpoint";
+import type { ApiKey } from "@shared/schema";
 
 export default function DeveloperAPI() {
   const quickStartCode = `// Initialize Electric Home Hub API
