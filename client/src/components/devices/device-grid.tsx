@@ -35,7 +35,10 @@ export default function DeviceGrid() {
     <div className="space-y-6">
       <div className="flex justify-between items-center">
         <h2 className="text-2xl font-bold">Universal device tracking</h2>
-        <Button className="bg-brand-red hover:bg-red-600">
+        <Button 
+          className="bg-brand-red hover:bg-red-600"
+          onClick={() => window.location.href = '/electrichomehub/tracking.html'}
+        >
           <Plus className="w-4 h-4 mr-2" />
           Add Device
         </Button>

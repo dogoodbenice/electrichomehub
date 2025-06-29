@@ -76,11 +76,18 @@ console.log(response);
         <div className="flex justify-between items-center mb-6">
           <h2 className="text-2xl font-bold text-brand-red">Developer API & Integration</h2>
           <div className="flex space-x-3">
-            <Button className="bg-brand-red hover:bg-red-600">
+            <Button 
+              className="bg-brand-red hover:bg-red-600"
+              onClick={() => window.location.href = '/electrichomehub/developer.html'}
+            >
               <Key className="w-4 h-4 mr-2" />
               Get API Key
             </Button>
-            <Button variant="outline" className="border-brand-red text-brand-red hover:bg-brand-red hover:text-white">
+            <Button 
+              variant="outline" 
+              className="border-brand-red text-brand-red hover:bg-brand-red hover:text-white"
+              onClick={() => window.location.href = '/electrichomehub/developer.html'}
+            >
               <Download className="w-4 h-4 mr-2" />
               Download SDK
             </Button>
@@ -184,7 +191,10 @@ console.log(response);
         <div className="border-t border-border pt-8 mt-8">
           <div className="flex justify-between items-center mb-6">
             <h3 className="text-xl font-bold">Your API Keys</h3>
-            <Button className="bg-brand-red hover:bg-red-600">
+            <Button 
+              className="bg-brand-red hover:bg-red-600"
+              onClick={() => window.location.href = '/electrichomehub/developer.html'}
+            >
               <Plus className="w-4 h-4 mr-2" />
               Generate New Key
             </Button>
@@ -245,13 +255,22 @@ console.log(response);
             </p>
             
             <div className="flex flex-col sm:flex-row gap-4 justify-center items-center">
-              <Button size="lg" className="bg-brand-red hover:bg-red-600 px-8 py-3">
+              <Button 
+                size="lg" 
+                className="bg-brand-red hover:bg-red-600 px-8 py-3"
+                onClick={() => window.location.href = '/electrichomehub/developer.html'}
+              >
                 <Key className="w-5 h-5 mr-2" />
                 Get Your Free API Key
                 <ArrowRight className="w-5 h-5 ml-2" />
               </Button>
               
-              <Button size="lg" variant="outline" className="border-brand-red text-brand-red hover:bg-brand-red hover:text-white px-8 py-3">
+              <Button 
+                size="lg" 
+                variant="outline" 
+                className="border-brand-red text-brand-red hover:bg-brand-red hover:text-white px-8 py-3"
+                onClick={() => window.location.href = '/electrichomehub/developer.html'}
+              >
                 <Code className="w-5 h-5 mr-2" />
                 View Full Documentation
               </Button>

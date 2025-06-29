@@ -85,6 +85,7 @@ export default function Dashboard() {
             <Button 
               variant="outline" 
               className="w-full bg-black border-2 border-brand-red hover:bg-brand-red/10 rounded-lg p-8 h-auto text-left transition-all duration-200 group justify-start relative overflow-hidden"
+              onClick={() => window.location.href = '/electrichomehub/developer.html'}
             >
               <div className="flex items-center space-x-4">
                 <div className="w-12 h-12 bg-brand-red rounded-full flex items-center justify-center">
@@ -127,6 +128,7 @@ export default function Dashboard() {
             <Button 
               variant="outline" 
               className="bg-black border-card hover:border-brand-red rounded-lg p-6 h-auto text-left transition-all duration-200 group justify-start"
+              onClick={() => window.location.href = '/electrichomehub/tracking.html'}
             >
               <div className="flex items-center space-x-3">
                 <Smartphone className="w-6 h-6 text-brand-red" />
@@ -140,6 +142,7 @@ export default function Dashboard() {
             <Button 
               variant="outline" 
               className="bg-black border-card hover:border-brand-red rounded-lg p-6 h-auto text-left transition-all duration-200 group justify-start"
+              onClick={() => window.location.href = '/electrichomehub/documentation.html'}
             >
               <div className="flex items-center space-x-3">
                 <FileText className="w-6 h-6 text-brand-red" />
@@ -153,6 +156,7 @@ export default function Dashboard() {
             <Button 
               variant="outline" 
               className="bg-black border-card hover:border-brand-red rounded-lg p-6 h-auto text-left transition-all duration-200 group justify-start"
+              onClick={() => window.location.href = '/electrichomehub/monitoring.html'}
             >
               <div className="flex items-center space-x-3">
                 <AlertTriangle className="w-6 h-6 text-brand-red" />

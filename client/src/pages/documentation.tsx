@@ -37,7 +37,10 @@ export default function Documentation() {
     <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-8">
       <div className="flex justify-between items-center mb-6">
         <h2 className="text-2xl font-bold">Manage Device Documents</h2>
-        <Button className="bg-brand-red hover:bg-red-600">
+        <Button 
+          className="bg-brand-red hover:bg-red-600"
+          onClick={() => window.location.href = '/electrichomehub/documentation.html'}
+        >
           <Upload className="w-4 h-4 mr-2" />
           Upload Document
         </Button>
