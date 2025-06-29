@@ -75,6 +75,12 @@ The application uses four main database tables:
 - June 29, 2025: Improved spacing in developer section layout
   - Increased margin-bottom from 2rem to 4rem between "Build Your Own Electric Home Hub" text and "Developer API Access" card
   - Enhanced visual hierarchy and breathing room on homepage layout
+- June 29, 2025: Enhanced button styling and API page reorganization
+  - Added comprehensive button styling with .btn-primary and .btn-secondary classes for consistency across all pages
+  - Improved "Select Files" and "Add Device" buttons to match site design with proper hover effects and animations
+  - Reorganized API page by moving "SDK Downloads" section above "Core Resources" for better developer workflow
+  - Enhanced button interactions with brand red accent colors, smooth transforms, and professional shadow effects
+  - All pages now feature consistent button styling that aligns with Electric Home Hub design language
 - June 29, 2025: Enhanced documentation.html and tracking.html page styling
   - Added comprehensive CSS styling for upload zones with dashed borders, hover effects, and drag-and-drop animations
   - Created professional document cards with consistent information hierarchy and action buttons
