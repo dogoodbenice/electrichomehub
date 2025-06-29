@@ -80,12 +80,27 @@ export const getQueryFn: <T>(options: {
         
         if (res.ok) {
           const data = await res.json();
-          // Handle new JSON structure with comments
-          if (data.devices) return data.devices;
-          if (data.documents) return data.documents;
-          if (data.alerts) return data.alerts;
-          if (data.apiKeys) return data.apiKeys;
-          if (data.stats) return data.stats;
+          // Handle new JSON structure with comments and nested data
+          if (endpoint === '/api/devices' && data.devices) return data.devices;
+          if (endpoint === '/api/documents' && data.documents) return data.documents;
+          if (endpoint === '/api/alerts' && data.alerts) return data.alerts;
+          if (endpoint === '/api/api-keys' && data.apiKeys) return data.apiKeys;
+          if (endpoint === '/api/dashboard/stats' && data.stats) return data.stats;
+          
+          // Handle device-specific endpoints
+          if (endpoint.startsWith('/api/devices/') && data.devices) {
+            const deviceId = parseInt(endpoint.split('/')[3]);
+            return data.devices.find((d: any) => d.id === deviceId);
+          }
+          if (endpoint.startsWith('/api/documents/device/') && data.documents) {
+            const deviceId = parseInt(endpoint.split('/')[4]);
+            return data.documents.filter((d: any) => d.deviceId === deviceId);
+          }
+          if (endpoint.startsWith('/api/alerts/unread') && data.alerts) {
+            return data.alerts.filter((a: any) => !a.isRead);
+          }
+          
+          // Fallback to original data if no nested structure
           return data;
         }
       } catch (error) {
