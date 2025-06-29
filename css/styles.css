@@ -238,7 +238,21 @@ body {
     margin: 0 auto;
 }
 
-/* Feature grid */
+/* Features Grid */
+.features-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 2rem;
+    margin-top: 3rem;
+}
+
+@media (max-width: 768px) {
+    .features-grid {
+        grid-template-columns: 1fr;
+    }
+}
+
+/* Feature grid (fallback) */
 .feature-grid {
     display: grid;
     grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
@@ -254,6 +268,11 @@ body {
     text-align: center;
     transition: all 0.3s ease;
     box-shadow: var(--shadow-sm);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: flex-start;
+    min-height: 280px;
 }
 
 .feature-card:hover {
@@ -276,13 +295,18 @@ body {
 
 .feature-card h3 {
     font-size: 1.25rem;
-    margin-bottom: 0.75rem;
+    margin: 1.5rem 0 1rem 0;
     color: var(--text-primary);
+    font-weight: 600;
 }
 
 .feature-card p {
     color: var(--text-secondary);
-    line-height: 1.5;
+    line-height: 1.6;
+    flex-grow: 1;
+    display: flex;
+    align-items: center;
+    text-align: center;
 }
 
 /* Developer section */
@@ -1482,7 +1506,7 @@ body {
 }
 
 .download-btn:hover {
-    background-color: var(--brand-red-hover);
+    background-color: #e62e2e;
 }
 }
 }
