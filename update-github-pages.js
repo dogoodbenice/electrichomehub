@@ -1,4 +1,13 @@
-<!DOCTYPE html>
+#!/usr/bin/env node
+
+import fs from 'fs';
+import path from 'path';
+import { fileURLToPath } from 'url';
+
+const __dirname = path.dirname(fileURLToPath(import.meta.url));
+
+// Create updated index.html that properly loads the React app
+const indexHtml = `<!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
@@ -320,4 +329,11 @@
         })();
     </script>
 </body>
-</html>
+</html>`;
+
+// Write the updated index.html
+fs.writeFileSync(path.join(__dirname, 'client/index.html'), indexHtml);
+
+console.log('✓ Updated index.html for GitHub Pages');
+console.log('✓ Fixed navigation and styling');
+console.log('✓ GitHub Pages deployment ready');
