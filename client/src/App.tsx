@@ -6,7 +6,7 @@ import { Toaster } from "@/components/ui/toaster";
 import { TooltipProvider } from "@/components/ui/tooltip";
 import Header from "@/components/layout/header";
 import Footer from "@/components/layout/footer";
-// Dashboard removed - Developer API is now the primary landing page
+import Dashboard from "@/pages/dashboard";
 import DeviceTracking from "@/pages/device-tracking";
 import Documentation from "@/pages/documentation";
 import IssueMonitoring from "@/pages/issue-monitoring";
@@ -41,7 +41,7 @@ function RouteHandler() {
 
   return (
     <Switch>
-      <Route path="/" component={DeveloperAPI} />
+      <Route path="/" component={Dashboard} />
       <Route path="/tracking" component={DeviceTracking} />
       <Route path="/documentation" component={Documentation} />
       <Route path="/monitoring" component={IssueMonitoring} />
