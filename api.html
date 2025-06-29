@@ -1,120 +1,166 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Developer API - Electric Home Hub</title>
-    <meta name="description" content="Access Electric Home Hub's comprehensive developer API for device management, documentation handling, and monitoring integration.">
-    
-    <link rel="stylesheet" href="css/styles.css">
-    <link rel="icon" href="images/favicon.svg" type="image/svg+xml">
-</head>
-<body>
-    <!-- Header -->
-    <header class="header">
-        <div class="container">
-            <div class="header-content">
-                <a href="index.html" class="logo">
-                    <div class="logo-icon">
-                        <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="white" stroke-width="2">
-                            <polygon points="13,2 3,14 12,14 11,22 21,10 12,10 13,2"></polygon>
-                        </svg>
-                    </div>
-                    <span class="logo-text">Electric Home Hub</span>
-                </a>
-                
-                <nav class="nav desktop-nav">
-                    <a href="api.html" class="nav-link api-cta featured">🚀 Developer API</a>
-                    <a href="tracking.html" class="nav-link">Device Tracking</a>
-                    <a href="documentation.html" class="nav-link">Hardware Manuals</a>
-                    <a href="monitoring.html" class="nav-link">Issue Monitoring</a>
-                    <a href="export.html" class="nav-link">Data Export</a>
-                </nav>
-                
-                <button class="mobile-menu-toggle" id="mobileMenuToggle">
-                    <span></span>
-                    <span></span>
-                    <span></span>
-                </button>
-            </div>
-        </div>
-        
-        <nav class="mobile-nav" id="mobileNav">
-            <a href="api.html" class="nav-link api-cta featured">🚀 Developer API</a>
-            <a href="tracking.html" class="nav-link">Device Tracking</a>
-            <a href="documentation.html" class="nav-link">Hardware Manuals</a>
-            <a href="monitoring.html" class="nav-link">Issue Monitoring</a>
-            <a href="export.html" class="nav-link">Data Export</a>
-        </nav>
-    </header>
+    <head>
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <title>Developer API - Electric Home Hub</title>
+        <meta
+            name="description"
+            content="Access Electric Home Hub's comprehensive developer API for device management, documentation handling, and monitoring integration."
+        />
 
-    <main>
-        <section class="page-hero">
+        <link rel="stylesheet" href="css/styles.css" />
+        <link rel="icon" href="images/favicon.svg" type="image/svg+xml" />
+    </head>
+    <body>
+        <!-- Header -->
+        <header class="header">
             <div class="container">
-                <h1>Developer API</h1>
-                <p>White-label our platform and build custom Electric Home Hub solutions</p>
-            </div>
-        </section>
-
-        <section class="content-section">
-            <div class="container">
-                <!-- Getting Started -->
-                <div class="api-section">
-                    <h2>Getting Started</h2>
-                    <p>The Electric Home Hub API is organized around REST. Our API has predictable resource-oriented URLs, accepts form-encoded request bodies, returns JSON-encoded responses, and uses standard HTTP response codes, authentication, and verbs.</p>
-                    
-                    <div class="code-block">
-                        <div class="code-header">
-                            <span>Base URL</span>
-                            <button class="btn-copy">Copy</button>
+                <div class="header-content">
+                    <a href="index.html" class="logo">
+                        <div class="logo-icon">
+                            <svg
+                                width="20"
+                                height="20"
+                                viewBox="0 0 24 24"
+                                fill="none"
+                                stroke="white"
+                                stroke-width="2"
+                            >
+                                <polygon
+                                    points="13,2 3,14 12,14 11,22 21,10 12,10 13,2"
+                                ></polygon>
+                            </svg>
                         </div>
-                        <pre><code>https://api.electrichomehub.com/v1</code></pre>
-                    </div>
-                    
-                    <div class="auth-section">
-                        <h3>Authentication</h3>
-                        <p>Authenticate your API requests by including your secret API key in the Authorization header. You can manage your API keys from the Electric Home Hub Dashboard.</p>
-                        
+                        <span class="logo-text">Electric Home Hub</span>
+                    </a>
+
+                    <nav class="nav desktop-nav">
+                        <a href="api.html" class="nav-link api-cta featured"
+                            >🚀 Developer API</a
+                        >
+                        <a href="tracking.html" class="nav-link"
+                            >Device Tracking</a
+                        >
+                        <a href="documentation.html" class="nav-link"
+                            >Hardware Manuals</a
+                        >
+                        <a href="monitoring.html" class="nav-link"
+                            >Issue Monitoring</a
+                        >
+                        <a href="export.html" class="nav-link">Data Export</a>
+                    </nav>
+
+                    <button class="mobile-menu-toggle" id="mobileMenuToggle">
+                        <span></span>
+                        <span></span>
+                        <span></span>
+                    </button>
+                </div>
+            </div>
+
+            <nav class="mobile-nav" id="mobileNav">
+                <a href="api.html" class="nav-link api-cta featured"
+                    >🚀 Developer API</a
+                >
+                <a href="tracking.html" class="nav-link">Device Tracking</a>
+                <a href="documentation.html" class="nav-link"
+                    >Hardware Manuals</a
+                >
+                <a href="monitoring.html" class="nav-link">Issue Monitoring</a>
+                <a href="export.html" class="nav-link">Data Export</a>
+            </nav>
+        </header>
+
+        <main>
+            <section class="page-hero">
+                <div class="container">
+                    <h1>Developer API</h1>
+                    <p>
+                        "Batteries included" software to build custom tools for
+                        your hardware ecosystem
+                    </p>
+                </div>
+            </section>
+
+            <section class="content-section">
+                <div class="container">
+                    <!-- Getting Started -->
+                    <div class="api-section">
+                        <h2>Getting Started</h2>
+                        <p>
+                            The Electric Home Hub API is organized around REST.
+                            Our API has predictable resource-oriented URLs,
+                            accepts form-encoded request bodies, returns
+                            JSON-encoded responses, and uses standard HTTP
+                            response codes, authentication, and verbs.
+                        </p>
+
                         <div class="code-block">
                             <div class="code-header">
-                                <span>Example Request</span>
+                                <span>Base URL</span>
                                 <button class="btn-copy">Copy</button>
                             </div>
-                            <pre><code>curl https://api.electrichomehub.com/v1/devices \
-  -H "Authorization: Bearer ehk_live_51bf5e..."</code></pre>
+                            <pre><code>https://api.electrichomehub.com/v1</code></pre>
                         </div>
-                    </div>
-                </div>
 
-                <!-- Core Resources -->
-                <div class="api-section">
-                    <h2>Core Resources</h2>
-                    
-                    <div class="endpoint-group">
-                        <h3>Devices</h3>
-                        <p>The Device object represents electric hardware in your system. Use these endpoints to manage your device inventory, track warranties, and monitor status.</p>
-                        
-                        <div class="endpoint-card">
-                            <div class="endpoint-header">
-                                <span class="method get">GET</span>
-                                <code>/api/devices</code>
-                            </div>
-                            <p>Retrieve all devices for the authenticated user</p>
+                        <div class="auth-section">
+                            <h3>Authentication</h3>
+                            <p>
+                                Authenticate your API requests by including your
+                                secret API key in the Authorization header. You
+                                can manage your API keys from the Electric Home
+                                Hub Dashboard.
+                            </p>
+
                             <div class="code-block">
                                 <div class="code-header">
                                     <span>Example Request</span>
                                     <button class="btn-copy">Copy</button>
                                 </div>
                                 <pre><code>curl https://api.electrichomehub.com/v1/devices \
+  -H "Authorization: Bearer ehk_live_51bf5e..."</code></pre>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Core Resources -->
+                    <div class="api-section">
+                        <h2>Core Resources</h2>
+
+                        <div class="endpoint-group">
+                            <h3>Devices</h3>
+                            <p>
+                                The Device object represents electric hardware
+                                in your system. Use these endpoints to manage
+                                your device inventory, track warranties, and
+                                monitor status.
+                            </p>
+
+                            <div class="endpoint-card">
+                                <div class="endpoint-header">
+                                    <span class="method get">GET</span>
+                                    <code>/api/devices</code>
+                                </div>
+                                <p>
+                                    Retrieve all devices for the authenticated
+                                    user
+                                </p>
+                                <div class="code-block">
+                                    <div class="code-header">
+                                        <span>Example Request</span>
+                                        <button class="btn-copy">Copy</button>
+                                    </div>
+                                    <pre><code>curl https://api.electrichomehub.com/v1/devices \
   -H "Authorization: Bearer ehk_live_51bf5e..." \
   -H "Content-Type: application/json"</code></pre>
-                            </div>
-                            <div class="code-block">
-                                <div class="code-header">
-                                    <span>Response</span>
-                                    <button class="btn-copy">Copy</button>
                                 </div>
-                                <pre><code>{
+                                <div class="code-block">
+                                    <div class="code-header">
+                                        <span>Response</span>
+                                        <button class="btn-copy">Copy</button>
+                                    </div>
+                                    <pre><code>{
   "data": [
     {
       "id": "device_123",
@@ -130,21 +176,21 @@
   "has_more": false,
   "total_count": 1
 }</code></pre>
-                            </div>
-                        </div>
-                        
-                        <div class="endpoint-card">
-                            <div class="endpoint-header">
-                                <span class="method post">POST</span>
-                                <code>/api/devices</code>
-                            </div>
-                            <p>Add a new device to the system</p>
-                            <div class="code-block">
-                                <div class="code-header">
-                                    <span>Example Request</span>
-                                    <button class="btn-copy">Copy</button>
                                 </div>
-                                <pre><code>curl https://api.electrichomehub.com/v1/devices \
+                            </div>
+
+                            <div class="endpoint-card">
+                                <div class="endpoint-header">
+                                    <span class="method post">POST</span>
+                                    <code>/api/devices</code>
+                                </div>
+                                <p>Add a new device to the system</p>
+                                <div class="code-block">
+                                    <div class="code-header">
+                                        <span>Example Request</span>
+                                        <button class="btn-copy">Copy</button>
+                                    </div>
+                                    <pre><code>curl https://api.electrichomehub.com/v1/devices \
   -H "Authorization: Bearer ehk_live_51bf5e..." \
   -H "Content-Type: application/json" \
   -d '{
@@ -155,13 +201,13 @@
     "warranty_expiry": "2026-06-15",
     "location": "Kitchen"
   }'</code></pre>
-                            </div>
-                            <div class="code-block">
-                                <div class="code-header">
-                                    <span>Response</span>
-                                    <button class="btn-copy">Copy</button>
                                 </div>
-                                <pre><code>{
+                                <div class="code-block">
+                                    <div class="code-header">
+                                        <span>Response</span>
+                                        <button class="btn-copy">Copy</button>
+                                    </div>
+                                    <pre><code>{
   "id": "device_456",
   "name": "Smart Refrigerator",
   "manufacturer": "Samsung",
@@ -172,21 +218,21 @@
   "status": "active",
   "created_at": "2024-12-29T10:30:00Z"
 }</code></pre>
-                            </div>
-                        </div>
-                        
-                        <div class="endpoint-card">
-                            <div class="endpoint-header">
-                                <span class="method put">PUT</span>
-                                <code>/api/devices/{id}</code>
-                            </div>
-                            <p>Update an existing device</p>
-                            <div class="code-block">
-                                <div class="code-header">
-                                    <span>Example Request</span>
-                                    <button class="btn-copy">Copy</button>
                                 </div>
-                                <pre><code>curl -X PUT https://api.electrichomehub.com/v1/devices/device_123 \
+                            </div>
+
+                            <div class="endpoint-card">
+                                <div class="endpoint-header">
+                                    <span class="method put">PUT</span>
+                                    <code>/api/devices/{id}</code>
+                                </div>
+                                <p>Update an existing device</p>
+                                <div class="code-block">
+                                    <div class="code-header">
+                                        <span>Example Request</span>
+                                        <button class="btn-copy">Copy</button>
+                                    </div>
+                                    <pre><code>curl -X PUT https://api.electrichomehub.com/v1/devices/device_123 \
   -H "Authorization: Bearer ehk_live_51bf5e..." \
   -H "Content-Type: application/json" \
   -d '{
@@ -194,13 +240,13 @@
     "location": "Updated Kitchen",
     "warranty_expiry": "2026-12-31"
   }'</code></pre>
-                            </div>
-                            <div class="code-block">
-                                <div class="code-header">
-                                    <span>Response</span>
-                                    <button class="btn-copy">Copy</button>
                                 </div>
-                                <pre><code>{
+                                <div class="code-block">
+                                    <div class="code-header">
+                                        <span>Response</span>
+                                        <button class="btn-copy">Copy</button>
+                                    </div>
+                                    <pre><code>{
   "id": "device_123",
   "name": "Smart Refrigerator Pro",
   "manufacturer": "Samsung",
@@ -209,59 +255,61 @@
   "warranty_expiry": "2026-12-31",
   "updated_at": "2024-12-29T10:30:00Z"
 }</code></pre>
-                            </div>
-                        </div>
-                        
-                        <div class="endpoint-card">
-                            <div class="endpoint-header">
-                                <span class="method delete">DELETE</span>
-                                <code>/api/devices/{id}</code>
-                            </div>
-                            <p>Remove a device from the system</p>
-                            <div class="code-block">
-                                <div class="code-header">
-                                    <span>Example Request</span>
-                                    <button class="btn-copy">Copy</button>
                                 </div>
-                                <pre><code>curl -X DELETE https://api.electrichomehub.com/v1/devices/device_123 \
+                            </div>
+
+                            <div class="endpoint-card">
+                                <div class="endpoint-header">
+                                    <span class="method delete">DELETE</span>
+                                    <code>/api/devices/{id}</code>
+                                </div>
+                                <p>Remove a device from the system</p>
+                                <div class="code-block">
+                                    <div class="code-header">
+                                        <span>Example Request</span>
+                                        <button class="btn-copy">Copy</button>
+                                    </div>
+                                    <pre><code>curl -X DELETE https://api.electrichomehub.com/v1/devices/device_123 \
   -H "Authorization: Bearer ehk_live_51bf5e..."</code></pre>
-                            </div>
-                            <div class="code-block">
-                                <div class="code-header">
-                                    <span>Response</span>
-                                    <button class="btn-copy">Copy</button>
                                 </div>
-                                <pre><code>{
+                                <div class="code-block">
+                                    <div class="code-header">
+                                        <span>Response</span>
+                                        <button class="btn-copy">Copy</button>
+                                    </div>
+                                    <pre><code>{
   "message": "Device successfully deleted",
   "deleted_id": "device_123"
 }</code></pre>
+                                </div>
                             </div>
                         </div>
-                    </div>
-                    
-                    <div class="endpoint-group">
-                        <h3>Document Management</h3>
-                        
-                        <div class="endpoint-card">
-                            <div class="endpoint-header">
-                                <span class="method get">GET</span>
-                                <code>/api/documents</code>
-                            </div>
-                            <p>List all documents with optional filtering</p>
-                            <div class="code-block">
-                                <div class="code-header">
-                                    <span>Example Request</span>
-                                    <button class="btn-copy">Copy</button>
+
+                        <div class="endpoint-group">
+                            <h3>Document Management</h3>
+
+                            <div class="endpoint-card">
+                                <div class="endpoint-header">
+                                    <span class="method get">GET</span>
+                                    <code>/api/documents</code>
                                 </div>
-                                <pre><code>curl https://api.electrichomehub.com/v1/documents?category=Manual&device_id=device_123 \
+                                <p>
+                                    List all documents with optional filtering
+                                </p>
+                                <div class="code-block">
+                                    <div class="code-header">
+                                        <span>Example Request</span>
+                                        <button class="btn-copy">Copy</button>
+                                    </div>
+                                    <pre><code>curl https://api.electrichomehub.com/v1/documents?category=Manual&device_id=device_123 \
   -H "Authorization: Bearer ehk_live_51bf5e..."</code></pre>
-                            </div>
-                            <div class="code-block">
-                                <div class="code-header">
-                                    <span>Response</span>
-                                    <button class="btn-copy">Copy</button>
                                 </div>
-                                <pre><code>{
+                                <div class="code-block">
+                                    <div class="code-header">
+                                        <span>Response</span>
+                                        <button class="btn-copy">Copy</button>
+                                    </div>
+                                    <pre><code>{
   "documents": [
     {
       "id": "doc_456",
@@ -277,33 +325,33 @@
   "total": 1,
   "page": 1
 }</code></pre>
-                            </div>
-                        </div>
-                        
-                        <div class="endpoint-card">
-                            <div class="endpoint-header">
-                                <span class="method post">POST</span>
-                                <code>/api/documents</code>
-                            </div>
-                            <p>Upload a new document</p>
-                            <div class="code-block">
-                                <div class="code-header">
-                                    <span>Example Request</span>
-                                    <button class="btn-copy">Copy</button>
                                 </div>
-                                <pre><code>curl https://api.electrichomehub.com/v1/documents \
+                            </div>
+
+                            <div class="endpoint-card">
+                                <div class="endpoint-header">
+                                    <span class="method post">POST</span>
+                                    <code>/api/documents</code>
+                                </div>
+                                <p>Upload a new document</p>
+                                <div class="code-block">
+                                    <div class="code-header">
+                                        <span>Example Request</span>
+                                        <button class="btn-copy">Copy</button>
+                                    </div>
+                                    <pre><code>curl https://api.electrichomehub.com/v1/documents \
   -H "Authorization: Bearer ehk_live_51bf5e..." \
   -F "file=@thermostat_manual.pdf" \
   -F "name=Thermostat Installation Guide" \
   -F "category=Manual" \
   -F "device_id=device_789"</code></pre>
-                            </div>
-                            <div class="code-block">
-                                <div class="code-header">
-                                    <span>Response</span>
-                                    <button class="btn-copy">Copy</button>
                                 </div>
-                                <pre><code>{
+                                <div class="code-block">
+                                    <div class="code-header">
+                                        <span>Response</span>
+                                        <button class="btn-copy">Copy</button>
+                                    </div>
+                                    <pre><code>{
   "id": "doc_790",
   "name": "Thermostat Installation Guide",
   "device_id": "device_789",
@@ -313,54 +361,57 @@
   "upload_date": "2024-12-29T10:35:00Z",
   "message": "Document uploaded successfully"
 }</code></pre>
+                                </div>
                             </div>
-                        </div>
 
-                        <div class="endpoint-card">
-                            <div class="endpoint-header">
-                                <span class="method get">GET</span>
-                                <code>/api/documents/{id}/download</code>
-                            </div>
-                            <p>Download a specific document</p>
-                            <div class="code-block">
-                                <pre><code>GET /api/documents/doc_456/download
+                            <div class="endpoint-card">
+                                <div class="endpoint-header">
+                                    <span class="method get">GET</span>
+                                    <code>/api/documents/{id}/download</code>
+                                </div>
+                                <p>Download a specific document</p>
+                                <div class="code-block">
+                                    <pre><code>GET /api/documents/doc_456/download
 
 // Response
 Content-Type: application/pdf
 Content-Disposition: attachment; filename="manual.pdf"
 [Binary file content]</code></pre>
+                                </div>
                             </div>
-                        </div>
 
-                        <div class="endpoint-card">
-                            <div class="endpoint-header">
-                                <span class="method delete">DELETE</span>
-                                <code>/api/documents/{id}</code>
-                            </div>
-                            <p>Delete a document</p>
-                            <div class="code-block">
-                                <pre><code>DELETE /api/documents/doc_456
+                            <div class="endpoint-card">
+                                <div class="endpoint-header">
+                                    <span class="method delete">DELETE</span>
+                                    <code>/api/documents/{id}</code>
+                                </div>
+                                <p>Delete a document</p>
+                                <div class="code-block">
+                                    <pre><code>DELETE /api/documents/doc_456
 
 // Response
 {
   "message": "Document successfully deleted",
   "deleted_id": "doc_456"
 }</code></pre>
+                                </div>
                             </div>
                         </div>
-                    </div>
-                    
-                    <div class="endpoint-group">
-                        <h3>Alert Management</h3>
-                        
-                        <div class="endpoint-card">
-                            <div class="endpoint-header">
-                                <span class="method get">GET</span>
-                                <code>/api/alerts</code>
-                            </div>
-                            <p>Retrieve system alerts with filtering options</p>
-                            <div class="code-block">
-                                <pre><code>GET /api/alerts?severity=critical&status=unread&limit=10
+
+                        <div class="endpoint-group">
+                            <h3>Alert Management</h3>
+
+                            <div class="endpoint-card">
+                                <div class="endpoint-header">
+                                    <span class="method get">GET</span>
+                                    <code>/api/alerts</code>
+                                </div>
+                                <p>
+                                    Retrieve system alerts with filtering
+                                    options
+                                </p>
+                                <div class="code-block">
+                                    <pre><code>GET /api/alerts?severity=critical&status=unread&limit=10
 
 // Response
 {
@@ -386,17 +437,17 @@ Content-Disposition: attachment; filename="manual.pdf"
   "total": 1,
   "unread_count": 3
 }</code></pre>
+                                </div>
                             </div>
-                        </div>
-                        
-                        <div class="endpoint-card">
-                            <div class="endpoint-header">
-                                <span class="method post">POST</span>
-                                <code>/api/alerts/{id}/acknowledge</code>
-                            </div>
-                            <p>Mark an alert as acknowledged</p>
-                            <div class="code-block">
-                                <pre><code>POST /api/alerts/alert_123/acknowledge
+
+                            <div class="endpoint-card">
+                                <div class="endpoint-header">
+                                    <span class="method post">POST</span>
+                                    <code>/api/alerts/{id}/acknowledge</code>
+                                </div>
+                                <p>Mark an alert as acknowledged</p>
+                                <div class="code-block">
+                                    <pre><code>POST /api/alerts/alert_123/acknowledge
 
 // Response
 {
@@ -405,17 +456,17 @@ Content-Disposition: attachment; filename="manual.pdf"
   "acknowledged_at": "2024-12-29T10:45:00Z",
   "message": "Alert marked as acknowledged"
 }</code></pre>
+                                </div>
                             </div>
-                        </div>
 
-                        <div class="endpoint-card">
-                            <div class="endpoint-header">
-                                <span class="method post">POST</span>
-                                <code>/api/alerts</code>
-                            </div>
-                            <p>Create a custom alert</p>
-                            <div class="code-block">
-                                <pre><code>POST /api/alerts
+                            <div class="endpoint-card">
+                                <div class="endpoint-header">
+                                    <span class="method post">POST</span>
+                                    <code>/api/alerts</code>
+                                </div>
+                                <p>Create a custom alert</p>
+                                <div class="code-block">
+                                    <pre><code>POST /api/alerts
 {
   "device_id": "device_789",
   "title": "Maintenance Reminder",
@@ -434,17 +485,17 @@ Content-Disposition: attachment; filename="manual.pdf"
   "status": "scheduled",
   "created_at": "2024-12-29T10:50:00Z"
 }</code></pre>
+                                </div>
                             </div>
-                        </div>
 
-                        <div class="endpoint-card">
-                            <div class="endpoint-header">
-                                <span class="method get">GET</span>
-                                <code>/api/alerts/stats</code>
-                            </div>
-                            <p>Get alert statistics and summary</p>
-                            <div class="code-block">
-                                <pre><code>GET /api/alerts/stats
+                            <div class="endpoint-card">
+                                <div class="endpoint-header">
+                                    <span class="method get">GET</span>
+                                    <code>/api/alerts/stats</code>
+                                </div>
+                                <p>Get alert statistics and summary</p>
+                                <div class="code-block">
+                                    <pre><code>GET /api/alerts/stats
 
 // Response
 {
@@ -463,31 +514,38 @@ Content-Disposition: attachment; filename="manual.pdf"
   },
   "recent_activity": "2024-12-29T08:00:00Z"
 }</code></pre>
+                                </div>
                             </div>
                         </div>
                     </div>
-                </div>
 
-                <!-- Webhooks -->
-                <div class="api-section">
-                    <h2>Webhooks</h2>
-                    <p>Electric Home Hub can send webhook events that notify your application when certain events happen in your account. Webhooks are useful for building event-driven applications.</p>
-                    
-                    <div class="endpoint-group">
-                        <h3>Managing Webhooks</h3>
-                        
-                        <div class="endpoint-card">
-                            <div class="endpoint-header">
-                                <span class="method post">POST</span>
-                                <code>/api/webhooks</code>
-                            </div>
-                            <p>Create a webhook endpoint to receive events</p>
-                            <div class="code-block">
-                                <div class="code-header">
-                                    <span>Example Request</span>
-                                    <button class="btn-copy">Copy</button>
+                    <!-- Webhooks -->
+                    <div class="api-section">
+                        <h2>Webhooks</h2>
+                        <p>
+                            Electric Home Hub can send webhook events that
+                            notify your application when certain events happen
+                            in your account. Webhooks are useful for building
+                            event-driven applications.
+                        </p>
+
+                        <div class="endpoint-group">
+                            <h3>Managing Webhooks</h3>
+
+                            <div class="endpoint-card">
+                                <div class="endpoint-header">
+                                    <span class="method post">POST</span>
+                                    <code>/api/webhooks</code>
                                 </div>
-                                <pre><code>curl https://api.electrichomehub.com/v1/webhooks \
+                                <p>
+                                    Create a webhook endpoint to receive events
+                                </p>
+                                <div class="code-block">
+                                    <div class="code-header">
+                                        <span>Example Request</span>
+                                        <button class="btn-copy">Copy</button>
+                                    </div>
+                                    <pre><code>curl https://api.electrichomehub.com/v1/webhooks \
   -H "Authorization: Bearer ehk_live_51bf5e..." \
   -H "Content-Type: application/json" \
   -d '{
@@ -495,21 +553,21 @@ Content-Disposition: attachment; filename="manual.pdf"
     "events": ["device.created", "alert.critical", "warranty.expiring"],
     "description": "Production webhook for device monitoring"
   }'</code></pre>
-                            </div>
-                        </div>
-                        
-                        <div class="endpoint-card">
-                            <div class="endpoint-header">
-                                <span class="method get">GET</span>
-                                <code>/api/webhooks</code>
-                            </div>
-                            <p>List all webhook endpoints</p>
-                            <div class="code-block">
-                                <div class="code-header">
-                                    <span>Response</span>
-                                    <button class="btn-copy">Copy</button>
                                 </div>
-                                <pre><code>{
+                            </div>
+
+                            <div class="endpoint-card">
+                                <div class="endpoint-header">
+                                    <span class="method get">GET</span>
+                                    <code>/api/webhooks</code>
+                                </div>
+                                <p>List all webhook endpoints</p>
+                                <div class="code-block">
+                                    <div class="code-header">
+                                        <span>Response</span>
+                                        <button class="btn-copy">Copy</button>
+                                    </div>
+                                    <pre><code>{
   "data": [
     {
       "id": "we_1NKy7GFKjGRL3KI7",
@@ -521,84 +579,122 @@ Content-Disposition: attachment; filename="manual.pdf"
     }
   ]
 }</code></pre>
+                                </div>
                             </div>
                         </div>
-                    </div>
-                    
-                    <div class="endpoint-group">
-                        <h3>Event Types</h3>
-                        <div class="events-list">
-                            <div class="event-item">
-                                <strong>device.created</strong> - Occurs when a new device is added
-                            </div>
-                            <div class="event-item">
-                                <strong>device.updated</strong> - Occurs when device information changes
-                            </div>
-                            <div class="event-item">
-                                <strong>alert.critical</strong> - Occurs when a critical alert is generated
-                            </div>
-                            <div class="event-item">
-                                <strong>warranty.expiring</strong> - Occurs when a warranty is expiring soon
-                            </div>
-                        </div>
-                    </div>
-                </div>
 
-                <!-- SDK Downloads -->
-                <div class="api-section">
-                    <h2>SDK Downloads</h2>
-                    <div class="sdk-grid">
-                        <div class="sdk-card">
-                            <div class="sdk-icon">
-                                <svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-                                    <path d="M2 3h6a4 4 0 0 1 4 4v14a3 3 0 0 0-3-3H2z"/>
-                                    <path d="M22 3h-6a4 4 0 0 0-4 4v14a3 3 0 0 1 3-3h7z"/>
-                                </svg>
+                        <div class="endpoint-group">
+                            <h3>Event Types</h3>
+                            <div class="events-list">
+                                <div class="event-item">
+                                    <strong>device.created</strong> - Occurs
+                                    when a new device is added
+                                </div>
+                                <div class="event-item">
+                                    <strong>device.updated</strong> - Occurs
+                                    when device information changes
+                                </div>
+                                <div class="event-item">
+                                    <strong>alert.critical</strong> - Occurs
+                                    when a critical alert is generated
+                                </div>
+                                <div class="event-item">
+                                    <strong>warranty.expiring</strong> - Occurs
+                                    when a warranty is expiring soon
+                                </div>
                             </div>
-                            <h3>JavaScript SDK</h3>
-                            <p>Full-featured SDK for web applications</p>
-                            <button class="btn-secondary">Download</button>
-                        </div>
-                        
-                        <div class="sdk-card">
-                            <div class="sdk-icon">
-                                <svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-                                    <path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/>
-                                    <polyline points="14,2 14,8 20,8"/>
-                                </svg>
-                            </div>
-                            <h3>Python SDK</h3>
-                            <p>Comprehensive Python library</p>
-                            <button class="btn-secondary">Download</button>
-                        </div>
-                        
-                        <div class="sdk-card">
-                            <div class="sdk-icon">
-                                <svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-                                    <path d="M4 19.5A2.5 2.5 0 0 1 6.5 17H20"/>
-                                    <path d="M6.5 2H20v20H6.5A2.5 2.5 0 0 1 4 19.5v-15A2.5 2.5 0 0 1 6.5 2z"/>
-                                </svg>
-                            </div>
-                            <h3>REST Documentation</h3>
-                            <p>Complete API reference</p>
-                            <button class="btn-secondary">View Docs</button>
                         </div>
                     </div>
-                </div>
 
-                <!-- Webhooks -->
-                <div class="api-section">
-                    <h2>Webhooks</h2>
-                    <p>Subscribe to real-time events and notifications from Electric Home Hub</p>
-                    
-                    <div class="endpoint-card">
-                        <div class="endpoint-header">
-                            <span class="method post">POST</span>
-                            <code>/api/webhooks</code>
+                    <!-- SDK Downloads -->
+                    <div class="api-section">
+                        <h2>SDK Downloads</h2>
+                        <div class="sdk-grid">
+                            <div class="sdk-card">
+                                <div class="sdk-icon">
+                                    <svg
+                                        width="32"
+                                        height="32"
+                                        viewBox="0 0 24 24"
+                                        fill="none"
+                                        stroke="currentColor"
+                                        stroke-width="2"
+                                    >
+                                        <path
+                                            d="M2 3h6a4 4 0 0 1 4 4v14a3 3 0 0 0-3-3H2z"
+                                        />
+                                        <path
+                                            d="M22 3h-6a4 4 0 0 0-4 4v14a3 3 0 0 1 3-3h7z"
+                                        />
+                                    </svg>
+                                </div>
+                                <h3>JavaScript SDK</h3>
+                                <p>Full-featured SDK for web applications</p>
+                                <button class="btn-secondary">Download</button>
+                            </div>
+
+                            <div class="sdk-card">
+                                <div class="sdk-icon">
+                                    <svg
+                                        width="32"
+                                        height="32"
+                                        viewBox="0 0 24 24"
+                                        fill="none"
+                                        stroke="currentColor"
+                                        stroke-width="2"
+                                    >
+                                        <path
+                                            d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"
+                                        />
+                                        <polyline points="14,2 14,8 20,8" />
+                                    </svg>
+                                </div>
+                                <h3>Python SDK</h3>
+                                <p>Comprehensive Python library</p>
+                                <button class="btn-secondary">Download</button>
+                            </div>
+
+                            <div class="sdk-card">
+                                <div class="sdk-icon">
+                                    <svg
+                                        width="32"
+                                        height="32"
+                                        viewBox="0 0 24 24"
+                                        fill="none"
+                                        stroke="currentColor"
+                                        stroke-width="2"
+                                    >
+                                        <path
+                                            d="M4 19.5A2.5 2.5 0 0 1 6.5 17H20"
+                                        />
+                                        <path
+                                            d="M6.5 2H20v20H6.5A2.5 2.5 0 0 1 4 19.5v-15A2.5 2.5 0 0 1 6.5 2z"
+                                        />
+                                    </svg>
+                                </div>
+                                <h3>REST Documentation</h3>
+                                <p>Complete API reference</p>
+                                <button class="btn-secondary">View Docs</button>
+                            </div>
                         </div>
-                        <p>Create a new webhook subscription</p>
-                        <div class="code-block">
-                            <pre><code>POST /api/webhooks
+                    </div>
+
+                    <!-- Webhooks -->
+                    <div class="api-section">
+                        <h2>Webhooks</h2>
+                        <p>
+                            Subscribe to real-time events and notifications from
+                            Electric Home Hub
+                        </p>
+
+                        <div class="endpoint-card">
+                            <div class="endpoint-header">
+                                <span class="method post">POST</span>
+                                <code>/api/webhooks</code>
+                            </div>
+                            <p>Create a new webhook subscription</p>
+                            <div class="code-block">
+                                <pre><code>POST /api/webhooks
 {
   "url": "https://your-app.com/webhooks/electric-home-hub",
   "events": ["device.created", "alert.critical", "warranty.expiring"],
@@ -614,37 +710,43 @@ Content-Disposition: attachment; filename="manual.pdf"
   "created_at": "2024-12-29T11:00:00Z",
   "status": "active"
 }</code></pre>
+                            </div>
                         </div>
-                    </div>
 
-                    <h4>Webhook Events</h4>
-                    <div class="webhook-events">
-                        <div class="event-item">
-                            <strong>device.created</strong> - New device added
+                        <h4>Webhook Events</h4>
+                        <div class="webhook-events">
+                            <div class="event-item">
+                                <strong>device.created</strong> - New device
+                                added
+                            </div>
+                            <div class="event-item">
+                                <strong>device.updated</strong> - Device
+                                information changed
+                            </div>
+                            <div class="event-item">
+                                <strong>device.deleted</strong> - Device removed
+                            </div>
+                            <div class="event-item">
+                                <strong>alert.critical</strong> - Critical alert
+                                triggered
+                            </div>
+                            <div class="event-item">
+                                <strong>alert.created</strong> - New alert
+                                generated
+                            </div>
+                            <div class="event-item">
+                                <strong>warranty.expiring</strong> - Warranty
+                                expiring soon
+                            </div>
+                            <div class="event-item">
+                                <strong>document.uploaded</strong> - New
+                                document added
+                            </div>
                         </div>
-                        <div class="event-item">
-                            <strong>device.updated</strong> - Device information changed
-                        </div>
-                        <div class="event-item">
-                            <strong>device.deleted</strong> - Device removed
-                        </div>
-                        <div class="event-item">
-                            <strong>alert.critical</strong> - Critical alert triggered
-                        </div>
-                        <div class="event-item">
-                            <strong>alert.created</strong> - New alert generated
-                        </div>
-                        <div class="event-item">
-                            <strong>warranty.expiring</strong> - Warranty expiring soon
-                        </div>
-                        <div class="event-item">
-                            <strong>document.uploaded</strong> - New document added
-                        </div>
-                    </div>
 
-                    <h4>Webhook Payload Example</h4>
-                    <div class="code-block">
-                        <pre><code>{
+                        <h4>Webhook Payload Example</h4>
+                        <div class="code-block">
+                            <pre><code>{
   "id": "evt_789",
   "event": "alert.critical",
   "created_at": "2024-12-29T11:15:00Z",
@@ -665,17 +767,21 @@ Content-Disposition: attachment; filename="manual.pdf"
     }
   }
 }</code></pre>
+                        </div>
                     </div>
-                </div>
 
-                <!-- Error Handling -->
-                <div class="api-section">
-                    <h2>Error Handling</h2>
-                    <p>Electric Home Hub API uses conventional HTTP response codes and returns error details in JSON format.</p>
-                    
-                    <h4>Error Response Format</h4>
-                    <div class="code-block">
-                        <pre><code>{
+                    <!-- Error Handling -->
+                    <div class="api-section">
+                        <h2>Error Handling</h2>
+                        <p>
+                            Electric Home Hub API uses conventional HTTP
+                            response codes and returns error details in JSON
+                            format.
+                        </p>
+
+                        <h4>Error Response Format</h4>
+                        <div class="code-block">
+                            <pre><code>{
   "error": {
     "code": "validation_error",
     "message": "Invalid device data provided",
@@ -688,52 +794,70 @@ Content-Disposition: attachment; filename="manual.pdf"
     "request_id": "req_abc123"
   }
 }</code></pre>
+                        </div>
+
+                        <h4>HTTP Status Codes</h4>
+                        <div class="status-codes">
+                            <div class="status-item">
+                                <span class="status-code success">200</span>
+                                <span class="status-desc"
+                                    >OK - Request successful</span
+                                >
+                            </div>
+                            <div class="status-item">
+                                <span class="status-code success">201</span>
+                                <span class="status-desc"
+                                    >Created - Resource created
+                                    successfully</span
+                                >
+                            </div>
+                            <div class="status-item">
+                                <span class="status-code error">400</span>
+                                <span class="status-desc"
+                                    >Bad Request - Invalid request data</span
+                                >
+                            </div>
+                            <div class="status-item">
+                                <span class="status-code error">401</span>
+                                <span class="status-desc"
+                                    >Unauthorized - Invalid API key</span
+                                >
+                            </div>
+                            <div class="status-item">
+                                <span class="status-code error">403</span>
+                                <span class="status-desc"
+                                    >Forbidden - Insufficient permissions</span
+                                >
+                            </div>
+                            <div class="status-item">
+                                <span class="status-code error">404</span>
+                                <span class="status-desc"
+                                    >Not Found - Resource doesn't exist</span
+                                >
+                            </div>
+                            <div class="status-item">
+                                <span class="status-code error">429</span>
+                                <span class="status-desc"
+                                    >Too Many Requests - Rate limit
+                                    exceeded</span
+                                >
+                            </div>
+                            <div class="status-item">
+                                <span class="status-code error">500</span>
+                                <span class="status-desc"
+                                    >Internal Server Error - Server error</span
+                                >
+                            </div>
+                        </div>
                     </div>
 
-                    <h4>HTTP Status Codes</h4>
-                    <div class="status-codes">
-                        <div class="status-item">
-                            <span class="status-code success">200</span>
-                            <span class="status-desc">OK - Request successful</span>
-                        </div>
-                        <div class="status-item">
-                            <span class="status-code success">201</span>
-                            <span class="status-desc">Created - Resource created successfully</span>
-                        </div>
-                        <div class="status-item">
-                            <span class="status-code error">400</span>
-                            <span class="status-desc">Bad Request - Invalid request data</span>
-                        </div>
-                        <div class="status-item">
-                            <span class="status-code error">401</span>
-                            <span class="status-desc">Unauthorized - Invalid API key</span>
-                        </div>
-                        <div class="status-item">
-                            <span class="status-code error">403</span>
-                            <span class="status-desc">Forbidden - Insufficient permissions</span>
-                        </div>
-                        <div class="status-item">
-                            <span class="status-code error">404</span>
-                            <span class="status-desc">Not Found - Resource doesn't exist</span>
-                        </div>
-                        <div class="status-item">
-                            <span class="status-code error">429</span>
-                            <span class="status-desc">Too Many Requests - Rate limit exceeded</span>
-                        </div>
-                        <div class="status-item">
-                            <span class="status-code error">500</span>
-                            <span class="status-desc">Internal Server Error - Server error</span>
-                        </div>
-                    </div>
-                </div>
+                    <!-- Advanced Examples -->
+                    <div class="api-section">
+                        <h2>Advanced Examples</h2>
 
-                <!-- Advanced Examples -->
-                <div class="api-section">
-                    <h2>Advanced Examples</h2>
-                    
-                    <h4>Bulk Device Import</h4>
-                    <div class="code-block">
-                        <pre><code>POST /api/devices/bulk
+                        <h4>Bulk Device Import</h4>
+                        <div class="code-block">
+                            <pre><code>POST /api/devices/bulk
 {
   "devices": [
     {
@@ -762,11 +886,11 @@ Content-Disposition: attachment; filename="manual.pdf"
     {"id": "device_102", "name": "Coffee Maker"}
   ]
 }</code></pre>
-                    </div>
+                        </div>
 
-                    <h4>Search Across All Data</h4>
-                    <div class="code-block">
-                        <pre><code>GET /api/search?q=samsung&include=devices,documents,alerts
+                        <h4>Search Across All Data</h4>
+                        <div class="code-block">
+                            <pre><code>GET /api/search?q=samsung&include=devices,documents,alerts
 
 // Response
 {
@@ -797,11 +921,11 @@ Content-Disposition: attachment; filename="manual.pdf"
   },
   "total_results": 3
 }</code></pre>
-                    </div>
+                        </div>
 
-                    <h4>Export Data</h4>
-                    <div class="code-block">
-                        <pre><code>POST /api/export
+                        <h4>Export Data</h4>
+                        <div class="code-block">
+                            <pre><code>POST /api/export
 {
   "format": "csv",
   "include": ["devices", "documents"],
@@ -831,21 +955,24 @@ GET /api/export/exp_456
   "download_url": "https://api.electrichomehub.com/exports/exp_456.csv",
   "expires_at": "2024-12-30T11:20:00Z"
 }</code></pre>
-                    </div>
-                </div>
-
-                <!-- Authentication -->
-                <div class="api-section">
-                    <h2>Authentication</h2>
-                    <div class="auth-info">
-                        <p>All API requests require authentication using your API key in the Authorization header:</p>
-                        <div class="code-block">
-                            <pre><code>Authorization: Bearer YOUR_API_KEY</code></pre>
                         </div>
-                        
-                        <h4>Complete Example Request</h4>
-                        <div class="code-block">
-                            <pre><code>curl -X GET \
+                    </div>
+
+                    <!-- Authentication -->
+                    <div class="api-section">
+                        <h2>Authentication</h2>
+                        <div class="auth-info">
+                            <p>
+                                All API requests require authentication using
+                                your API key in the Authorization header:
+                            </p>
+                            <div class="code-block">
+                                <pre><code>Authorization: Bearer YOUR_API_KEY</code></pre>
+                            </div>
+
+                            <h4>Complete Example Request</h4>
+                            <div class="code-block">
+                                <pre><code>curl -X GET \
   "https://api.electrichomehub.com/v1/devices" \
   -H "Authorization: Bearer ehk_prod_1234567890abcdef" \
   -H "Content-Type: application/json" \
@@ -876,43 +1003,50 @@ response = requests.get(
 )
 
 devices = response.json()</code></pre>
-                        </div>
+                            </div>
 
-                        <h4>Rate Limiting</h4>
-                        <div class="rate-limits">
-                            <div class="rate-item">
-                                <strong>Free Plan:</strong> 100 requests/hour
+                            <h4>Rate Limiting</h4>
+                            <div class="rate-limits">
+                                <div class="rate-item">
+                                    <strong>Free Plan:</strong> 100
+                                    requests/hour
+                                </div>
+                                <div class="rate-item">
+                                    <strong>Developer Plan:</strong> 1,000
+                                    requests/hour
+                                </div>
+                                <div class="rate-item">
+                                    <strong>Professional Plan:</strong> 5,000
+                                    requests/hour
+                                </div>
+                                <div class="rate-item">
+                                    <strong>Enterprise Plan:</strong> 25,000
+                                    requests/hour
+                                </div>
                             </div>
-                            <div class="rate-item">
-                                <strong>Developer Plan:</strong> 1,000 requests/hour
-                            </div>
-                            <div class="rate-item">
-                                <strong>Professional Plan:</strong> 5,000 requests/hour
-                            </div>
-                            <div class="rate-item">
-                                <strong>Enterprise Plan:</strong> 25,000 requests/hour
-                            </div>
-                        </div>
 
-                        <p>Rate limit headers included in all responses:</p>
-                        <div class="code-block">
-                            <pre><code>X-RateLimit-Limit: 1000
+                            <p>Rate limit headers included in all responses:</p>
+                            <div class="code-block">
+                                <pre><code>X-RateLimit-Limit: 1000
 X-RateLimit-Remaining: 999
 X-RateLimit-Reset: 1640995200</code></pre>
+                            </div>
                         </div>
                     </div>
                 </div>
+            </section>
+        </main>
+
+        <footer class="footer">
+            <div class="container">
+                <p>
+                    &copy; 2025 Electric Home Hub. Empowering electric device
+                    management, made with love, as a demo by Suraj
+                </p>
             </div>
-        </section>
-    </main>
+        </footer>
 
-    <footer class="footer">
-        <div class="container">
-            <p>&copy; 2025 Electric Home Hub. Empowering electric device management, made with love, as a demo by Suraj</p>
-        </div>
-    </footer>
-
-    <script src="js/main.js"></script>
-    <script src="js/api.js"></script>
-</body>
+        <script src="js/main.js"></script>
+        <script src="js/api.js"></script>
+    </body>
 </html>
