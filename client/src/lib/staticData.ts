@@ -25,7 +25,7 @@ export const exampleDevices: Device[] = [
     category: "Kitchen",
     serialNumber: "SR240001234",
     warrantyStatus: "active",
-    warrantyExpiry: "2027-12-15",
+    warrantyExpiry: "2025-12-15",
     location: "Kitchen",
     iconType: "refrigerator"
   },
@@ -36,8 +36,8 @@ export const exampleDevices: Device[] = [
     manufacturer: "Google",
     category: "HVAC",
     serialNumber: "NT350002456",
-    warrantyStatus: "expiring", 
-    warrantyExpiry: "2025-03-22",
+    warrantyStatus: "expiring_soon", 
+    warrantyExpiry: "2025-02-15",
     location: "Living Room",
     iconType: "thermostat"
   },
@@ -60,8 +60,8 @@ export const exampleDevices: Device[] = [
     manufacturer: "Ring",
     category: "Security",
     serialNumber: "RG880004567",
-    warrantyStatus: "active",
-    warrantyExpiry: "2026-09-30",
+    warrantyStatus: "expiring_soon",
+    warrantyExpiry: "2025-01-30",
     location: "Front Door",
     iconType: "doorbell"
   },
@@ -72,8 +72,8 @@ export const exampleDevices: Device[] = [
     manufacturer: "Philips",
     category: "Lighting",
     serialNumber: "PH550005890",
-    warrantyStatus: "active",
-    warrantyExpiry: "2028-01-15",
+    warrantyStatus: "expired",
+    warrantyExpiry: "2024-06-15",
     location: "Living Room",
     iconType: "hub"
   },
@@ -84,8 +84,8 @@ export const exampleDevices: Device[] = [
     manufacturer: "iRobot",
     category: "Cleaning",
     serialNumber: "IR770006123",
-    warrantyStatus: "expiring",
-    warrantyExpiry: "2025-06-20",
+    warrantyStatus: "active",
+    warrantyExpiry: "2025-11-20",
     location: "Living Room",
     iconType: "vacuum"
   }
