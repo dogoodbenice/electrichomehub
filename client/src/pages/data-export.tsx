@@ -54,7 +54,10 @@ export default function DataExport() {
                     <h4 className="font-medium">Device Inventory Report</h4>
                     <p className="text-sm text-muted-foreground">Complete list with warranty status</p>
                   </div>
-                  <Button className="bg-brand-red hover:bg-red-600">
+                  <Button 
+                    className="bg-brand-red hover:bg-red-600"
+                    onClick={() => window.location.href = '/electrichomehub/data-export.html'}
+                  >
                     Export CSV
                   </Button>
                 </div>
@@ -68,7 +71,10 @@ export default function DataExport() {
                     <h4 className="font-medium">Alert History</h4>
                     <p className="text-sm text-muted-foreground">Past 12 months of monitoring alerts</p>
                   </div>
-                  <Button className="bg-brand-red hover:bg-red-600">
+                  <Button 
+                    className="bg-brand-red hover:bg-red-600"
+                    onClick={() => window.location.href = '/electrichomehub/data-export.html'}
+                  >
                     Export JSON
                   </Button>
                 </div>
@@ -82,7 +88,10 @@ export default function DataExport() {
                     <h4 className="font-medium">Document Archive</h4>
                     <p className="text-sm text-muted-foreground">All uploaded manuals and records</p>
                   </div>
-                  <Button className="bg-brand-red hover:bg-red-600">
+                  <Button 
+                    className="bg-brand-red hover:bg-red-600"
+                    onClick={() => window.location.href = '/electrichomehub/data-export.html'}
+                  >
                     Export ZIP
                   </Button>
                 </div>
