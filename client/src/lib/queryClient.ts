@@ -1,6 +1,7 @@
 import { QueryClient, QueryFunction } from "@tanstack/react-query";
 import { 
   isStaticDeployment, 
+  getBasePath,
   exampleDevices, 
   exampleDocuments, 
   exampleAlerts, 
@@ -72,8 +73,9 @@ export const getQueryFn: <T>(options: {
     // Use static JSON files for GitHub Pages deployment
     if (isStaticDeployment()) {
       try {
-        // Convert API endpoint to static file path
-        const staticPath = endpoint.replace('/api/', './api/') + '.json';
+        // Convert API endpoint to static file path with proper base path handling
+        const basePath = getBasePath();
+        const staticPath = basePath + endpoint.replace('/api', '/api') + '.json';
         const res = await fetch(staticPath);
         
         if (!res.ok) {

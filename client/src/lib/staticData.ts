@@ -7,6 +7,14 @@ export const isStaticDeployment = () => {
          import.meta.env.VITE_STATIC_MODE === 'true';
 };
 
+// Get the correct base path for the current environment
+export const getBasePath = () => {
+  if (window.location.hostname.includes('github.io')) {
+    return '/electrichomehub';
+  }
+  return '';
+};
+
 // Example data for static deployment demonstration
 export const exampleDevices: Device[] = [
   {

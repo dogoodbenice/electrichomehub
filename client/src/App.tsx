@@ -14,10 +14,9 @@ import DataExport from "@/pages/data-export";
 import FAQ from "@/pages/faq";
 import About from "@/pages/about";
 import NotFound from "@/pages/not-found";
+import { getBasePath } from "./lib/staticData";
 
-// Check if we're in GitHub Pages environment
-const isGitHubPages = window.location.hostname.includes('github.io');
-const basePath = isGitHubPages ? '/electrichomehub' : '';
+const basePath = getBasePath();
 
 function Router() {
   return (
