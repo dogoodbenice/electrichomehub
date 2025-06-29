@@ -76,6 +76,12 @@ The application uses four main database tables:
   - Increased margin-bottom from 2rem to 4rem between "Build Your Own Electric Home Hub" text and "Developer API Access" card
   - Enhanced CTA card spacing by increasing gap from 2rem to 3rem between content and "Access Developer Tools" button
   - Enhanced visual hierarchy and breathing room on homepage layout
+- June 29, 2025: Added four new devices and enhanced tracking page statistics
+  - Added BMW iX3 electric vehicle, SolarEdge solar panel system, Mitsubishi heat pump, and LG Chem battery pack
+  - Updated device statistics to reflect new totals: 10 devices, 4 active warranties, 3 expiring soon, 3 expired
+  - Enhanced summary stats section with professional card-based design, brand red accent numbers, and responsive grid layout
+  - Added new filter categories: Automotive, Energy, HVAC to accommodate expanded device types
+  - Improved mobile responsiveness with adaptive grid layouts for statistics display
 - June 29, 2025: Enhanced button styling and API page reorganization
   - Added comprehensive button styling with .btn-primary and .btn-secondary classes for consistency across all pages
   - Improved "Select Files" and "Add Device" buttons to match site design with proper hover effects and animations
