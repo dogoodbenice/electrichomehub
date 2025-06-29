@@ -5,19 +5,24 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Electric Home Hub</title>
     <script>
-      // Simple GitHub Pages SPA redirect
-      // Store the attempted path and redirect to main app
+      // GitHub Pages SPA redirect handler
       const currentPath = window.location.pathname;
       const basePath = '/electrichomehub';
       
-      // Store the intended route in session storage
+      // Handle different URL patterns
       if (currentPath.startsWith(basePath + '/') && currentPath !== basePath + '/') {
+        // Correct subdirectory path - store the route
         const route = currentPath.replace(basePath, '');
         sessionStorage.setItem('intended-route', route);
+        window.location.replace(basePath + '/');
+      } else if (currentPath !== basePath && currentPath !== basePath + '/') {
+        // Missing subdirectory - redirect to correct path
+        const correctPath = basePath + currentPath;
+        window.location.replace(correctPath);
+      } else {
+        // Default redirect to main app
+        window.location.replace(basePath + '/');
       }
-      
-      // Redirect to the main application
-      window.location.replace(basePath + '/');
     </script>
   </head>
   <body>
