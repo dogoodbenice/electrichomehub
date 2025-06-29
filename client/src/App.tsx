@@ -24,6 +24,13 @@ function RouteHandler() {
   const [, setLocation] = useLocation();
   
   useEffect(() => {
+    // Check for initial route set by static HTML pages
+    const initialRoute = (window as any).__INITIAL_ROUTE__;
+    if (initialRoute) {
+      setLocation(initialRoute);
+      return;
+    }
+
     // Check for intended route stored by 404 page
     const intendedRoute = sessionStorage.getItem('intended-route');
     if (intendedRoute) {
