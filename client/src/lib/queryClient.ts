@@ -72,7 +72,26 @@ export const getQueryFn: <T>(options: {
     
     // Use static data for GitHub Pages deployment
     if (isStaticDeployment()) {
-      // Always use in-memory data for reliable static deployment
+      // Try JSON files first, then fallback to in-memory data
+      try {
+        const basePath = getBasePath();
+        const staticPath = basePath + endpoint.replace('/api', '/api') + '.json';
+        const res = await fetch(staticPath);
+        
+        if (res.ok) {
+          const data = await res.json();
+          // Handle new JSON structure with comments
+          if (data.devices) return data.devices;
+          if (data.documents) return data.documents;
+          if (data.alerts) return data.alerts;
+          if (data.apiKeys) return data.apiKeys;
+          if (data.stats) return data.stats;
+          return data;
+        }
+      } catch (error) {
+        // Fallback to in-memory data
+      }
+      
       await new Promise(resolve => setTimeout(resolve, 200));
       return getStaticData(endpoint);
     }

@@ -1,4 +1,7 @@
-[
+{
+  "_comment": "EXAMPLE DATA - This file contains demonstration data for the Electric Home Hub platform. In a production environment, this would be replaced by live API endpoints serving real device data.",
+  "_demo_note": "These are fictional smart home devices showcasing various manufacturers, warranty statuses, and device categories for demonstration purposes only.",
+  "devices": [
   {
     "id": 1,
     "name": "Smart Refrigerator",
@@ -71,4 +74,5 @@
     "location": "Living Room",
     "iconType": "vacuum"
   }
-]
+  ]
+}

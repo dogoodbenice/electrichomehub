@@ -1,4 +1,7 @@
-[
+{
+  "_comment": "EXAMPLE DATA - This file contains demonstration alert data for the Electric Home Hub platform. In production, this would be replaced by live API endpoints serving real device alerts and notifications.",
+  "_demo_note": "These are fictional smart home device alerts showcasing various severity levels, alert types, and maintenance notifications for demonstration purposes only.",
+  "alerts": [
   {
     "id": 1,
     "deviceId": 1,
@@ -39,4 +42,5 @@
     "isRead": false,
     "createdAt": "2024-12-24T00:00:00.000Z"
   }
-]
+  ]
+}

@@ -1,4 +1,7 @@
-[
+{
+  "_comment": "EXAMPLE DATA - This file contains demonstration document data for the Electric Home Hub platform. In production, this would be replaced by live API endpoints serving real device documentation and files.",
+  "_demo_note": "These are fictional device documents showcasing various document types (manuals, warranties, installation guides) for demonstration purposes only.",
+  "documents": [
   {
     "id": 1,
     "deviceId": 1,
@@ -35,4 +38,5 @@
     "filePath": "/docs/ring-doorbell-setup.pdf",
     "uploadDate": "2024-03-05T00:00:00.000Z"
   }
-]
+  ]
+}
