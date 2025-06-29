@@ -79,6 +79,7 @@ The application uses four main database tables:
   - Removed unused API JSON files and simplified query client architecture
   - Ensured all navigation works correctly at https://dogoodbenice.github.io/electrichomehub/
   - Streamlined footer with functional links only, removed placeholder social links
+  - Reordered top navigation to prioritize Developer API as first menu item
 - Earlier: Complete static GitHub Pages demo with enhanced styling
   - Fixed DeviceTile component to display proper warranty status badges (Active/Expiring/Expired)
   - Added animated demo section with blue/purple gradient background below electric divider

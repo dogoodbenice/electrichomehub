@@ -6,11 +6,11 @@ import { Sheet, SheetContent, SheetTrigger } from "@/components/ui/sheet";
 import { getBasePath } from "@/lib/staticData";
 
 const navigation = [
+  { name: "Developer API", href: "/developer", featured: true },
   { name: "Dashboard", href: "/" },
   { name: "Device Tracking", href: "/tracking" },
   { name: "Documentation", href: "/documentation" },
   { name: "Issue Monitoring", href: "/monitoring" },
-  { name: "Developer API", href: "/developer", featured: true },
   { name: "Data Export", href: "/data-export" },
   { name: "FAQ", href: "/faq" },
 ];
