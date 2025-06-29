@@ -34,7 +34,7 @@ export default function DeviceGrid() {
   return (
     <div className="space-y-6">
       <div className="flex justify-between items-center">
-        <h2 className="text-2xl font-bold">Complete universal device tracking</h2>
+        <h2 className="text-2xl font-bold">Universal device tracking</h2>
         <Button className="bg-brand-red hover:bg-red-600">
           <Plus className="w-4 h-4 mr-2" />
           Add Device
