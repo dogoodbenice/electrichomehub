@@ -177,7 +177,6 @@ export default function Dashboard() {
           <div className="w-8 h-px bg-gradient-to-l from-transparent to-brand-red"></div>
         </div>
       </div>
-      
       {/* Demo Section */}
       <div className="relative overflow-hidden">
         {/* Animated Background */}
@@ -192,7 +191,7 @@ export default function Dashboard() {
           <div className="bg-gradient-to-r from-blue-600/20 to-purple-600/20 backdrop-blur-sm border border-blue-500/30 rounded-full px-6 py-2">
             <div className="flex items-center space-x-2">
               <div className="w-2 h-2 bg-blue-400 rounded-full animate-pulse"></div>
-              <span className="text-blue-200 text-sm font-medium">INTERACTIVE DEMO</span>
+              <span className="text-blue-200 text-sm font-medium">DEMO</span>
               <div className="w-2 h-2 bg-purple-400 rounded-full animate-pulse" style={{animationDelay: '0.5s'}}></div>
             </div>
           </div>
