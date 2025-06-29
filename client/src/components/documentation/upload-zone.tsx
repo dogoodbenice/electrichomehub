@@ -40,7 +40,10 @@ export default function UploadZone() {
             <p className="text-muted-foreground text-sm mb-4">
               Drag and drop files or click to browse
             </p>
-            <Button className="bg-brand-red hover:bg-red-600">
+            <Button 
+              className="bg-brand-red hover:bg-red-600"
+              onClick={() => window.location.href = '/electrichomehub/documentation.html'}
+            >
               Choose Files
             </Button>
           </CardContent>
