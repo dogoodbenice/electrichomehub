@@ -70,26 +70,11 @@ export const getQueryFn: <T>(options: {
   async ({ queryKey }) => {
     const endpoint = queryKey[0] as string;
     
-    // Use static JSON files for GitHub Pages deployment
+    // Use static data for GitHub Pages deployment
     if (isStaticDeployment()) {
-      try {
-        // Convert API endpoint to static file path with proper base path handling
-        const basePath = getBasePath();
-        const staticPath = basePath + endpoint.replace('/api', '/api') + '.json';
-        const res = await fetch(staticPath);
-        
-        if (!res.ok) {
-          // Fallback to in-memory data if JSON file not found
-          await new Promise(resolve => setTimeout(resolve, 200));
-          return getStaticData(endpoint);
-        }
-        
-        return await res.json();
-      } catch (error) {
-        // Fallback to in-memory data on any error
-        await new Promise(resolve => setTimeout(resolve, 200));
-        return getStaticData(endpoint);
-      }
+      // Always use in-memory data for reliable static deployment
+      await new Promise(resolve => setTimeout(resolve, 200));
+      return getStaticData(endpoint);
     }
 
     // Original API fetch for development/backend deployment
