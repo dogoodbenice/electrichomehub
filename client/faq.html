@@ -6,12 +6,306 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>FAQ - Electric Home Hub</title>
   <meta name="description" content="Frequently asked questions about Electric Home Hub smart device management platform." />
-  <script>
-    window.__INITIAL_ROUTE__ = '/faq';
-  </script>
+  <style>
+    * { margin: 0; padding: 0; box-sizing: border-box; }
+    body { 
+      font-family: system-ui, -apple-system, sans-serif; 
+      background: black; 
+      color: white; 
+      line-height: 1.6; 
+    }
+    .container { max-width: 1200px; margin: 0 auto; padding: 2rem 1rem; }
+    .header {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 1rem 2rem;
+      border-bottom: 1px solid #333;
+      background: black;
+    }
+    .logo {
+      display: flex;
+      align-items: center;
+      gap: 0.5rem;
+      font-size: 1.5rem;
+      font-weight: bold;
+      color: #ff3333;
+      text-decoration: none;
+    }
+    .nav {
+      display: flex;
+      gap: 2rem;
+      list-style: none;
+    }
+    .nav a {
+      color: white;
+      text-decoration: none;
+      padding: 0.5rem 1rem;
+      border-radius: 0.25rem;
+      transition: all 0.2s;
+    }
+    .nav a:hover { background: #333; }
+    .nav a.featured {
+      color: #ff3333;
+      border: 1px solid #ff3333;
+      font-weight: 600;
+    }
+    .faq-section {
+      margin-bottom: 3rem;
+    }
+    .faq-item {
+      background: #111;
+      border: 1px solid #333;
+      border-radius: 0.5rem;
+      margin-bottom: 1rem;
+      overflow: hidden;
+    }
+    .faq-question {
+      padding: 1.5rem;
+      cursor: pointer;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      transition: all 0.2s;
+    }
+    .faq-question:hover {
+      background: #222;
+    }
+    .faq-answer {
+      padding: 0 1.5rem 1.5rem;
+      color: #999;
+      border-top: 1px solid #333;
+      background: #0a0a0a;
+    }
+    .faq-icon {
+      color: #ff3333;
+      font-size: 1.25rem;
+    }
+    h1 { font-size: 2rem; margin-bottom: 2rem; }
+    h2 { font-size: 1.5rem; margin-bottom: 1.5rem; color: #ff3333; }
+    .search-box {
+      background: #111;
+      border: 1px solid #333;
+      border-radius: 0.5rem;
+      padding: 1rem;
+      margin-bottom: 2rem;
+      display: flex;
+      align-items: center;
+      gap: 1rem;
+    }
+    .search-input {
+      background: transparent;
+      border: none;
+      color: white;
+      flex: 1;
+      outline: none;
+      font-size: 1rem;
+    }
+    .search-input::placeholder {
+      color: #666;
+    }
+    @media (max-width: 768px) {
+      .nav { display: none; }
+      .container { padding: 1rem; }
+      .faq-question { padding: 1rem; }
+      .faq-answer { padding: 0 1rem 1rem; }
+    }
+  </style>
 </head>
 <body>
-  <div id="root"></div>
-  <script type="module" src="/electrichomehub/src/main.tsx"></script>
+  <header class="header">
+    <a href="/electrichomehub/" class="logo">
+      ⚡ Electric Home Hub
+    </a>
+    <nav>
+      <ul class="nav">
+        <li><a href="/electrichomehub/developer.html" class="featured">Developer API</a></li>
+        <li><a href="/electrichomehub/tracking.html">Device Tracking</a></li>
+        <li><a href="/electrichomehub/documentation.html">Documentation</a></li>
+        <li><a href="/electrichomehub/monitoring.html">Issue Monitoring</a></li>
+        <li><a href="/electrichomehub/data-export.html">Data Export</a></li>
+        <li><a href="/electrichomehub/faq.html">FAQ</a></li>
+      </ul>
+    </nav>
+  </header>
+
+  <div class="container">
+    <h1>Frequently Asked Questions</h1>
+    
+    <div class="search-box">
+      <span style="color: #ff3333;">🔍</span>
+      <input type="text" class="search-input" placeholder="Search FAQ..." />
+    </div>
+
+    <div class="faq-section">
+      <h2>Getting Started</h2>
+      
+      <div class="faq-item">
+        <div class="faq-question">
+          <span>What is Electric Home Hub?</span>
+          <span class="faq-icon">+</span>
+        </div>
+        <div class="faq-answer">
+          Electric Home Hub is a centralized platform for managing smart home devices across all brands and manufacturers. We provide device tracking, documentation management, proactive issue monitoring, and developer APIs to simplify the fragmented experience of managing devices from multiple companies.
+        </div>
+      </div>
+
+      <div class="faq-item">
+        <div class="faq-question">
+          <span>How do I add my first device?</span>
+          <span class="faq-icon">+</span>
+        </div>
+        <div class="faq-answer">
+          Navigate to the Device Tracking page and click "Add Device." You'll need your device's model number, serial number, and purchase date. Our system will automatically detect warranty information and set up monitoring for recalls and updates.
+        </div>
+      </div>
+
+      <div class="faq-item">
+        <div class="faq-question">
+          <span>Is Electric Home Hub compatible with my existing smart home setup?</span>
+          <span class="faq-icon">+</span>
+        </div>
+        <div class="faq-answer">
+          Yes! Electric Home Hub works with devices from all major manufacturers including Samsung, Google, Amazon, Philips, TP-Link, and hundreds of others. We focus on management and monitoring rather than device control, so we complement your existing apps and systems.
+        </div>
+      </div>
+    </div>
+
+    <div class="faq-section">
+      <h2>Device Management</h2>
+      
+      <div class="faq-item">
+        <div class="faq-question">
+          <span>How does warranty tracking work?</span>
+          <span class="faq-icon">+</span>
+        </div>
+        <div class="faq-answer">
+          When you add a device, we automatically look up warranty information based on the model and purchase date. We'll send you alerts when warranties are about to expire and help you understand what's covered. You can also upload warranty documents for extended warranties.
+        </div>
+      </div>
+
+      <div class="faq-item">
+        <div class="faq-question">
+          <span>What types of alerts will I receive?</span>
+          <span class="faq-icon">+</span>
+        </div>
+        <div class="faq-answer">
+          We monitor for device recalls, firmware updates, security patches, warranty expiration notices, and maintenance reminders. All alerts are prioritized by severity and include clear action steps. You can customize which alerts you receive for each device.
+        </div>
+      </div>
+
+      <div class="faq-item">
+        <div class="faq-question">
+          <span>Can I organize devices by room or location?</span>
+          <span class="faq-icon">+</span>
+        </div>
+        <div class="faq-answer">
+          Absolutely! You can assign each device to a specific location (Kitchen, Living Room, Bedroom, etc.) and filter your device list by location. This makes it easier to manage devices and understand which areas of your home might be affected by alerts.
+        </div>
+      </div>
+    </div>
+
+    <div class="faq-section">
+      <h2>Developer API</h2>
+      
+      <div class="faq-item">
+        <div class="faq-question">
+          <span>How do I get started with the API?</span>
+          <span class="faq-icon">+</span>
+        </div>
+        <div class="faq-answer">
+          Visit our Developer API page to generate your first API key. We offer a free tier with generous limits, comprehensive documentation, and SDKs for popular programming languages. Our API allows you to integrate device management into your own applications.
+        </div>
+      </div>
+
+      <div class="faq-item">
+        <div class="faq-question">
+          <span>What can I build with the API?</span>
+          <span class="faq-icon">+</span>
+        </div>
+        <div class="faq-answer">
+          Our API enables you to create custom dashboards, integrate with property management systems, build white-label solutions for your customers, or create specialized applications for specific industries like hospitality or real estate.
+        </div>
+      </div>
+
+      <div class="faq-item">
+        <div class="faq-question">
+          <span>Is there a rate limit on API calls?</span>
+          <span class="faq-icon">+</span>
+        </div>
+        <div class="faq-answer">
+          The free tier includes 1,000 API calls per month. Paid plans start at $29/month for 10,000 calls. Enterprise customers can get custom rate limits. All plans include real-time monitoring of your API usage.
+        </div>
+      </div>
+    </div>
+
+    <div class="faq-section">
+      <h2>Data & Privacy</h2>
+      
+      <div class="faq-item">
+        <div class="faq-question">
+          <span>How is my data protected?</span>
+          <span class="faq-icon">+</span>
+        </div>
+        <div class="faq-answer">
+          We use enterprise-grade encryption for data at rest and in transit. All API access requires authentication, and we provide detailed audit logs. We never sell your data and only use it to provide the services you've requested.
+        </div>
+      </div>
+
+      <div class="faq-item">
+        <div class="faq-question">
+          <span>Can I export my data?</span>
+          <span class="faq-icon">+</span>
+        </div>
+        <div class="faq-answer">
+          Yes! Use our Data Export feature to download all your device information, documents, and alert history in various formats including CSV, JSON, PDF, and Excel. You can also set up automated scheduled exports.
+        </div>
+      </div>
+
+      <div class="faq-item">
+        <div class="faq-question">
+          <span>What happens if I want to delete my account?</span>
+          <span class="faq-icon">+</span>
+        </div>
+        <div class="faq-answer">
+          You can delete your account at any time from your settings page. We'll immediately stop all monitoring and permanently delete your data within 30 days. You'll receive a confirmation email when the deletion is complete.
+        </div>
+      </div>
+    </div>
+
+    <div class="faq-section">
+      <h2>Billing & Support</h2>
+      
+      <div class="faq-item">
+        <div class="faq-question">
+          <span>Is there a free plan available?</span>
+          <span class="faq-icon">+</span>
+        </div>
+        <div class="faq-answer">
+          Yes! Our free plan includes up to 5 devices, basic alerts, and limited API access. It's perfect for individuals or small households. Paid plans start at $9/month for unlimited devices and advanced features.
+        </div>
+      </div>
+
+      <div class="faq-item">
+        <div class="faq-question">
+          <span>How do I contact support?</span>
+          <span class="faq-icon">+</span>
+        </div>
+        <div class="faq-answer">
+          Free users can access our community forum and knowledge base. Paid users get email support with 24-hour response time. Enterprise customers receive priority phone support and dedicated account management.
+        </div>
+      </div>
+
+      <div class="faq-item">
+        <div class="faq-question">
+          <span>Do you offer enterprise solutions?</span>
+          <span class="faq-icon">+</span>
+        </div>
+        <div class="faq-answer">
+          Absolutely! We provide white-label solutions, custom integrations, bulk device management, and dedicated support for property managers, manufacturers, and service providers. Contact our sales team for custom pricing.
+        </div>
+      </div>
+    </div>
+  </div>
 </body>
 </html>

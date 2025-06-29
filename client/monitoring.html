@@ -6,12 +6,259 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Issue Monitoring - Electric Home Hub</title>
   <meta name="description" content="Monitor device issues, recalls, and alerts with proactive notifications for your smart home devices." />
-  <script>
-    window.__INITIAL_ROUTE__ = '/monitoring';
-  </script>
+  <style>
+    * { margin: 0; padding: 0; box-sizing: border-box; }
+    body { 
+      font-family: system-ui, -apple-system, sans-serif; 
+      background: black; 
+      color: white; 
+      line-height: 1.6; 
+    }
+    .container { max-width: 1200px; margin: 0 auto; padding: 2rem 1rem; }
+    .header {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 1rem 2rem;
+      border-bottom: 1px solid #333;
+      background: black;
+    }
+    .logo {
+      display: flex;
+      align-items: center;
+      gap: 0.5rem;
+      font-size: 1.5rem;
+      font-weight: bold;
+      color: #ff3333;
+      text-decoration: none;
+    }
+    .nav {
+      display: flex;
+      gap: 2rem;
+      list-style: none;
+    }
+    .nav a {
+      color: white;
+      text-decoration: none;
+      padding: 0.5rem 1rem;
+      border-radius: 0.25rem;
+      transition: all 0.2s;
+    }
+    .nav a:hover { background: #333; }
+    .nav a.featured {
+      color: #ff3333;
+      border: 1px solid #ff3333;
+      font-weight: 600;
+    }
+    .status-bar {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      margin-bottom: 2rem;
+    }
+    .monitoring-status {
+      display: flex;
+      align-items: center;
+      gap: 0.5rem;
+      color: #16a34a;
+    }
+    .status-dot {
+      width: 0.75rem;
+      height: 0.75rem;
+      background: #16a34a;
+      border-radius: 50%;
+      animation: pulse 2s infinite;
+    }
+    @keyframes pulse {
+      0%, 100% { opacity: 1; }
+      50% { opacity: 0.5; }
+    }
+    .alert-card {
+      background: #111;
+      border: 1px solid #333;
+      border-radius: 0.5rem;
+      padding: 1.5rem;
+      margin-bottom: 1rem;
+      transition: all 0.2s;
+    }
+    .alert-card:hover {
+      border-color: #ff3333;
+      transform: translateY(-1px);
+    }
+    .alert-header {
+      display: flex;
+      justify-content: space-between;
+      align-items: flex-start;
+      margin-bottom: 1rem;
+    }
+    .alert-icon {
+      width: 2.5rem;
+      height: 2.5rem;
+      border-radius: 0.25rem;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 1.25rem;
+      margin-right: 1rem;
+    }
+    .severity-high { background: #dc2626; }
+    .severity-medium { background: #f59e0b; }
+    .severity-low { background: #16a34a; }
+    .alert-badge {
+      padding: 0.25rem 0.75rem;
+      border-radius: 9999px;
+      font-size: 0.75rem;
+      font-weight: 600;
+    }
+    .badge-recall { background: #dc2626; color: white; }
+    .badge-warning { background: #f59e0b; color: black; }
+    .badge-maintenance { background: #16a34a; color: white; }
+    .alert-title { font-size: 1.25rem; font-weight: 600; margin-bottom: 0.5rem; }
+    .alert-description { color: #999; margin-bottom: 1rem; }
+    .alert-footer {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      color: #666;
+      font-size: 0.875rem;
+    }
+    h1 { font-size: 2rem; margin-bottom: 1rem; }
+    .empty-state {
+      text-align: center;
+      padding: 4rem 2rem;
+      color: #666;
+    }
+    .empty-state-icon {
+      font-size: 4rem;
+      margin-bottom: 1rem;
+    }
+    @media (max-width: 768px) {
+      .nav { display: none; }
+      .container { padding: 1rem; }
+      .status-bar { flex-direction: column; gap: 1rem; align-items: flex-start; }
+    }
+  </style>
 </head>
 <body>
-  <div id="root"></div>
-  <script type="module" src="/electrichomehub/src/main.tsx"></script>
+  <header class="header">
+    <a href="/electrichomehub/" class="logo">
+      ⚡ Electric Home Hub
+    </a>
+    <nav>
+      <ul class="nav">
+        <li><a href="/electrichomehub/developer.html" class="featured">Developer API</a></li>
+        <li><a href="/electrichomehub/tracking.html">Device Tracking</a></li>
+        <li><a href="/electrichomehub/documentation.html">Documentation</a></li>
+        <li><a href="/electrichomehub/monitoring.html">Issue Monitoring</a></li>
+        <li><a href="/electrichomehub/data-export.html">Data Export</a></li>
+        <li><a href="/electrichomehub/faq.html">FAQ</a></li>
+      </ul>
+    </nav>
+  </header>
+
+  <div class="container">
+    <div class="status-bar">
+      <h1>Proactive Issue Monitoring</h1>
+      <div class="monitoring-status">
+        <div class="status-dot"></div>
+        <span>Monitoring Active</span>
+      </div>
+    </div>
+    
+    <div class="alert-card">
+      <div class="alert-header">
+        <div style="display: flex; align-items: flex-start;">
+          <div class="alert-icon severity-high">⚠️</div>
+          <div style="flex: 1;">
+            <div class="alert-title">Smart Fridge Recall Notice</div>
+            <div class="alert-badge badge-recall">Recall</div>
+          </div>
+        </div>
+      </div>
+      <div class="alert-description">
+        Samsung has issued a recall for RF28R7351 models due to potential ice maker malfunction. Please contact Samsung support to schedule a free repair appointment.
+      </div>
+      <div class="alert-footer">
+        <span>📍 Affects: Smart Fridge (Kitchen)</span>
+        <span>📅 2 hours ago</span>
+      </div>
+    </div>
+
+    <div class="alert-card">
+      <div class="alert-header">
+        <div style="display: flex; align-items: flex-start;">
+          <div class="alert-icon severity-medium">🔧</div>
+          <div style="flex: 1;">
+            <div class="alert-title">Thermostat Firmware Update</div>
+            <div class="alert-badge badge-warning">Update Available</div>
+          </div>
+        </div>
+      </div>
+      <div class="alert-description">
+        Google Nest Learning Thermostat has a critical security update available. Update recommended within 7 days to maintain optimal security.
+      </div>
+      <div class="alert-footer">
+        <span>📍 Affects: Smart Thermostat (Living Room)</span>
+        <span>📅 1 day ago</span>
+      </div>
+    </div>
+
+    <div class="alert-card">
+      <div class="alert-header">
+        <div style="display: flex; align-items: flex-start;">
+          <div class="alert-icon severity-low">🛠️</div>
+          <div style="flex: 1;">
+            <div class="alert-title">Smart Bulbs Maintenance</div>
+            <div class="alert-badge badge-maintenance">Scheduled</div>
+          </div>
+        </div>
+      </div>
+      <div class="alert-description">
+        Philips Hue Color bulbs are due for routine maintenance check. Consider cleaning fixtures and checking connections for optimal performance.
+      </div>
+      <div class="alert-footer">
+        <span>📍 Affects: Smart Light Bulbs (Bedroom)</span>
+        <span>📅 3 days ago</span>
+      </div>
+    </div>
+
+    <div class="alert-card">
+      <div class="alert-header">
+        <div style="display: flex; align-items: flex-start;">
+          <div class="alert-icon severity-medium">🔋</div>
+          <div style="flex: 1;">
+            <div class="alert-title">Smart Lock Battery Low</div>
+            <div class="alert-badge badge-warning">Battery Alert</div>
+          </div>
+        </div>
+      </div>
+      <div class="alert-description">
+        August Smart Lock Pro battery level is at 15%. Replace batteries soon to avoid lockout situations. Estimated 2-3 weeks remaining.
+      </div>
+      <div class="alert-footer">
+        <span>📍 Affects: Smart Door Lock (Front Door)</span>
+        <span>📅 5 days ago</span>
+      </div>
+    </div>
+
+    <div class="alert-card">
+      <div class="alert-header">
+        <div style="display: flex; align-items: flex-start;">
+          <div class="alert-icon severity-low">📡</div>
+          <div style="flex: 1;">
+            <div class="alert-title">Network Connectivity Check</div>
+            <div class="alert-badge badge-maintenance">Routine</div>
+          </div>
+        </div>
+      </div>
+      <div class="alert-description">
+        Smart Speaker occasionally experiences brief connectivity drops. Monitor for patterns and consider router placement optimization if issues persist.
+      </div>
+      <div class="alert-footer">
+        <span>📍 Affects: Smart Speaker (Kitchen)</span>
+        <span>📅 1 week ago</span>
+      </div>
+    </div>
+  </div>
 </body>
 </html>

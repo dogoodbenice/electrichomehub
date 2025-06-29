@@ -6,12 +6,211 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Device Tracking - Electric Home Hub</title>
   <meta name="description" content="Track and monitor all your electric devices with warranty status and location management." />
-  <script>
-    window.__INITIAL_ROUTE__ = '/tracking';
-  </script>
+  <style>
+    * { margin: 0; padding: 0; box-sizing: border-box; }
+    body { 
+      font-family: system-ui, -apple-system, sans-serif; 
+      background: black; 
+      color: white; 
+      line-height: 1.6; 
+    }
+    .container { max-width: 1200px; margin: 0 auto; padding: 2rem 1rem; }
+    .header {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 1rem 2rem;
+      border-bottom: 1px solid #333;
+      background: black;
+    }
+    .logo {
+      display: flex;
+      align-items: center;
+      gap: 0.5rem;
+      font-size: 1.5rem;
+      font-weight: bold;
+      color: #ff3333;
+      text-decoration: none;
+    }
+    .nav {
+      display: flex;
+      gap: 2rem;
+      list-style: none;
+    }
+    .nav a {
+      color: white;
+      text-decoration: none;
+      padding: 0.5rem 1rem;
+      border-radius: 0.25rem;
+      transition: all 0.2s;
+    }
+    .nav a:hover { background: #333; }
+    .nav a.featured {
+      color: #ff3333;
+      border: 1px solid #ff3333;
+      font-weight: 600;
+    }
+    .grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+      gap: 1.5rem;
+      margin-top: 2rem;
+    }
+    .device-card {
+      background: #111;
+      border: 1px solid #333;
+      border-radius: 0.5rem;
+      padding: 1.5rem;
+      transition: all 0.2s;
+    }
+    .device-card:hover {
+      border-color: #ff3333;
+      transform: translateY(-2px);
+    }
+    .device-header {
+      display: flex;
+      justify-content: space-between;
+      align-items: flex-start;
+      margin-bottom: 1rem;
+    }
+    .device-icon {
+      width: 3rem;
+      height: 3rem;
+      background: #ff3333;
+      border-radius: 50%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 1.5rem;
+    }
+    .warranty-badge {
+      padding: 0.25rem 0.75rem;
+      border-radius: 9999px;
+      font-size: 0.75rem;
+      font-weight: 600;
+    }
+    .warranty-active { background: #16a34a; color: white; }
+    .warranty-expiring { background: #f59e0b; color: black; }
+    .warranty-expired { background: #dc2626; color: white; }
+    .device-title { font-size: 1.25rem; font-weight: 600; margin-bottom: 0.5rem; }
+    .device-details { color: #999; font-size: 0.875rem; }
+    .device-location { margin-top: 1rem; color: #666; font-size: 0.875rem; }
+    h1 { font-size: 2rem; margin-bottom: 2rem; }
+    .mobile-nav { display: none; }
+    @media (max-width: 768px) {
+      .nav { display: none; }
+      .mobile-nav { display: block; }
+      .grid { grid-template-columns: 1fr; }
+      .container { padding: 1rem; }
+    }
+  </style>
 </head>
 <body>
-  <div id="root"></div>
-  <script type="module" src="/electrichomehub/src/main.tsx"></script>
+  <header class="header">
+    <a href="/electrichomehub/" class="logo">
+      ⚡ Electric Home Hub
+    </a>
+    <nav>
+      <ul class="nav">
+        <li><a href="/electrichomehub/developer.html" class="featured">Developer API</a></li>
+        <li><a href="/electrichomehub/tracking.html">Device Tracking</a></li>
+        <li><a href="/electrichomehub/documentation.html">Documentation</a></li>
+        <li><a href="/electrichomehub/monitoring.html">Issue Monitoring</a></li>
+        <li><a href="/electrichomehub/data-export.html">Data Export</a></li>
+        <li><a href="/electrichomehub/faq.html">FAQ</a></li>
+      </ul>
+    </nav>
+  </header>
+
+  <div class="container">
+    <h1>Device Tracking</h1>
+    <p style="color: #999; margin-bottom: 2rem;">Monitor all your electric devices with warranty status and location management.</p>
+    
+    <div class="grid">
+      <div class="device-card">
+        <div class="device-header">
+          <div class="device-icon">📱</div>
+          <div class="warranty-badge warranty-active">Active</div>
+        </div>
+        <div class="device-title">Smart Fridge</div>
+        <div class="device-details">
+          Samsung RF28R7351<br>
+          Serial: SF2024001<br>
+          Warranty until: Dec 15, 2026
+        </div>
+        <div class="device-location">📍 Kitchen</div>
+      </div>
+
+      <div class="device-card">
+        <div class="device-header">
+          <div class="device-icon">🌡️</div>
+          <div class="warranty-badge warranty-active">Active</div>
+        </div>
+        <div class="device-title">Smart Thermostat</div>
+        <div class="device-details">
+          Google Nest Learning<br>
+          Serial: NT2024002<br>
+          Warranty until: Mar 10, 2027
+        </div>
+        <div class="device-location">📍 Living Room</div>
+      </div>
+
+      <div class="device-card">
+        <div class="device-header">
+          <div class="device-icon">💡</div>
+          <div class="warranty-badge warranty-expiring">Expiring Soon</div>
+        </div>
+        <div class="device-title">Smart Light Bulbs</div>
+        <div class="device-details">
+          Philips Hue Color<br>
+          Serial: PH2024003<br>
+          Warranty until: Aug 22, 2025
+        </div>
+        <div class="device-location">📍 Bedroom</div>
+      </div>
+
+      <div class="device-card">
+        <div class="device-header">
+          <div class="device-icon">🔌</div>
+          <div class="warranty-badge warranty-expiring">Expiring Soon</div>
+        </div>
+        <div class="device-title">Smart Outlets</div>
+        <div class="device-details">
+          TP-Link Kasa Smart<br>
+          Serial: TP2024004<br>
+          Warranty until: Sep 15, 2025
+        </div>
+        <div class="device-location">📍 Office</div>
+      </div>
+
+      <div class="device-card">
+        <div class="device-header">
+          <div class="device-icon">🎵</div>
+          <div class="warranty-badge warranty-expired">Expired</div>
+        </div>
+        <div class="device-title">Smart Speaker</div>
+        <div class="device-details">
+          Amazon Echo Dot<br>
+          Serial: EC2023005<br>
+          Warranty expired: Jan 20, 2025
+        </div>
+        <div class="device-location">📍 Kitchen</div>
+      </div>
+
+      <div class="device-card">
+        <div class="device-header">
+          <div class="device-icon">🔒</div>
+          <div class="warranty-badge warranty-expired">Expired</div>
+        </div>
+        <div class="device-title">Smart Door Lock</div>
+        <div class="device-details">
+          August Smart Lock Pro<br>
+          Serial: AL2023006<br>
+          Warranty expired: Feb 28, 2025
+        </div>
+        <div class="device-location">📍 Front Door</div>
+      </div>
+    </div>
+  </div>
 </body>
 </html>

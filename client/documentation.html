@@ -6,12 +6,274 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Documentation - Electric Home Hub</title>
   <meta name="description" content="Documentation and user guides for Electric Home Hub smart device management platform." />
-  <script>
-    window.__INITIAL_ROUTE__ = '/documentation';
-  </script>
+  <style>
+    * { margin: 0; padding: 0; box-sizing: border-box; }
+    body { 
+      font-family: system-ui, -apple-system, sans-serif; 
+      background: black; 
+      color: white; 
+      line-height: 1.6; 
+    }
+    .container { max-width: 1200px; margin: 0 auto; padding: 2rem 1rem; }
+    .header {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 1rem 2rem;
+      border-bottom: 1px solid #333;
+      background: black;
+    }
+    .logo {
+      display: flex;
+      align-items: center;
+      gap: 0.5rem;
+      font-size: 1.5rem;
+      font-weight: bold;
+      color: #ff3333;
+      text-decoration: none;
+    }
+    .nav {
+      display: flex;
+      gap: 2rem;
+      list-style: none;
+    }
+    .nav a {
+      color: white;
+      text-decoration: none;
+      padding: 0.5rem 1rem;
+      border-radius: 0.25rem;
+      transition: all 0.2s;
+    }
+    .nav a:hover { background: #333; }
+    .nav a.featured {
+      color: #ff3333;
+      border: 1px solid #ff3333;
+      font-weight: 600;
+    }
+    .upload-zone {
+      border: 2px dashed #333;
+      border-radius: 0.5rem;
+      padding: 3rem;
+      text-align: center;
+      margin: 2rem 0;
+      background: #111;
+      transition: all 0.2s;
+    }
+    .upload-zone:hover {
+      border-color: #ff3333;
+      background: #222;
+    }
+    .btn {
+      background: #ff3333;
+      color: white;
+      border: none;
+      padding: 0.75rem 1.5rem;
+      border-radius: 0.25rem;
+      font-weight: 600;
+      cursor: pointer;
+      transition: all 0.2s;
+      text-decoration: none;
+      display: inline-flex;
+      align-items: center;
+      gap: 0.5rem;
+    }
+    .btn:hover { background: #cc2222; }
+    .grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+      gap: 1.5rem;
+      margin-top: 2rem;
+    }
+    .doc-card {
+      background: #111;
+      border: 1px solid #333;
+      border-radius: 0.5rem;
+      padding: 1.5rem;
+      transition: all 0.2s;
+    }
+    .doc-card:hover {
+      border-color: #ff3333;
+      transform: translateY(-2px);
+    }
+    .doc-header {
+      display: flex;
+      justify-content: between;
+      align-items: flex-start;
+      margin-bottom: 1rem;
+    }
+    .doc-icon {
+      width: 2.5rem;
+      height: 2.5rem;
+      background: #ff3333;
+      border-radius: 0.25rem;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 1.25rem;
+      margin-right: 1rem;
+    }
+    .doc-badge {
+      padding: 0.25rem 0.75rem;
+      border-radius: 9999px;
+      font-size: 0.75rem;
+      font-weight: 600;
+      margin-left: auto;
+    }
+    .badge-manual { background: #1e40af; color: white; }
+    .badge-warranty { background: #16a34a; color: white; }
+    .doc-title { font-size: 1.125rem; font-weight: 600; margin-bottom: 0.5rem; }
+    .doc-details { color: #999; font-size: 0.875rem; }
+    .doc-date { margin-top: 1rem; color: #666; font-size: 0.875rem; }
+    h1 { font-size: 2rem; margin-bottom: 1rem; }
+    h2 { font-size: 1.5rem; margin: 2rem 0 1rem 0; }
+    .section-header {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      margin-bottom: 1.5rem;
+    }
+    @media (max-width: 768px) {
+      .nav { display: none; }
+      .grid { grid-template-columns: 1fr; }
+      .container { padding: 1rem; }
+      .section-header { flex-direction: column; gap: 1rem; align-items: flex-start; }
+    }
+  </style>
 </head>
 <body>
-  <div id="root"></div>
-  <script type="module" src="/electrichomehub/src/main.tsx"></script>
+  <header class="header">
+    <a href="/electrichomehub/" class="logo">
+      ⚡ Electric Home Hub
+    </a>
+    <nav>
+      <ul class="nav">
+        <li><a href="/electrichomehub/developer.html" class="featured">Developer API</a></li>
+        <li><a href="/electrichomehub/tracking.html">Device Tracking</a></li>
+        <li><a href="/electrichomehub/documentation.html">Documentation</a></li>
+        <li><a href="/electrichomehub/monitoring.html">Issue Monitoring</a></li>
+        <li><a href="/electrichomehub/data-export.html">Data Export</a></li>
+        <li><a href="/electrichomehub/faq.html">FAQ</a></li>
+      </ul>
+    </nav>
+  </header>
+
+  <div class="container">
+    <div class="section-header">
+      <h1>Manage Device Documents</h1>
+      <button class="btn">📤 Upload Document</button>
+    </div>
+    
+    <div class="upload-zone">
+      <div style="font-size: 3rem; margin-bottom: 1rem;">📁</div>
+      <h3 style="margin-bottom: 0.5rem;">Drop files here or click to browse</h3>
+      <p style="color: #999;">Supported formats: PDF, DOC, DOCX, JPG, PNG (Max 10MB)</p>
+    </div>
+
+    <h2>Document Library</h2>
+    
+    <div class="grid">
+      <div class="doc-card">
+        <div class="doc-header">
+          <div style="display: flex; align-items: center;">
+            <div class="doc-icon">📋</div>
+            <div>
+              <div class="doc-title">Smart Fridge Manual</div>
+              <div class="doc-badge badge-manual">Manual</div>
+            </div>
+          </div>
+        </div>
+        <div class="doc-details">
+          Samsung RF28R7351 Installation Guide<br>
+          Complete setup and troubleshooting manual
+        </div>
+        <div class="doc-date">📅 Uploaded: Dec 15, 2024</div>
+      </div>
+
+      <div class="doc-card">
+        <div class="doc-header">
+          <div style="display: flex; align-items: center;">
+            <div class="doc-icon">🛡️</div>
+            <div>
+              <div class="doc-title">Thermostat Warranty</div>
+              <div class="doc-badge badge-warranty">Warranty</div>
+            </div>
+          </div>
+        </div>
+        <div class="doc-details">
+          Google Nest Learning Thermostat<br>
+          3-year extended warranty certificate
+        </div>
+        <div class="doc-date">📅 Uploaded: Mar 10, 2024</div>
+      </div>
+
+      <div class="doc-card">
+        <div class="doc-header">
+          <div style="display: flex; align-items: center;">
+            <div class="doc-icon">📋</div>
+            <div>
+              <div class="doc-title">Smart Bulbs Guide</div>
+              <div class="doc-badge badge-manual">Manual</div>
+            </div>
+          </div>
+        </div>
+        <div class="doc-details">
+          Philips Hue Color Setup Manual<br>
+          App configuration and color management
+        </div>
+        <div class="doc-date">📅 Uploaded: Aug 22, 2024</div>
+      </div>
+
+      <div class="doc-card">
+        <div class="doc-header">
+          <div style="display: flex; align-items: center;">
+            <div class="doc-icon">🛡️</div>
+            <div>
+              <div class="doc-title">Smart Outlets Warranty</div>
+              <div class="doc-badge badge-warranty">Warranty</div>
+            </div>
+          </div>
+        </div>
+        <div class="doc-details">
+          TP-Link Kasa Smart Outlets<br>
+          2-year manufacturer warranty
+        </div>
+        <div class="doc-date">📅 Uploaded: Sep 15, 2024</div>
+      </div>
+
+      <div class="doc-card">
+        <div class="doc-header">
+          <div style="display: flex; align-items: center;">
+            <div class="doc-icon">📋</div>
+            <div>
+              <div class="doc-title">Echo Dot Manual</div>
+              <div class="doc-badge badge-manual">Manual</div>
+            </div>
+          </div>
+        </div>
+        <div class="doc-details">
+          Amazon Echo Dot (4th Gen)<br>
+          Voice commands and Alexa setup guide
+        </div>
+        <div class="doc-date">📅 Uploaded: Jan 20, 2023</div>
+      </div>
+
+      <div class="doc-card">
+        <div class="doc-header">
+          <div style="display: flex; align-items: center;">
+            <div class="doc-icon">📋</div>
+            <div>
+              <div class="doc-title">Smart Lock Installation</div>
+              <div class="doc-badge badge-manual">Manual</div>
+            </div>
+          </div>
+        </div>
+        <div class="doc-details">
+          August Smart Lock Pro<br>
+          Installation and mobile app setup
+        </div>
+        <div class="doc-date">📅 Uploaded: Feb 28, 2023</div>
+      </div>
+    </div>
+  </div>
 </body>
 </html>

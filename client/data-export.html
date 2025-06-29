@@ -5,13 +5,296 @@
   <link rel="icon" type="image/svg+xml" href="/electrichomehub/favicon.svg" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Data Export - Electric Home Hub</title>
-  <meta name="description" content="Export and visualize your smart home device data with comprehensive reporting tools." />
-  <script>
-    window.__INITIAL_ROUTE__ = '/data-export';
-  </script>
+  <meta name="description" content="Export and visualize your device data, maintenance schedules, and system analytics." />
+  <style>
+    * { margin: 0; padding: 0; box-sizing: border-box; }
+    body { 
+      font-family: system-ui, -apple-system, sans-serif; 
+      background: black; 
+      color: white; 
+      line-height: 1.6; 
+    }
+    .container { max-width: 1200px; margin: 0 auto; padding: 2rem 1rem; }
+    .header {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 1rem 2rem;
+      border-bottom: 1px solid #333;
+      background: black;
+    }
+    .logo {
+      display: flex;
+      align-items: center;
+      gap: 0.5rem;
+      font-size: 1.5rem;
+      font-weight: bold;
+      color: #ff3333;
+      text-decoration: none;
+    }
+    .nav {
+      display: flex;
+      gap: 2rem;
+      list-style: none;
+    }
+    .nav a {
+      color: white;
+      text-decoration: none;
+      padding: 0.5rem 1rem;
+      border-radius: 0.25rem;
+      transition: all 0.2s;
+    }
+    .nav a:hover { background: #333; }
+    .nav a.featured {
+      color: #ff3333;
+      border: 1px solid #ff3333;
+      font-weight: 600;
+    }
+    .export-card {
+      background: #111;
+      border: 1px solid #333;
+      border-radius: 0.5rem;
+      padding: 1.5rem;
+      margin-bottom: 1.5rem;
+    }
+    .export-header {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      margin-bottom: 1rem;
+    }
+    .btn {
+      background: #ff3333;
+      color: white;
+      border: none;
+      padding: 0.75rem 1.5rem;
+      border-radius: 0.25rem;
+      font-weight: 600;
+      cursor: pointer;
+      transition: all 0.2s;
+      text-decoration: none;
+      display: inline-flex;
+      align-items: center;
+      gap: 0.5rem;
+    }
+    .btn:hover { background: #cc2222; }
+    .btn-outline {
+      background: transparent;
+      border: 1px solid #333;
+      color: white;
+    }
+    .btn-outline:hover {
+      border-color: #ff3333;
+      color: #ff3333;
+    }
+    .grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+      gap: 1.5rem;
+    }
+    .format-badge {
+      padding: 0.25rem 0.75rem;
+      border-radius: 9999px;
+      font-size: 0.75rem;
+      font-weight: 600;
+      margin-right: 0.5rem;
+    }
+    .format-csv { background: #16a34a; color: white; }
+    .format-json { background: #2563eb; color: white; }
+    .format-pdf { background: #dc2626; color: white; }
+    .format-xlsx { background: #f59e0b; color: black; }
+    h1 { font-size: 2rem; margin-bottom: 2rem; }
+    h2 { font-size: 1.5rem; margin-bottom: 1rem; }
+    h3 { font-size: 1.25rem; margin-bottom: 1rem; }
+    .stats-row {
+      display: flex;
+      gap: 1rem;
+      margin: 1rem 0;
+      flex-wrap: wrap;
+    }
+    .stat-item {
+      background: #222;
+      padding: 1rem;
+      border-radius: 0.5rem;
+      text-align: center;
+      flex: 1;
+      min-width: 120px;
+    }
+    .stat-value {
+      font-size: 2rem;
+      font-weight: bold;
+      color: #ff3333;
+    }
+    .stat-label {
+      color: #999;
+      font-size: 0.875rem;
+    }
+    @media (max-width: 768px) {
+      .nav { display: none; }
+      .container { padding: 1rem; }
+      .grid { grid-template-columns: 1fr; }
+      .export-header { flex-direction: column; gap: 1rem; align-items: flex-start; }
+    }
+  </style>
 </head>
 <body>
-  <div id="root"></div>
-  <script type="module" src="/electrichomehub/src/main.tsx"></script>
+  <header class="header">
+    <a href="/electrichomehub/" class="logo">
+      ⚡ Electric Home Hub
+    </a>
+    <nav>
+      <ul class="nav">
+        <li><a href="/electrichomehub/developer.html" class="featured">Developer API</a></li>
+        <li><a href="/electrichomehub/tracking.html">Device Tracking</a></li>
+        <li><a href="/electrichomehub/documentation.html">Documentation</a></li>
+        <li><a href="/electrichomehub/monitoring.html">Issue Monitoring</a></li>
+        <li><a href="/electrichomehub/data-export.html">Data Export</a></li>
+        <li><a href="/electrichomehub/faq.html">FAQ</a></li>
+      </ul>
+    </nav>
+  </header>
+
+  <div class="container">
+    <h1>Data Export & Visualization</h1>
+    
+    <div class="stats-row">
+      <div class="stat-item">
+        <div class="stat-value">6</div>
+        <div class="stat-label">Total Devices</div>
+      </div>
+      <div class="stat-item">
+        <div class="stat-value">2</div>
+        <div class="stat-label">Active Warranties</div>
+      </div>
+      <div class="stat-item">
+        <div class="stat-value">12</div>
+        <div class="stat-label">Documents</div>
+      </div>
+      <div class="stat-item">
+        <div class="stat-value">5</div>
+        <div class="stat-label">Active Alerts</div>
+      </div>
+    </div>
+
+    <div class="grid">
+      <div class="export-card">
+        <div class="export-header">
+          <h3>📊 Device Inventory Report</h3>
+          <button class="btn">📥 Export</button>
+        </div>
+        <p style="color: #999; margin-bottom: 1rem;">
+          Complete device inventory with warranty status, locations, and specifications.
+        </p>
+        <div>
+          <span class="format-badge format-csv">CSV</span>
+          <span class="format-badge format-xlsx">XLSX</span>
+          <span class="format-badge format-pdf">PDF</span>
+        </div>
+      </div>
+
+      <div class="export-card">
+        <div class="export-header">
+          <h3>📋 Documentation Archive</h3>
+          <button class="btn">📥 Export</button>
+        </div>
+        <p style="color: #999; margin-bottom: 1rem;">
+          All device manuals, warranties, and documentation files in organized folders.
+        </p>
+        <div>
+          <span class="format-badge format-pdf">PDF</span>
+          <span class="format-badge format-json">JSON</span>
+        </div>
+      </div>
+
+      <div class="export-card">
+        <div class="export-header">
+          <h3>⚠️ Alert History</h3>
+          <button class="btn">📥 Export</button>
+        </div>
+        <p style="color: #999; margin-bottom: 1rem;">
+          Historical alerts, recalls, and maintenance notifications with timestamps.
+        </p>
+        <div>
+          <span class="format-badge format-csv">CSV</span>
+          <span class="format-badge format-json">JSON</span>
+        </div>
+      </div>
+
+      <div class="export-card">
+        <div class="export-header">
+          <h3>📈 Warranty Analytics</h3>
+          <button class="btn">📥 Export</button>
+        </div>
+        <p style="color: #999; margin-bottom: 1rem;">
+          Warranty expiration timeline and coverage analysis for budget planning.
+        </p>
+        <div>
+          <span class="format-badge format-pdf">PDF</span>
+          <span class="format-badge format-xlsx">XLSX</span>
+        </div>
+      </div>
+
+      <div class="export-card">
+        <div class="export-header">
+          <h3>🔄 API Usage Statistics</h3>
+          <button class="btn">📥 Export</button>
+        </div>
+        <p style="color: #999; margin-bottom: 1rem;">
+          API call logs, rate limiting data, and integration performance metrics.
+        </p>
+        <div>
+          <span class="format-badge format-json">JSON</span>
+          <span class="format-badge format-csv">CSV</span>
+        </div>
+      </div>
+
+      <div class="export-card">
+        <div class="export-header">
+          <h3>🏠 Complete System Backup</h3>
+          <button class="btn">📥 Export</button>
+        </div>
+        <p style="color: #999; margin-bottom: 1rem;">
+          Full system export including all devices, documents, alerts, and settings.
+        </p>
+        <div>
+          <span class="format-badge format-json">JSON</span>
+          <span class="format-badge format-pdf">PDF</span>
+        </div>
+      </div>
+    </div>
+
+    <div class="export-card" style="margin-top: 2rem;">
+      <h2>📅 Scheduled Exports</h2>
+      <p style="color: #999; margin-bottom: 1.5rem;">
+        Automate your data exports with scheduled reports delivered to your email.
+      </p>
+      
+      <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); gap: 1rem;">
+        <div style="background: #222; padding: 1rem; border-radius: 0.5rem;">
+          <h4 style="margin-bottom: 0.5rem;">📊 Monthly Device Report</h4>
+          <p style="color: #999; font-size: 0.875rem; margin-bottom: 0.5rem;">
+            Every 1st of the month
+          </p>
+          <button class="btn-outline">⚙️ Configure</button>
+        </div>
+        
+        <div style="background: #222; padding: 1rem; border-radius: 0.5rem;">
+          <h4 style="margin-bottom: 0.5rem;">⚠️ Weekly Alert Summary</h4>
+          <p style="color: #999; font-size: 0.875rem; margin-bottom: 0.5rem;">
+            Every Monday at 9 AM
+          </p>
+          <button class="btn-outline">⚙️ Configure</button>
+        </div>
+        
+        <div style="background: #222; padding: 1rem; border-radius: 0.5rem;">
+          <h4 style="margin-bottom: 0.5rem;">📋 Quarterly Backup</h4>
+          <p style="color: #999; font-size: 0.875rem; margin-bottom: 0.5rem;">
+            Every 3 months
+          </p>
+          <button class="btn-outline">⚙️ Configure</button>
+        </div>
+      </div>
+    </div>
+  </div>
 </body>
 </html>
