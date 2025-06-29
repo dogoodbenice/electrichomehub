@@ -1,4 +1,19 @@
-<!DOCTYPE html>
+#!/usr/bin/env node
+
+import fs from 'fs';
+import path from 'path';
+import { fileURLToPath } from 'url';
+
+const __dirname = path.dirname(fileURLToPath(import.meta.url));
+
+// Create client directory if it doesn't exist
+const clientDir = path.join(__dirname, 'client');
+if (!fs.existsSync(clientDir)) {
+  fs.mkdirSync(clientDir, { recursive: true });
+}
+
+// Updated HTML template with proper React routing support
+const htmlTemplate = `<!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
@@ -200,4 +215,89 @@
     <!-- React App will mount here when available -->
     <script type="module" src="./src/main.tsx"></script>
 </body>
-</html>
+</html>`;
+
+// Write the main index.html
+fs.writeFileSync(path.join(clientDir, 'index.html'), htmlTemplate);
+
+// Create a simple 404.html for GitHub Pages
+const notFoundHtml = `<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Electric Home Hub - Page Not Found</title>
+    <style>
+        body {
+            background-color: #000;
+            color: #fff;
+            font-family: system-ui, -apple-system, sans-serif;
+            margin: 0;
+            padding: 2rem;
+            text-align: center;
+            min-height: 100vh;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+        }
+        .logo {
+            color: #ff3333;
+            font-size: 2rem;
+            font-weight: bold;
+            margin-bottom: 2rem;
+        }
+        .navigation {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 1rem;
+            justify-content: center;
+            margin-top: 2rem;
+        }
+        .nav-link {
+            padding: 0.75rem 1.5rem;
+            background-color: #1a1a1a;
+            border: 1px solid #333;
+            border-radius: 6px;
+            color: #fff;
+            text-decoration: none;
+            transition: all 0.2s;
+        }
+        .nav-link:hover {
+            border-color: #ff3333;
+            background-color: rgba(255, 51, 51, 0.1);
+        }
+    </style>
+</head>
+<body>
+    <div class="logo">Electric Home Hub</div>
+    <h1>Page Not Found</h1>
+    <p>The page you're looking for doesn't exist. Navigate to one of our main sections:</p>
+    
+    <div class="navigation">
+        <a href="/electrichomehub/" class="nav-link">Home</a>
+        <a href="/electrichomehub/developer.html" class="nav-link">Developer API</a>
+        <a href="/electrichomehub/tracking.html" class="nav-link">Device Tracking</a>
+        <a href="/electrichomehub/documentation.html" class="nav-link">Documentation</a>
+        <a href="/electrichomehub/monitoring.html" class="nav-link">Issue Monitoring</a>
+        <a href="/electrichomehub/data-export.html" class="nav-link">Data Export</a>
+        <a href="/electrichomehub/faq.html" class="nav-link">FAQ</a>
+    </div>
+    
+    <script>
+        // Try to redirect to React app with intended route
+        const path = window.location.pathname.replace('/electrichomehub', '');
+        if (path && path !== '/') {
+            sessionStorage.setItem('intended-route', path);
+            window.location.href = '/electrichomehub/';
+        }
+    </script>
+</body>
+</html>`;
+
+fs.writeFileSync(path.join(clientDir, '404.html'), notFoundHtml);
+
+console.log('✓ Generated static files for GitHub Pages');
+console.log('✓ Created index.html with React app fallback');
+console.log('✓ Created 404.html for routing');
+console.log('✓ All files ready for GitHub Pages deployment');
