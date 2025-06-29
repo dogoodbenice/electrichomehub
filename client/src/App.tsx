@@ -20,7 +20,7 @@ import { getBasePath } from "./lib/staticData";
 const basePath = getBasePath();
 const isGitHubPages = window.location.hostname.includes('github.io');
 
-function Router() {
+function RouteHandler() {
   const [, setLocation] = useLocation();
   
   useEffect(() => {
@@ -33,18 +33,24 @@ function Router() {
   }, [setLocation]);
 
   return (
-    <WouterRouter>
-      <Switch>
-        <Route path="/" component={Dashboard} />
-        <Route path="/tracking" component={DeviceTracking} />
-        <Route path="/documentation" component={Documentation} />
-        <Route path="/monitoring" component={IssueMonitoring} />
-        <Route path="/developer" component={DeveloperAPI} />
-        <Route path="/data-export" component={DataExport} />
-        <Route path="/faq" component={FAQ} />
-        <Route path="/about" component={About} />
-        <Route component={NotFound} />
-      </Switch>
+    <Switch>
+      <Route path="/" component={Dashboard} />
+      <Route path="/tracking" component={DeviceTracking} />
+      <Route path="/documentation" component={Documentation} />
+      <Route path="/monitoring" component={IssueMonitoring} />
+      <Route path="/developer" component={DeveloperAPI} />
+      <Route path="/data-export" component={DataExport} />
+      <Route path="/faq" component={FAQ} />
+      <Route path="/about" component={About} />
+      <Route component={NotFound} />
+    </Switch>
+  );
+}
+
+function Router() {
+  return (
+    <WouterRouter base={basePath}>
+      <RouteHandler />
     </WouterRouter>
   );
 }
