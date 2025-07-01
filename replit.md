@@ -72,6 +72,12 @@ The application uses four main database tables:
 5. **Demo Functionality**: All five core features fully demonstrated
 
 ## Recent Changes
+- June 29, 2025: Enhanced API documentation with comprehensive CRM and marketplace concepts
+  - Added User Management API for proficiency tracking, preferences, and personalization
+  - Implemented Home Management API with energy analytics, benchmarking, and recommendations
+  - Created Marketplace Services API covering hardware recommendations, trial programs, educational content, and maintenance services
+  - Added personalized offers system based on user profiles and home data analysis
+  - Enhanced API structure to support end-user proficiency variations and comprehensive hardware lifecycle management
 - June 29, 2025: Cleaned up project redundancies and optimized codebase
   - Removed redundant files: attached_assets/ folder, faq.html, js/faq.js, package-lock.json
   - Consolidated duplicate CSS rules for .btn-primary and .btn-secondary classes
